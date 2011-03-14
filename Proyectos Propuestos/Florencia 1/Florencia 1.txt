@@ -1,0 +1,12 @@
+1. La idea sería que un usuario que se encuentra en un lugar determinado reciba alertas o notificaciones de lugares que 
+están alrededor de él. O sea, el usuario tendría una aplicación, en el celular por ejemplo, que detecte la ubicación y que 
+consulte algún servidor o algo que le envíe información (avisos, promociones) sobre locales que están cerca. Entonces, el 
+usuario recibe una notificación en el celular y decide si le interesa o no, o bien se guarda en algún lado por si lo quiere 
+consultar después. Si le interesa, selecciona la notificación y se amplía la información (se le indica como llegar, etc). 
+Además, se podría armar un perfil para que reciba solo cosas que le interese a partir de las notificaciones que va aceptando 
+y las que no. Y también puede ser al revés, que el usuario se arme una lista de productos o un "wishlist" en el celular y le 
+avise cuando pasa cerca de algún lugar donde lo puede comprar.
+Para detectar la ubicación del usuario hay cosas en Android, por ejemplo en 
+http://developer.android.com/guide/topics/location/obtaining-user-location.html
+Después, para indicarle como llegar se puede integrar con google maps y para hacer la parte del perfil debe haber algún 
+método supervisado que se pueda aplicar (si alguien ya hizo sistemas inteligentes, puede explicar mejor qué hacer con eso :P ).

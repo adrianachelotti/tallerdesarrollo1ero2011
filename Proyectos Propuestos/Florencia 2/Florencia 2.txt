@@ -1,0 +1,6 @@
+2. Conectar a quienes brindan un servicio urgente con aquellos que lo necesitan sin intervención de terceros. Por ejemplo, 
+un médico, electricista, etc. envía a un servidor dónde está y una persona que necesita el servicio consulta un sitio web 
+(que le muestra los resultados ordenados de acuerdo a qué tan cerca se encuentra el profesional por ejemplo) y se comunica 
+con él. Se puede hacer que sea más "red social" si se puede recomendar a personas, dar opiniones sobre los servicios que 
+brindan, sugerir contactos. Igual, a esta opción no le veo claramente la parte comercial.
+Se puede usar Android también para que envíe automáticamente la ubicación.

@@ -1,0 +1,16 @@
+El usuario debe tener un aparato GPS el cual se conecta a la computadora, se
+ingresa a una pagina web y en primer lugar se verifica si el aparato es
+compatible con todas las aplicaciones que se pueden descargar de la misma. Si es
+así, mi idea es brindarle información diaria del trafico de la ciudad donde se
+encuentra el usuario o alguna que el quiera pedir, esto incluiría calles
+cortadas, marchas, trafico embotellado, arreglos en las mismas, y algunas otras
+cosas mas.
+A este servicio se le puede agregar información de eventos próximos, como
+recitales, exposiciones, etc. Obviamente con su posición en el ciudad, su costo,
+horario, etc. Restaurantes, cines, etc.
+Hablando de plata, la primera parte se le cobra al usuario, y la segunda se le
+puede cobrar tanto al usuario como al que presta el evento. (o solo al que
+presta el evento haciendo esto más accesible al usuario)
+Bueno esta un poco verde.. lo se... estoy elaborando algo más profundo para
+llevar todo bien explicado, con alcance y demás... pero quería que sepan más o
+menos la idea..
