@@ -14,3 +14,15 @@ presta el evento haciendo esto más accesible al usuario)
 Bueno esta un poco verde.. lo se... estoy elaborando algo más profundo para
 llevar todo bien explicado, con alcance y demás... pero quería que sepan más o
 menos la idea..
+
+Agregado por Ramiro Romero: 
+La idea esta buena, es muy similar a la idea 2 de Flor, con el agregado del tema
+del trafico. Lo bueno es que el sistema no toma ninguna accion, solo se encarga
+de informar a los usuarios suscriptos para que ellos decidan que hacer con la
+informacion recibida. Respecto al transito, no se que capacidad tiene (tomando
+como ejemplo la ciudad de buenos aires) para informar el estado en tiempo real
+sin que dependa de medios no automaticos, como ser un helicoptero sobrevolando
+la ciudad con alguien informando desde alli, y alguien transcribiendo la infor
+macion. Tal vez se deberia integrar a la idea que yo tenia sobre el control
+de trafico, pero este ultimo, se podria hacer menos complejo, o sea, no tomaria
+tantas acciones si no que solo brindaria informacion.
