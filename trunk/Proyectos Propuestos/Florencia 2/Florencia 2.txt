@@ -4,3 +4,12 @@ un médico, electricista, etc. envía a un servidor dónde está y una persona que n
 con él. Se puede hacer que sea más "red social" si se puede recomendar a personas, dar opiniones sobre los servicios que 
 brindan, sugerir contactos. Igual, a esta opción no le veo claramente la parte comercial.
 Se puede usar Android también para que envíe automáticamente la ubicación.
+
+-----------------------------------------------------------------------------------------------------------------------------
+Agregado por: Raúl De Roovers
+La parte comercial puede venir por el lado de la "red social", la propaganda que puede llegar a haber ahi si la idea pega,
+es increible. Lo bueno que tiene es que el costo de implementar algo asi no es tan elevado, de hecho en ppio depende solo
+de los usuarios, que se prendan, que saquen cuenta y empiecen a usar el servicio, en algun momento habra que hacer una
+inversion en hard para bancar los volumenes crecientes de info, pero cuanta mas gente lo use, tambien mas terceros se van
+a interesar en publicitar, lo cual vuelve al tema comercial.
+La contra es que habria que crear una "red social" nueva... pero quizas se podria plantear como plugin de facebook o twitter.

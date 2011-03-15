@@ -10,3 +10,13 @@ Para detectar la ubicación del usuario hay cosas en Android, por ejemplo en
 http://developer.android.com/guide/topics/location/obtaining-user-location.html
 Después, para indicarle como llegar se puede integrar con google maps y para hacer la parte del perfil debe haber algún 
 método supervisado que se pueda aplicar (si alguien ya hizo sistemas inteligentes, puede explicar mejor qué hacer con eso :P ).
+
+-----------------------------------------------------------------------------------------------------------------------------
+Agregado por: Raúl De Roovers
+Creo que no termino de entender la idea o en realidad el beneficio para el usuario. Capaz no me imagino qué promociones
+pueden llegar a ofrecerse.
+Quizás se puede llegar a mezclar con distintos sitios o publicaciones a las que el usuario esté suscripto (la tarjeta de La
+Nación, la de Clarín, la de Jumbo, algo así...) y en base a eso se puede informar si pasa por un Freddo, tipo "con tu 
+tarjeta La Nación tenes descuento en el Freddo que te vas a cruzar en dos cuadras" o algo así...
+El tema de recibir alertas o notificaciones a veces pueder ser medio molesto porque si el tipo esta suscripto a muchas cosas,
+le van a llegar 5 millones de mensajes y se puede llegar a pudrir.
