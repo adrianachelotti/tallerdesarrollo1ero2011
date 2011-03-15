@@ -12,3 +12,9 @@ Quizás si se hace "merge" con la idea 2, puede andar muy bien, porque no solo es
 ofreciendo y coordinando para generar un nuevo proyecto, onda "necesito pintores" y que un "amigo" te diga "che yo conozco
 un par que no están laburando ahora" y así... Acá lo que desconozco totalmente son las implicancias legales, si es que las
 hay.
+
+-----------------------------------------------------------------------------------------------------------------------------
+Agregado por: Ramiro Romero
+Coincido con Raul, creo que podría formar parte de la idea 2, o sea, ademas de que se publiciten servicios, mismo los clientes
+publiciten sus necesidades, el sistema se encargaria de "matchear" eso, y de no haber coincidencias quedaria como publicado
+en una especie de cartelera de ofrecimientos y requerimientos para que otra persona los pueda cubrir
