@@ -5,3 +5,10 @@ presupuestos, etc. Otro ejemplo puede ser la construcción de un edificio, se cre
 arquitectos, etc. También puede ser más "red social" con sugerencias, recomendaciones.
 De todas formas, es demasiado parecido al tp del cine independiente, no es muy original, seguro que ya existe algo así. 
 Tampoco está clara la parte comercial.
+
+-----------------------------------------------------------------------------------------------------------------------------
+Agregado por: Raúl De Roovers
+Quizás si se hace "merge" con la idea 2, puede andar muy bien, porque no solo estás solicitando un servicio, sino que estás
+ofreciendo y coordinando para generar un nuevo proyecto, onda "necesito pintores" y que un "amigo" te diga "che yo conozco
+un par que no están laburando ahora" y así... Acá lo que desconozco totalmente son las implicancias legales, si es que las
+hay.
