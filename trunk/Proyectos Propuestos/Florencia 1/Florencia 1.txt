@@ -20,3 +20,12 @@ Nación, la de Clarín, la de Jumbo, algo así...) y en base a eso se puede informa
 tarjeta La Nación tenes descuento en el Freddo que te vas a cruzar en dos cuadras" o algo así...
 El tema de recibir alertas o notificaciones a veces pueder ser medio molesto porque si el tipo esta suscripto a muchas cosas,
 le van a llegar 5 millones de mensajes y se puede llegar a pudrir.
+
+-----------------------------------------------------------------------------------------------------------------------------
+Agregado por: Ramiro Romero .
+Entiendo que se refiere a cualquier servicio o local o lo que sea que este enviando ofertas o informacion sobre sus productos.
+Creo que para subsanar el tema de que al usuario no le llegue spam, se debería manejar una suscripcion o informacion basada
+en la "wishlist" que propone Flor y que haya una cierta confirmacion del usuario, o sea "Freddo quiere enviarte sus promos, 
+desea aceptar?" y que tambien el usuario se pueda suscribir o desuscribir a los diferentes anunciantes a placer. Y 
+estaría bueno que solo le llegaran promociones de los lugares que esten, por ejemplo, en un radio de 1
+km a la redonda de donde se encuentra ubicado el cliente.
