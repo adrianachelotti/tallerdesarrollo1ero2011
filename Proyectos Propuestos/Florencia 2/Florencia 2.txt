@@ -13,9 +13,29 @@ de los usuarios, que se prendan, que saquen cuenta y empiecen a usar el servicio
 inversion en hard para bancar los volumenes crecientes de info, pero cuanta mas gente lo use, tambien mas terceros se van
 a interesar en publicitar, lo cual vuelve al tema comercial.
 La contra es que habria que crear una "red social" nueva... pero quizas se podria plantear como plugin de facebook o twitter.
+
 ----------------------------------------------------------------------------------------------------------------------------
 Agregado por: Adriana
 A favor: Esta buena la idea, es muy útil. Lo que se podria agregar es también tener por zonas un ranking de confiabilidad del
 prestador del servicio. El lado comercial, seria que el sistema a cambio de $$ siempre recomiende entre los primeros los 
 profesionales que $$. Osea una empresa o profesional podría pagar una cuota mensual para que se tenga en cuenta dentro de los favoritos.
 En contra: Hacer una red social, me parece que es muy costoso, coincido con Raúl.
+
+----------------------------------------------------------------------------------------------------------------------------
+Agregado por: Perez Staltari Dario
+La idea me parece buena, igual planteo algunas cosas que me gustarian. 
+
+- Estaría bueno que al efectuar una busqueda pueda disponer de los turno u horarios para los cuales puedo acordar el servicio, 
+de esta forma se acordaría la prestación en ese momento pudiendo programarlo para un tiempo futuro tambien. Podría el prestador
+cargar los turnos que dispone, segun desee trabajar, y a medida que se los tome se marquen como asignados.
+
+- Funcionalidad de "Urgentes" (como lo describió Florencia anteriormente)
+
+- Se necesita validar a los profesionales que se suscriben de alguna forma. Almenos dudaria en contactarme con un medico
+por este medio si no hay algun organismo que avale que realmente lo es. Esto con profesionales no me resulta trivial.
+
+- Despues el ranking lo haria tanto para el prestador como para el cliente, de esta forma lo puedo usar como un indice de
+confianza de ambas partes.
+
+- Lo que no veo muy bien es lo de que puedan escalar en el ranking de recomendados solo por pagar, entiendo que es el negocio
+pero pierde la gracia "social" de la idea.
