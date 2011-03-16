@@ -13,3 +13,9 @@ de los usuarios, que se prendan, que saquen cuenta y empiecen a usar el servicio
 inversion en hard para bancar los volumenes crecientes de info, pero cuanta mas gente lo use, tambien mas terceros se van
 a interesar en publicitar, lo cual vuelve al tema comercial.
 La contra es que habria que crear una "red social" nueva... pero quizas se podria plantear como plugin de facebook o twitter.
+----------------------------------------------------------------------------------------------------------------------------
+Agregado por: Adriana
+A favor: Esta buena la idea, es muy útil. Lo que se podria agregar es también tener por zonas un ranking de confiabilidad del
+prestador del servicio. El lado comercial, seria que el sistema a cambio de $$ siempre recomiende entre los primeros los 
+profesionales que $$. Osea una empresa o profesional podría pagar una cuota mensual para que se tenga en cuenta dentro de los favoritos.
+En contra: Hacer una red social, me parece que es muy costoso, coincido con Raúl.
