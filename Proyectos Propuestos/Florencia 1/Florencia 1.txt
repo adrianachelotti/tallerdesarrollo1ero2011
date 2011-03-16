@@ -29,3 +29,17 @@ en la "wishlist" que propone Flor y que haya una cierta confirmacion del usuario
 desea aceptar?" y que tambien el usuario se pueda suscribir o desuscribir a los diferentes anunciantes a placer. Y 
 estaría bueno que solo le llegaran promociones de los lugares que esten, por ejemplo, en un radio de 1
 km a la redonda de donde se encuentra ubicado el cliente.
+
+-----------------------------------------------------------------------------------------------------------------------------
+Agregado por: Perez Staltari Dario
+La primera sensación que me da es que puede resultar algo molesto el tema de las alertas, por esto trataría de encararlo
+por otro lado. A mi entender resultaría mejor si el que decide que necesita es uno mismo. Es decir, si quiero comprar
+algun producto los comercios que puedan proveerme, se encuentren adheridos y esten cerca de donde estoy efectuan su oferta.
+Vamos con un ejemplo mejor: quiero un paquete de harina y me encuentro en Paseo Colon e Independencia, informo por SMS que
+lo que quiero comprar y me aparece un listado de los negocios que me pueden proveer. Desde aca podemos elegir distintos
+criterios para la busqueda anterior:
+- Obtener los negocios por el precio del articulo
+- Obtener los negocios mas cercanos
+- Podriamos ponderar con algun "costo" extra la cantidad de distancia a recorrer para las comparaciones.
+
+Bueno lo corto aca porque me voy mucho de la idea....
