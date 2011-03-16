@@ -1,7 +1,7 @@
-- Ofertas via GPS(Florencia1 e idea de Martin fusionadas) 5
-- Control de Pasajeros 2
-- Sistema de Servicios Mutuos (Florencia2) 3 
-- Sistema de Multas 4
-- Sistema de Seguridad (Smart Gadget) 3
-- Sistema de abastecimiento automatizado (Smart Home) 4
-- Sistema de control de trafico (Smart traffic) 3
+- Ofertas via GPS(Florencia1 e idea de Martin fusionadas) 5 5
+- Control de Pasajeros 2 4
+- Sistema de Servicios Mutuos (Florencia2) 3 2
+- Sistema de Multas 4 2
+- Sistema de Seguridad (Smart Gadget) 3 3
+- Sistema de abastecimiento automatizado (Smart Home) 4 3
+- Sistema de control de trafico (Smart traffic) 3 3

@@ -43,3 +43,12 @@ criterios para la busqueda anterior:
 - Podriamos ponderar con algun "costo" extra la cantidad de distancia a recorrer para las comparaciones.
 
 Bueno lo corto aca porque me voy mucho de la idea....
+
+------------------------------------------------------------------------------------------------------------------------------
+Agregado por: Martin Zucchiatti
+Bueno esta idea es muy parecida a la mia, sin el tema del trafico, me parece muy accesible con respecto a la realizacion de la
+demo y esas cosas.
+Con respecto al costo, en si es bajo y con respecto a las ganancias pueden llegar de dos lugares, del cliente que paga por el
+servicio y/o de las empresas que pagan por aparecer en el servicio.
+
+
