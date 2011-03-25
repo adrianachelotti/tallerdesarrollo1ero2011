@@ -1,2 +1,62 @@
-- Sujeto a la Ley de Proteccion de Datos Personales
+- Sujeto a la Ley de Proteccion de Datos Personales N°25326
 Fuentes de informacion para el veraz: BCRA, Tribunales, Boletin oficial, clientes
+
+POSIBLE POLITICA A UTILIZAR
+- Los primeros 6 meses se paga un valor de poliza fijo. Luego se hace un analisis de riesgo
+respecto de los datos recolectados por el sistema. Luego cada 3 meses se hace un recalculo
+de la poliza
+
+DATOS A CONSULTAR
+. Cada cuanto se recalcula un poliza?
+. En base a que parametros? (Inflacion, informacion crediticia de la persona en el veraz)
+. Que se toma en cuenta a la hora de asegurar un automotor? que parametros? que tipo de informacion les serviria?
+. Como funciona el tema del scoring? es viable para las compañias?
+
+INFO DEL VERAZ:
+
+DATOS TECNICOS
+
+- Promedio de velocidad total
+- Velocidad maxima total alcanzada
+
+- Promedio de velocidad en autopistas
+- Promedio de velocidad en calles urbanas
+
+- Promedio de revoluciones del motor total
+- Maximas revoluciones alcanzadas
+- Cantidad de veces que se supero el umbral de revoluciones
+
+- Tiempo de circulacion en calles urbanas
+- Tiempo de circulacion en autopistas
+- Tiempo de circulacion en rutas
+
+- Tiempo promedio de circulacion en autopistas
+- Tiempo promedio de circulacion en calles
+- Tiempo promedio de circulacion en rutas
+
+- Temperatura promedio del auto
+- Mayor temperatura alcanzada
+- Cantidad de veces que se supero el umbral de temperatura
+
+- Zonas de circulacion
+- Promedio de horas por zona de circulacion
+
+- Cantidad de remolques efectuados
+
+- Desaceleracion promedio
+- Desaceleracion maxima
+
+- Consumo de combustible promedio
+
+- Peso promedio extra en el automovil
+- Peso maximo extra en el automovil
+
+
+DATOS EXTRAS
+
+- Cantidad de siniestros
+- Siniestros promedio por mes
+- Siniestros promedio por año
+- Monto promedio de siniestros por mes
+- Monto promedio de siniestros por años
+
