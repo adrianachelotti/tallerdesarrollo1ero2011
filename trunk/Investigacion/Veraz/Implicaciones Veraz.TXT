@@ -22,7 +22,8 @@ DATOS TECNICOS
 - Promedio de velocidad en autopistas
 - Promedio de velocidad en calles urbanas
 
-- Promedio de revoluciones del motor total
+
+- Promedio de revoluciones del motor total 
 - Maximas revoluciones alcanzadas
 - Cantidad de veces que se supero el umbral de revoluciones
 
@@ -33,6 +34,7 @@ DATOS TECNICOS
 - Tiempo promedio de circulacion en autopistas
 - Tiempo promedio de circulacion en calles
 - Tiempo promedio de circulacion en rutas
+
 
 - Temperatura promedio del auto
 - Mayor temperatura alcanzada
@@ -60,3 +62,5 @@ DATOS EXTRAS
 - Monto promedio de siniestros por mes
 - Monto promedio de siniestros por años
 
+DUDAS
+(Adri)Las revoluciones y la temperatura--->Para qué sirviría?
