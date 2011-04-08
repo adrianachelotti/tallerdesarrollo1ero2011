@@ -1,0 +1,49 @@
+DATOS ADQUIRIDOS EN CONSULTA PRE CONTRATACION
+- Datos personales adquiridos por consulta al propio cliente y por
+inspección ocular de la unidad
+
+Nombre
+Edad
+Sexo
+Estado Civil
+Profesion
+Ingresos
+Propietario?
+Maneja la unidad?
+Alguien mas va a manejar la unidad?
+Tasacion monetaria de la unidad (Valor de mercado)
+Donde se va a guardar el automovil (garage personal, garege privado, intemperie)
+
+- Verificacion primaria del automovil
+Estado general de chapa y pintura
+Estado del interior
+Verificacion mecánica básica
+Noción del estado del motor (prueba acc + dirección)
+
+DATOS ADQUIRIDOS DE FUNTES EXTERNAS (para contratacion y/o retasacion de poliza actual)
+- VTV
+Fue realizada en los plazos estipulados por la ley? (Si corresponde)
+Resultados de la misma:
+  - Amortiguacion
+  - Frenos
+  - Direccion
+  - Emision de gases
+  - Estado general
+  
+- HISTORIAL DE INFRACCIONES
+Listado de infracciones labradas
+Estado de las infracciones (saldadas o no, tiempo que paso hasta ser saldada)
+Infracciones labradas en otros municipios (se puede?) 
+
+- HSTORIAL JUDICIAL (civil y penal)
+Juicio por accidente de tránsito
+Denuncias vigentes (solo lo que tuvo alcance judicial o denuncias
+
+
+- VERAZ
+Historial credilicio del cliente
+Deudas (si las hay)
+Creditos (si los hay, estado de los mismos)
+
+- AFIP
+Deudas con el fisco (si las hay)
