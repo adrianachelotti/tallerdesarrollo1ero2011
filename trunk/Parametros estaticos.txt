@@ -1,18 +1,22 @@
 DATOS ADQUIRIDOS EN CONSULTA PRE CONTRATACION
+=============================================
+
 - Datos personales adquiridos por consulta al propio cliente y por
-inspección ocular de la unidad
+inspección ocular de la unidad (profiling)
 
 Nombre
-Edad
+Edad 
 Sexo
+Lugar de residencia
 Estado Civil
-Profesion
+Profesion (Tipo de trabajo)
 Ingresos
 Propietario?
 Maneja la unidad?
 Alguien mas va a manejar la unidad?
 Tasacion monetaria de la unidad (Valor de mercado)
 Donde se va a guardar el automovil (garage personal, garege privado, intemperie)
+Examen médico
 
 - Verificacion primaria del automovil
 Estado general de chapa y pintura
@@ -20,7 +24,12 @@ Estado del interior
 Verificacion mecánica básica
 Noción del estado del motor (prueba acc + dirección)
 
+
+Sobre estas dos fuentes dijo además, que en general el 20% del cálculo que hacen las empresas de seguros considera profiling y el resto es historial.
+
 DATOS ADQUIRIDOS DE FUNTES EXTERNAS (para contratacion y/o retasacion de poliza actual)
+======================================================================================
+
 - VTV
 Fue realizada en los plazos estipulados por la ley? (Si corresponde)
 Resultados de la misma:
@@ -34,10 +43,11 @@ Resultados de la misma:
 Listado de infracciones labradas
 Estado de las infracciones (saldadas o no, tiempo que paso hasta ser saldada)
 Infracciones labradas en otros municipios (se puede?) 
+Relación km/mes con infracciones. (Por ejemplo si una persona recorre 1000 km/mes y tiene 10 infracciones "está peor" que otro que recorre 1500 km/mes con la misma cantidad de infracciones).
 
 - HSTORIAL JUDICIAL (civil y penal)
 Juicio por accidente de tránsito
-Denuncias vigentes (solo lo que tuvo alcance judicial o denuncias
+Denuncias vigentes (solo lo que tuvo alcance judicial o denuncias)
 
 
 - VERAZ
@@ -47,3 +57,9 @@ Creditos (si los hay, estado de los mismos)
 
 - AFIP
 Deudas con el fisco (si las hay)
+
+- EMPRESAS DE SEGUROS
+
+Información sobre siniestros
+
+(O sea, no solo brindarle información a la empresa, sino que además ésta aporte datos sobre por ejemplo, siniestros)
