@@ -43,7 +43,7 @@ Resultados de la misma:
 Listado de infracciones labradas
 Estado de las infracciones (saldadas o no, tiempo que paso hasta ser saldada)
 Infracciones labradas en otros municipios (se puede?) 
-Relación km/mes con infracciones. (Por ejemplo si una persona recorre 1000 km/mes y tiene 10 infracciones "está peor" que otro que recorre 1500 km/mes con la misma cantidad de infracciones).
+Relación km/mes con infracciones. (Por ejemplo si una persona recorre 1000 km/mes y tiene 10 infracciones "está peor" que otro que recorre 1500 km/mes con la misma cantidad de infracciones). ---> Si no tenemos dispositivo electronico, no hay kilometraje. Lo que si se puede hacer es cruzarlo con el kilometraje anual de la VTV
 
 - HSTORIAL JUDICIAL (civil y penal)
 Juicio por accidente de tránsito
@@ -62,4 +62,4 @@ Deudas con el fisco (si las hay)
 
 Información sobre siniestros
 
-(O sea, no solo brindarle información a la empresa, sino que además ésta aporte datos sobre por ejemplo, siniestros)
+(O sea, no solo brindarle información a la empresa, sino que además ésta aporte datos sobre por ejemplo, siniestros) ---> Esto en definitiva seria que las empresas aseguradoras tuvieran participacion activa en el veraz automovilistico. O sea que habría que tener un convenio por el cual todas las aseguradoras vuelquen su info sobre siniestros ahi, o al menos las que adhieran al convenio.
