@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<wicket:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Log in</title>
+	<wicket:link>
+		<link href="style/style.css" rel="stylesheet" type="text/css" />
+	</wicket:link>
+</wicket:head>
+<body>
+	
+		<p wicket:id="mensajes"/>
+		<form wicket:id="formulario">
+		<table class="tabla">
+			<tr>
+			<td>
+				<span class="titulos">Registrar usuario</span>
+			<br><br>
+				
+				Usuario:<br>
+				<input type="text" wicket:id="username" class="componentes"/><br><br>
+				Contraseña: <br> 
+				<input wicket:id="pass" type="password" value="password" class="componentes" size="30"/><br><br>
+				Nombre: <br> 
+				<input wicket:id="nombre" class="componentes"/><br><br>
+				Email:<br>
+				<input type="text" wicket:id="email" class="componentes" /><br><br>
+				
+		
+			
+			
+				<input type="submit" value="Ingresar" >
+				<input type="reset" value="Borrar" >
+				
+			<br><br>
+			<a wicket:id = "volver">Volver</a>
+			</td></tr>
+			
+		</table>
+		</form>
+	
+	
+</body>
+</html>
