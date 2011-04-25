@@ -1,0 +1,33 @@
+BODY{ font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	background-color: #7FA3CF;}
+	
+
+.tabla {
+	font-family: Arial;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	background-color: #D9D9FF;
+	padding: 5px;
+	border: 1px solid #000000;
+	color: #000000;
+}
+.letra {
+	font-family: Arial;
+	font-size: 12px;
+	color: #000000;
+}
+.titulos {
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: bold;
+	color: #003399;
+	text-decoration: underline;
+}
+.componentes {
+	font-family: Arial;
+	font-size: 12px;
+	border: 1px solid #000000;
+}
+
