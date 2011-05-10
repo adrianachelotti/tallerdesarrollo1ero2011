@@ -99,3 +99,44 @@ Resp.Civil-Robo/Incendio Total-Danos Totales por accidente	2607.41	 434.57
 		Todo Riesgo con Deducible Fijo de $ 2500.-	3311.66	 551.94
 		Todo Riesgo con Deducible Fijo de $ 5000.-	3053.71	 508.95
 		Resp.Civil-Robo/Incendio Total y Parcial-Danos Totales por Accidente	2685.9	 447.65
+
+
+
+
+    Tipos de choque:
+- Trasero
+- Frontal
+- Lateral
+
+. hasta 300 - 50000 pesos
+Trasero: 0.02%
+Delantero: 0.04%
+Lateral: 0.03%
+   
+. hasta 400 - 40000 pesos - 0.02
+Trasero: 0.02%
+Delantero: 0.04%
+Lateral: 0.03%
+
+. mas de 400 - 60000 pesos
+Trasero: 0.02%
+Delantero: 0.04%
+Lateral: 0.03%
+
+2.5 accidentes por persona - anual - Estadisticas año 2009
+2000 pesos - Promedio reparacion de un auto
+
+3 accidentes por años - Gastos: 6000 pesos anuales
+
+Poliza promedio:350 pesos - 4200 anual
+
+1800 pesos de perdida
+
+Deberias cobrar 500 pesos de poliza para amortizar supuestos gastos
+
+- Si no lo aseguran, la compañia ahorra 500 pesos mensuales
+- Si lo asegura, tiene que aumentar la poliza a 600 pesos para obtener ganancia
+
+Consulta puntual
+Pack de consulta
+Pack de consulta ilimitado
