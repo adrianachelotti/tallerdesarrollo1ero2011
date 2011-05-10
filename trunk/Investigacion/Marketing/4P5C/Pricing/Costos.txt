@@ -88,3 +88,14 @@ Cobertura	Costo ($) Semestral	Cuota ($) Mensual
 		Todo Riesgo con Deducible Fijo de $ 2500.-	2629.74	 438.29
 		Todo Riesgo con Deducible Fijo de $ 5000.-	2422.35	 403.73
 		Resp.Civil-Robo/Incendio Total y Parcial-Danos Totales por Accidente	1878.3	 313.05
+
+Rama Provincia
+Resp.Civil-Robo/Incendio Total-Danos Totales por accidente	2607.41	 434.57
+		Resp.Civil-Robo/Incendio Total	2418.35	 403.06
+		Resp.Civil-Robo/Incendio Total y Parcial-Danos Totales por Accidente	2607.76	 434.63
+		Resp.Civil-Robo/Incendio Total y Parcial	2443.31	 407.22
+		Todo Riesgo con Deducible Fijo de $ 1000.-	3891.95	 648.66
+		Todo Riesgo con Deducible Fijo de $ 1500.-	3634.03	 605.67
+		Todo Riesgo con Deducible Fijo de $ 2500.-	3311.66	 551.94
+		Todo Riesgo con Deducible Fijo de $ 5000.-	3053.71	 508.95
+		Resp.Civil-Robo/Incendio Total y Parcial-Danos Totales por Accidente	2685.9	 447.65
