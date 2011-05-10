@@ -1,0 +1,90 @@
+Tu tiempo vale. Es por eso que te pedimos que confirmes estos datos para darte una cotización online.
+
+Sos mayor de 21 años y menor a 70 años.
+Sos el principal conductor del vehículo a cotizar.
+ 
+No ha sido modificado para mejorar la velocidad máxima o aceleración.
+No tiene más de 15 años de antigüedad.
+Es de uso estrictamente particular.
+Tiene un valor mayor a $ 6000 (si no estas seguro podes chequearlo en la página)
+
+Raulo Capital
+Vigencia de esta cotización: 15 días.
+Las solicitudes realizadas por Internet, se deberán abonar exclusivamente con Tarjeta de Crédito.
+Suma Asegurada: $ 19950
+Cobertura	Costo ($) Semestral	Cuota ($) Mensual
+		Resp.Civil-Robo/Incendio Total-Danos Totales por accidente	1856.24	 309.37
+		Resp.Civil-Robo/Incendio Total	1798.99	 299.83
+		Resp.Civil-Robo/Incendio Total y Parcial-Danos Totales por Accidente	1903.85	 317.31
+		Resp.Civil-Robo/Incendio Total y Parcial	1843.12	 307.19
+
+Raulo Provincia
+Vigencia de esta cotización: 15 días.
+Las solicitudes realizadas por Internet, se deberán abonar exclusivamente con Tarjeta de Crédito.
+Suma Asegurada: $ 19950
+Cobertura	Costo ($) Semestral	Cuota ($) Mensual
+		Resp.Civil-Robo/Incendio Total-Danos Totales por accidente	2349.18	 391.53
+		Resp.Civil-Robo/Incendio Total	2272.12	 378.69
+		Resp.Civil-Robo/Incendio Total y Parcial-Danos Totales por Accidente	2383.21	 397.2
+		Resp.Civil-Robo/Incendio Total y Parcial	2308.77	 384.8
+
+
+Juan Pablo Provincia
+Vigencia de esta cotización: 15 días.
+Las solicitudes realizadas por Internet, se deberán abonar exclusivamente con Tarjeta de Crédito.
+Suma Asegurada: $ 49875
+Cobertura	Costo ($) Semestral	Cuota ($) Mensual
+		Resp.Civil-Robo/Incendio Total-Danos Totales por accidente	1462.07	 243.68
+		Resp.Civil-Robo/Incendio Total	1356.26	 226.04
+		Resp.Civil-Robo/Incendio Total y Parcial-Danos Totales por Accidente	1555.24	 259.21
+		Resp.Civil-Robo/Incendio Total y Parcial	1466.17	 244.36
+		Todo Riesgo con Deducible Fijo de $ 1000.-	2582.66	 430.44
+		Todo Riesgo con Deducible Fijo de $ 1500.-	2393.2	 398.87
+		Todo Riesgo con Deducible Fijo de $ 2500.-	2109.03	 351.51
+		Todo Riesgo con Deducible Fijo de $ 5000.-	1919.58	 319.93
+		Resp.Civil-Robo/Incendio Total y Parcial-Danos Totales por Accidente	1617.83	 269.64
+
+Juan Pablo Capital
+Vigencia de esta cotización: 15 días.
+Las solicitudes realizadas por Internet, se deberán abonar exclusivamente con Tarjeta de Crédito.
+Suma Asegurada: $ 49875
+Cobertura	Costo ($) Semestral	Cuota ($) Mensual
+		Resp.Civil-Robo/Incendio Total-Danos Totales por accidente	1163.52	 193.92
+		Resp.Civil-Robo/Incendio Total	1082.59	 180.43
+		Resp.Civil-Robo/Incendio Total y Parcial-Danos Totales por Accidente	1253.14	 208.86
+		Resp.Civil-Robo/Incendio Total y Parcial	1180.7	 196.78
+		Todo Riesgo con Deducible Fijo de $ 1000.-	2561.11	 426.85
+		Todo Riesgo con Deducible Fijo de $ 1500.-	2354.9	 392.48
+		Todo Riesgo con Deducible Fijo de $ 2500.-	2045.57	 340.93
+		Todo Riesgo con Deducible Fijo de $ 5000.-	1839.35	 306.56
+		Resp.Civil-Robo/Incendio Total y Parcial-Danos Totales por Accidente	1321.72	 220.29
+
+Mi viejo Capital
+Vigencia de esta cotización: 15 días.
+Las solicitudes realizadas por Internet, se deberán abonar exclusivamente con Tarjeta de Crédito.
+Suma Asegurada: $ 40950
+Cobertura	Costo ($) Semestral	Cuota ($) Mensual
+		Resp.Civil-Robo/Incendio Total-Danos Totales por accidente	1432.59	 238.77
+		Resp.Civil-Robo/Incendio Total	1418.61	 236.44
+		Resp.Civil-Robo/Incendio Total y Parcial-Danos Totales por Accidente	1456.52	 242.75
+		Resp.Civil-Robo/Incendio Total y Parcial	1445.43	 240.91
+		Todo Riesgo con Deducible Fijo de $ 1000.-	3015.72	 502.62
+		Todo Riesgo con Deducible Fijo de $ 1500.-	2789.93	 464.99
+		Todo Riesgo con Deducible Fijo de $ 2500.-	2479.52	 413.25
+		Todo Riesgo con Deducible Fijo de $ 5000.-	2253.78	 375.63
+		Resp.Civil-Robo/Incendio Total y Parcial-Danos Totales por Accidente	1515.7	 252.62
+
+Mi viejo Provincia
+Vigencia de esta cotización: 15 días.
+Las solicitudes realizadas por Internet, se deberán abonar exclusivamente con Tarjeta de Crédito.
+Suma Asegurada: $ 40950
+Cobertura	Costo ($) Semestral	Cuota ($) Mensual
+		Resp.Civil-Robo/Incendio Total-Danos Totales por accidente	1807.74	 301.29
+		Resp.Civil-Robo/Incendio Total	1787.28	 297.88
+		Resp.Civil-Robo/Incendio Total y Parcial-Danos Totales por Accidente	1822.24	 303.71
+		Resp.Civil-Robo/Incendio Total y Parcial	1808.94	 301.49
+		Todo Riesgo con Deducible Fijo de $ 1000.-	3122.32	 520.39
+		Todo Riesgo con Deducible Fijo de $ 1500.-	2914.91	 485.82
+		Todo Riesgo con Deducible Fijo de $ 2500.-	2629.74	 438.29
+		Todo Riesgo con Deducible Fijo de $ 5000.-	2422.35	 403.73
+		Resp.Civil-Robo/Incendio Total y Parcial-Danos Totales por Accidente	1878.3	 313.05
