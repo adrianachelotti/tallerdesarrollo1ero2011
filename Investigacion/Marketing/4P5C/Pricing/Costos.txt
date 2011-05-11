@@ -135,7 +135,27 @@ Poliza promedio:350 pesos - 4200 anual
 Deberias cobrar 500 pesos de poliza para amortizar supuestos gastos
 
 - Si no lo aseguran, la compañia ahorra 500 pesos mensuales
-- Si lo asegura, tiene que aumentar la poliza a 600 pesos para obtener ganancia
+- Si lo asegura, tiene que aumentar la poliza a 600 pesos para obtener ganancia (1200)
+
+En caso de no haber asegurado al cliente riesgoso, la compañia se ahorra como vimos, 500 mensuales. Esto hace un total de 6000 anuales, como tambien vimos.
+Ahora, a nuestros fines, podemos establecerle a la empresa, una tarifa de 250 mensuales (50% de la perdida que hubiese tenido). Esta podria considerarse una tarifa base a partir de la cual comenzar a hacer ajustes. Por ejemplo, podriamos poner una tarifa de 300 mensuales para los casos de consultas ilimitadas, de hecho esto podria ser aun mayor si consideramos que la empresa no va a tener solo un cliente riesgoso y que probablemente la perdida en tal caso sera mucho mayor.
+Por otro lado, si consideramos que se espera que en 2011 se patenten 700000 autos. Si consideramos que hay actualmente unas 100 compañias aseguradoras con mayoria de clientes
+en alrededor de 10, podemos decir que un 60% de los automoviles estaran aseguras por estas compañias mientras que el 40% restantes se dividiran entre las 90 compañias que quedan.
+Algunos numeros rapidos:
+60% de 700.000 = 420.000
+40% de 700.000 = 280.000
+
+Tenemos 420.000 distribuidos entre 10 compañias: 42.000
+Tenemos 280.000 distribuidos entre 90 compañias: (aprox.) 3.111
+
+En promedio tendremos 451 automoviles por compañia. Con un promedio de 350 de seguro por automovil, eso hace aprox. (350*12*451) 1.894.200 anual de ganancia.
+Considerando 1.000.000 de accidentes al año con 15.000.000 de automoviles, estimamos muy groseramente 30 accidentes para los 451 vehiculos nuevos asegurados en una compañia.
+Siendo asi y considerando un promedio de 2000 por reparacion, tenemos 60.000 de perdida lo cual suena realmente muy poco...
+Volviendo al caso de 2.5 accidentes por persona, serian 1127,5 accidentes por año por los 451 clientes, y $2.255.000 lo cual es mas realista aunque un poco elevado...
+En este caso tendriamos una perdida de $360.800.
+Volviendo a nuestros numeros, con 451 clientes nuevos, hubiesemos tenido 451 consultas. Asegurando que la compañia se hubiese ahorrado esos $360.800, tomamos la mitad, o sea $180.400, lo dividimos por 451 y nos da $400. Cobrando $400 por consulta, la empresa se hubiese ahorrado esos $360.800.
+
+Creo que estamos muy por encima todavia... es jodido llegar a un numero correcto considerando tan pocos parametros. Me parece que habria que ponderar muchos otros factores, no podemos decir que cada cliente tiene un riesgo de 2.5 o si lo tomamos asi hay que corregir otros factores porque eso solo contempla choques, sin consecuencias mayores. Tampoco estamos considerando el factor robo!!!
 
 Consulta puntual
 Pack de consulta
