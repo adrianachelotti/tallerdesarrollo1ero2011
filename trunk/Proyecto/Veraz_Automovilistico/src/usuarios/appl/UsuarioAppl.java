@@ -6,7 +6,7 @@ import usuarios.domain.UsuarioDO;
 public class UsuarioAppl {
 
 	public static boolean esUsuarioAutorizado(UsuarioDO usuario) {
-		if (usuario.getNombre().equals("usuario")){
+		if (usuario.getUser().equals("usuario")){
 			return true;
 		}
 		return false;

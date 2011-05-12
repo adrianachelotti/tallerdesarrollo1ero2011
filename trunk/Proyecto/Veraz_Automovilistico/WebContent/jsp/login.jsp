@@ -12,7 +12,7 @@
 Por favor, identifíquese.
 </div>
 <s:form action="LoginAction">
-  <s:textfield    label="Identificador"   name="usuario.nombre"/>
+  <s:textfield    label="Identificador"   name="usuario.user"/>
   <s:password     label="Contraseña"           name="usuario.password" />
   <s:submit       value="Login"                align="center"/>
   <a href="jsp/registracion.jsp">registrese</a>
