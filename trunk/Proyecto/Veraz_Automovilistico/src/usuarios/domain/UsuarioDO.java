@@ -1,6 +1,6 @@
-package application;
+package usuarios.domain;
 
-public class Usuario {
+public class UsuarioDO {
 	String nombre;
 	String password;
 	public String getNombre() {

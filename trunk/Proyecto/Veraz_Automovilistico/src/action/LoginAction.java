@@ -1,23 +1,24 @@
 package action;
 
 import java.util.Map;
-import application.Usuario;
+
+import usuarios.appl.UsuarioAppl;
+import usuarios.domain.UsuarioDO;
 import com.opensymphony.xwork2.*;
-import dao.UsuarioDao;
 
 
 public class LoginAction extends ActionSupport {
     private static final long serialVersionUID = 2228074990625416790L;
     private static final String USUARIO_NO_AUTORIZADO    = "El usuario introducido no está autorizado.";
     private static final String ERROR_INTERNO                  = "Error interno. Por favor, inténtelo otra vez en unos minutos.";
-    private Usuario usuario;
+    private UsuarioDO usuario;
     private String mensaje;
     
     @SuppressWarnings("unchecked")
 	public String execute () {
           String destino = INPUT;
           try {
-                if (UsuarioDao.esUsuarioAutorizado(usuario)) {
+                if (UsuarioAppl.esUsuarioAutorizado(usuario)) {
                       Map session = ActionContext.getContext().getSession();
                       session.put("usuario", usuario);
                       destino = SUCCESS;
@@ -31,11 +32,11 @@ public class LoginAction extends ActionSupport {
           return destino;
     }
     
-    public Usuario getUsuario() {
+    public UsuarioDO getUsuario() {
           return usuario;
     }
     
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(UsuarioDO usuario) {
           this.usuario = usuario;
     }
     public String getMensaje() {
