@@ -15,6 +15,8 @@ Por favor, identifíquese.
   <s:textfield    label="Identificador"   name="usuario.nombre"/>
   <s:password     label="Contraseña"           name="usuario.password" />
   <s:submit       value="Login"                align="center"/>
+  <a href="jsp/registracion.jsp">registrese</a>
 </s:form>
+
 </body>
 </html>
