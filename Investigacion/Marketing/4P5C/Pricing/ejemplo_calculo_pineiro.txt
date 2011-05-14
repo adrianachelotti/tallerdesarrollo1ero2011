@@ -1,0 +1,25 @@
+
+Ejemplo de cálculo de Piñeiro
+=============================
+
++ 100000 autos
++ Cuotas de $350 por mes
++ Tasa de siniestralidad de 6% anual
++ 6% del total reclama premio
+
+[ % de siniestralidad ] + [ Otros gastos ]
+
+% siniestralidad
+================
+
+6000 (6% de 100000) * $5000 (esto creo que salía de estimar 12*$350)
+
+El % de siniestralidad depende del tipo de vehículo (colectivo, vehículo particular, etc), conductor (jubilado, etc), edad, etc.
+
+Otros gastos
+=============
++ Costos legales por juicios, abogados, monto de cada "dolo" en particular. En el caso de los bancos es de 1/3.
++ Reaseguradoras: empresas (La Caja, Banco Nación, etc) que sirven de backup de seguros. Otra empresa de seguros (mas grande) asume la mayor parte del seguro. El precio de la cuota es más alto, hay ganancia parcial, pero "gana globalmente". Esto además se hace para una cartera de clientes, no para una poliza en particular, en general.
++ Operaciones, pago de premio.
+
+Entonces, por ejemplo logro reducir el de 6% a 4% la tasa y con eso ya le ahorro a la empresa el 2% de lo que tenia de costos.
