@@ -3,15 +3,17 @@ package action;
 import java.util.Map;
 
 import usuarios.appl.UsuarioAppl;
-import usuarios.domain.UsuarioDO;
-import com.opensymphony.xwork2.*;
+import usuarios.domain.Usuario;
+
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
 
 
 public class LoginAction extends ActionSupport {
     private static final long serialVersionUID = 2228074990625416790L;
     private static final String USUARIO_NO_AUTORIZADO    = "El usuario introducido no está autorizado.";
     private static final String ERROR_INTERNO                  = "Error interno. Por favor, inténtelo otra vez en unos minutos.";
-    private UsuarioDO usuario;
+    private Usuario usuario;
     private String mensaje;
     
     @SuppressWarnings("unchecked")
@@ -32,11 +34,11 @@ public class LoginAction extends ActionSupport {
           return destino;
     }
     
-    public UsuarioDO getUsuario() {
+    public Usuario getUsuario() {
           return usuario;
     }
     
-    public void setUsuario(UsuarioDO usuario) {
+    public void setUsuario(Usuario usuario) {
           this.usuario = usuario;
     }
     public String getMensaje() {
