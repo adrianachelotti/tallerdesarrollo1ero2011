@@ -23,7 +23,7 @@
 			<tr><td><input type="radio" value="si" name="aceptacion">Acepto </td></tr>
 			<tr><td><input type="radio" value="on" name="aceptacion" onclick="">No Acepto </td></tr>
 
-			<tr><td><a href="contrato_servicios.jsp" style="color: red;"><span na>Next</span></a></td><td ><a href="jsp/login.jsp" style="color: red;">Cancelar</a></td>	</tr>		
+			<tr><td><a href="contrato_servicios.jsp" style="color: red;"><span>Next</span></a></td><td ><a href="jsp/login.jsp" style="color: red;">Cancelar</a></td>	</tr>		
 		</table>
 		
 	</form>
