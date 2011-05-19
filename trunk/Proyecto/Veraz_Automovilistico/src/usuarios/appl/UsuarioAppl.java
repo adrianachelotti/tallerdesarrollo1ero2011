@@ -1,12 +1,11 @@
 package usuarios.appl;
 
-import usuarios.domain.UsuarioDO;
+import usuarios.domain.Usuario;
 
-//TODO: falta la conexion a la bbdd
 public class UsuarioAppl {
 
-	public static boolean esUsuarioAutorizado(UsuarioDO usuario) {
-		if (usuario.getUser().equals("usuario")){
+	public static boolean esUsuarioAutorizado(Usuario usuario) {
+		if (usuario.getIdentificador().equals("usuario")){
 			return true;
 		}
 		return false;
