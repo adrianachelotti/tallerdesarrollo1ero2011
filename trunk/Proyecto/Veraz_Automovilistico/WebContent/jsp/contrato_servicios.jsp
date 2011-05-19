@@ -22,7 +22,7 @@
 			<tr><td><input type="radio" value="2" name="aceptacion">Servicio Personalizado </td></tr>
 			<tr><td><input type="radio" value="3" name="aceptacion" >Servicio Premiun</td></tr>
 
-			<tr><td><a href="contrato_servicio.jsp" style="color: red;"><span na>Next</span></a></td><td ><a href="jsp/login.jsp" style="color: red;">Cancelar</a></td>	</tr>		
+			<tr><td><a href="contrato_servicio.jsp" style="color: red;"><span>Next</span></a></td><td ><a href="jsp/login.jsp" style="color: red;">Cancelar</a></td>	</tr>		
 		</table>
 		
 	</form>
