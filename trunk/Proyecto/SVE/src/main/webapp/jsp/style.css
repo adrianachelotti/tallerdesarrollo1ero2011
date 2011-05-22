@@ -1,0 +1,221 @@
+body{
+	margin:0;
+	background-color: #FFF;
+	text-align: center;
+}
+
+#header{
+	background-color: #0e4375;
+	width: 100%;
+	text-align: center;
+	padding: 40px 0px 20px 0px;
+}
+
+.header_popup{
+	background-color: #0e4375;
+	padding: 40px 0px 20px 20px;
+}
+
+#botonera{
+	padding-top:10px;
+}
+
+#botonera ul
+{
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+#botonera ul li {
+	display: inline;
+	text-align: center;
+	width: 180px;
+	background-color:#0062a8; 
+}
+
+#botonera ul li a{
+	font-family: Arial;
+	font-size: 14px;	
+	color: #FFF;
+	text-decoration:none;
+	padding:5px;
+	background-color:#0062a8; 
+	
+}
+
+#botonera ul li a:hover{
+	color: #FFF;
+	text-decoration:underline;
+}
+
+
+#form{
+	text-align: center;
+	width: 780px;
+}
+
+#msg{
+	text-align: left;
+	font-family: Arial;
+	font-size: 14px;
+	color: #333;
+	padding-top:40px;
+	width: 780px;	
+}
+
+#error_msg{
+	text-align: left;
+	font-family: Arial;
+	font-size: 16px;
+	color: #333;
+	padding-top:40px;
+	width: 780px;	
+}
+
+.txt_agree{
+	text-align: left;
+	font-family: Arial;
+	font-size: 12px;
+	color: #333;
+	padding-top:40px;
+	padding-left:40px;	
+}
+
+.txt{
+	text-align: left;
+	font-family: Arial;
+	font-size: 12px;
+	color: #333;
+	padding-left:25px;
+	padding-right:25px;	
+}
+
+#contenido{
+	text-align: -moz-center;
+	background-color:#FFFFFF;
+	width: 780px;
+	height:100%;
+	margin:0;
+	padding-left:0px;
+	padding-right:0px;
+	padding-top:20px;
+	padding-bottom:0px;
+}
+
+#tit{
+	color:#333;
+	font-family: Arial;
+	font-size: 28px;
+	border-bottom: 3px solid #0062a8;
+	width: 780px;
+	padding-bottom: 5px;
+	text-align: left;	
+}
+
+#label_rubro{
+	text-transform: capitalize;
+}
+
+input.btnSubmit {
+	color:#FFF;
+	font: bold 12px Arial;
+	background-color:#0062a8;
+	border:1px solid;
+	border-color: #0062a8;
+}
+
+input.txt {
+	font-family: Arial;
+	font-size: 12px;	
+}
+
+.table_form td{
+	font-family: Arial;
+	font-size: 14px;
+	color: #333;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #CCC;
+}
+
+.table_form td a{
+	color:#0062a8;
+	text-decoration:none;
+}
+
+.table_form td a:hover{
+	color:#0062a8;
+	text-decoration:underline;	
+}
+
+.table_form td a:visited{
+	color:#0062a8;
+	text-decoration:none;	
+}
+
+.destacado{
+	color:#0062a8;
+	font-weight:bold;
+	font-family: Arial;
+	font-size: 14px;	
+}
+
+.marcacion{
+	font-family: "Trebuchet MS";
+	font-size: 22px;
+}
+
+.tit_rubros{
+	font-family: Arial;
+	font-size: 14px;	
+}
+
+.listado_rubros{
+	font-family: Arial;
+	font-size: 14px;	
+}
+
+.subtit{
+	color:#333;
+	font-family: Arial;
+	font-size: 18px;
+	border: 0px;
+	padding-top:25px;
+}
+
+.alert, .error{
+	color:red;
+	font-family: Arial;
+	font-size: 12px;
+	padding:0px;
+}
+
+td.footer{
+	border:0px;
+	font-family: Arial;
+	font-size: 11px;	
+}
+
+.agreement{
+	font-family: Arial;
+	font-size: 12px;
+	padding:25px;
+ }
+
+.agreement_title{
+	font-family: Arial;
+	font-size: 16px;
+	font-weight:bold;
+ } 
+ 
+ .row_odd{
+  background-color:#EFEFEF;
+ }
+ 
+ .row_even{
+  background-color:#E5E5E5;
+ }
+ 
