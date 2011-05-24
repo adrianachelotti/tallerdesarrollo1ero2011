@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+	<wicket:panel>
+		<div class="conthead" wicket:id="header">
+			<h2 wicket:id="nombre">Form Styles</h2>
+		</div>
+
+		<div class="contentbox" wicket:id="contenido">
+
+			<form wicket:id="formularioModificarDatos">
+				<table class="tabla">
+					<tr>
+						<h1>Datos de la cuenta de usuario</h1>
+						<td>
+
+							<div class="inputboxes">
+								<label for="dropdown">Tipo de usuario: </label> <select
+									name="Dropdown" id="dropdown" wicket:id="tipo">
+									<option />Dropdown Example
+								</select>
+							</div>
+
+
+							<div class="inputboxes">
+								<label for="regular">Usuario: </label> <input type="text"
+									id="regular" wicket:id="username" class="inputbox " />
+							</div>
+
+							<div class="inputboxes">
+								<label for="regular">Contrase&ntildea: </label> <input
+									type="password" value="password" id="regular" wicket:id="pass"
+									class="inputbox" />
+							</div>
+
+							<div class="inputboxes">
+								<label for="regular">Nombre: </label> <input type="text"
+									id="regular" wicket:id="nombre" class="inputbox" />
+							</div>
+
+							<div class="inputboxes">
+								<label for="regular">Apellido: </label> <input type="text"
+									id="regular" wicket:id="apellido" class="inputbox" />
+							</div>
+
+
+							<div class="inputboxes">
+								<label for="regular">Email: </label> <input type="text"
+									id="regular" wicket:id="email" class="inputbox" />
+							</div>
+							<div id="tabs-2">
+								<h1>Permisos</h1>
+
+
+								<table cellspacing="5" class="tabla">
+
+									<tr>
+										<!-- estos son los headers del listview -->
+										<th>Permiso</th>
+										<th>Asignar</th>
+										
+									</tr>
+									<tr wicket:id="rows">
+
+										<td><span wicket:id="descripcion">name</span></td>
+										<td><input type="checkbox" wicket:id="check" /></td>
+										
+									</tr>
+
+								</table>
+
+
+							</div> <br> <input type="submit" value="Registrar" class="btn">
+							<input type="reset" value="Borrar" class="btn">
+						</td>
+
+
+					</tr>
+
+				</table>
+			</form>
+
+		</div>
+	</wicket:panel>
+</body>
+</html>

@@ -1,0 +1,121 @@
+package hibernate.domain.vehiculos;
+
+import hibernate.domain.conductores.Conductor;
+
+
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
+
+
+/**
+ * Modela un vehiculo.
+ * @author grupo 2
+ *
+ */
+@Entity
+@Table(name="vehiculos")
+public class Vehiculo {
+
+	String patente;
+	Integer modelo;
+	String estadoInterior;
+	String estadoExterior;
+	String estadoMecanica;
+	Set<VerificacionTecnica> verificacionesTecnicas;
+	Set<Siniestro> siniestros;
+	
+private Conductor conductor;
+	
+	public void setConductor(Conductor conductor) {
+		this.conductor = conductor;
+	}
+	
+    @ManyToOne(
+
+            cascade = { CascadeType.PERSIST, CascadeType.MERGE },
+            fetch = FetchType.EAGER,
+            targetEntity = hibernate.domain.conductores.Conductor.class
+
+            )
+
+	public Conductor getConductor() {
+		return conductor;
+	}
+	
+	
+	
+    @OneToMany (cascade = CascadeType.ALL,fetch= FetchType.EAGER)
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE_ORPHAN)
+    @JoinTable(
+        name="vehiculo_siniestros",
+        joinColumns = @JoinColumn( name="vehiculo_id"),
+        inverseJoinColumns = @JoinColumn( name="siniestro_id"))
+	public Set<Siniestro> getSiniestros() {
+		return siniestros;
+	}
+	public void setSiniestros(Set<Siniestro> siniestros) {
+		this.siniestros = siniestros;
+	}
+	
+	@OneToMany (cascade = CascadeType.ALL,fetch= FetchType.EAGER)
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE_ORPHAN)
+    @JoinTable(
+        name="vehiculo_siniestros",
+        joinColumns = @JoinColumn( name="vehiculo_id"),
+        inverseJoinColumns = @JoinColumn( name="verificacionesTecnicas_id"))
+	public Set<VerificacionTecnica> getVerificacionesTecnicas() {
+		return verificacionesTecnicas;
+	}
+	public void setVerificacionesTecnicas(
+			Set<VerificacionTecnica> verificacionesTecnicas) {
+		this.verificacionesTecnicas = verificacionesTecnicas;
+	}
+	
+    @Id
+    @Column (name="vehiculo_id")
+	public String getPatente() {
+		return patente;
+	}
+	public void setPatente(String patente) {
+		this.patente = patente;
+	}
+	public Integer getModelo() {
+		return modelo;
+	}
+	public void setModelo(Integer modelo) {
+		this.modelo = modelo;
+	}
+	public String getEstadoInterior() {
+		return estadoInterior;
+	}
+	public void setEstadoInterior(String estadoInterior) {
+		this.estadoInterior = estadoInterior;
+	}
+	public String getEstadoExterior() {
+		return estadoExterior;
+	}
+	public void setEstadoExterior(String estadoExterior) {
+		this.estadoExterior = estadoExterior;
+	}
+	public String getEstadoMecanica() {
+		return estadoMecanica;
+	}
+	public void setEstadoMecanica(String estadoMecanica) {
+		this.estadoMecanica = estadoMecanica;
+	}
+	
+	
+}
