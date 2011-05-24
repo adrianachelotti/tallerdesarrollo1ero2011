@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+	<wicket:panel>
+		<div class="conthead" wicket:id="header">
+			<h2 wicket:id="nombre">Form Styles</h2>
+		</div>
+
+		<div class="contentbox" wicket:id="contenido">
+
+
+			<table width="100%">
+				<thead>
+					<!--  HEADINGS -->
+					<tr>
+						<th>Username</th>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Tipo</th>
+						<th>Modificar</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr wicket:id="usuarios">
+						<td><span wicket:id="username" />
+						</td>
+						<td><span wicket:id="nombre" />
+						</td>
+						<td><span wicket:id="apellido" />
+						</td>
+						<td><span wicket:id="tipo" />
+						</td>
+						<td><a href="#" wicket:id="link">Modificar</a></td>
+					</tr>
+
+				</tbody>
+			</table>
+			<div class="extrabottom">
+				<ul class="pagination">
+					<span wicket:id="pager">navigation controls here</span>
+				</ul>
+
+			</div>
+		</div>
+			
+	</wicket:panel>
+</body>
+</html>

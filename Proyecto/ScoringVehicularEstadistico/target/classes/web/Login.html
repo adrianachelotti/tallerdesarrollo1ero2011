@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-
+
+transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<wicket:head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SVE Log in</title>
+<wicket:link>
+<link href="./styles/login.css" rel="stylesheet" type="text/css" />
+</wicket:link>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></wicket:head>
+<body>
+
+	<div id="logincontainer">
+    	<h1>SVE</h1>
+	<p wicket:id="mensajes"/>
+        <div id="loginbox">
+
+        	<form wicket:id="formulario" >
+                <div class="inputcontainer">
+                	<wicket:link>
+                    <img src="./images/icons/icon_username.png" alt="Username" />
+                    </wicket:link>
+                    <label for="username">Usuario:</label>
+                    <input type="text" wicket:id="username" id="username" />
+                </div>
+                <div class="inputcontainer">
+                	<wicket:link>
+                    <img src="./images/icons/icon_locked.png" alt="Password" />
+				</wicket:link>	
+                    <label for="password">Contrase&ntilde;a:</label>
+                    <input wicket:id="pass" type="password" id="password" />
+                </div>
+                <input type="submit" value="Login" class="loginsubmit" />
+                <!-- <p><a wicket:id = "registrar">Recuperar contrase&ntildea</a></p>  -->
+		<span wicket:id="datos"/> 
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>
