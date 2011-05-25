@@ -19,7 +19,7 @@ public class MyApp extends WebApplication {
 
 	@Override
 	public Class<? extends Page> getHomePage() {
-		return Login.class;
+		return Login2.class;
 	}
 
 	@Override
