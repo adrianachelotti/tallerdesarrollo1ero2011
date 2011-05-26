@@ -6,11 +6,16 @@ import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.panel.Panel;
 
 
-import web.formularios.EliminarUsuario;
-import web.formularios.FormularioDefault;
+import web.formularios.Ayuda;
+import web.formularios.ConsultarPagos;
 
-import web.formularios.RegistrarUsuario;
-import web.formularios.SeleccionarUsuario;
+import web.formularios.FormularioDefault;
+import web.formularios.ModificarDatosCuenta;
+
+import web.formularios.Consulta;
+import web.formularios.ConsultaHistorial;
+import web.formularios.Contactenos;
+
 
 public class NavigationAdministrador extends Panel {
 	/**
@@ -31,50 +36,10 @@ public class NavigationAdministrador extends Panel {
 	
 
 
+	@SuppressWarnings("rawtypes")
 	private void agregarLinks() {
 
-		this.add(new Link("linkRegistrarUsuario") {
-
-			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void onClick() {
-
-				menu.cambiarFormulario(new RegistrarUsuario(menu));
-
-			}
-
-		});
-		
-		
-		this.add(new Link("linkModificarUsuario") {
-
-			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void onClick() {
-
-			menu.cambiarFormulario(new SeleccionarUsuario(menu));
-
-			}
-
-		});
-		
-		this.add(new Link("linkEliminarUsuario") {
-
-			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void onClick() {
-
-				menu.cambiarFormulario(new EliminarUsuario(menu));
-
-			}
-
-		});
-		
-		
-		this.add(new Link("linkActualizarBaseDeDatos") {
+		this.add(new Link("linkHome") {
 
 			private static final long serialVersionUID = 1L;
 
@@ -82,8 +47,86 @@ public class NavigationAdministrador extends Panel {
 			public void onClick() {
 
 				menu.cambiarFormulario(new FormularioDefault(
-						menu,"Opciones"));
+						menu,"Home"));
 
+			}
+
+		});
+		
+		
+		this.add(new Link("linkModificarDatos") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new ModificarDatosCuenta(menu));
+
+			}
+
+		});
+		
+		this.add(new Link("linkVerPagos") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new ConsultarPagos(menu));
+
+			}
+
+		});
+		
+		
+		this.add(new Link("linkRealizarConsulta") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new Consulta(menu));
+
+			}
+
+		});
+		
+		
+		this.add(new Link("linkVerHistorial") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new ConsultaHistorial(menu));
+			}
+
+		});
+		
+		this.add(new Link("linkAyuda") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new Ayuda(menu));
+			}
+
+		});
+		
+		this.add(new Link("linkContactenos") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new Contactenos(menu));
 			}
 
 		});

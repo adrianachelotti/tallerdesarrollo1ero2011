@@ -14,7 +14,7 @@ public class Logout extends AuthenticatedWebPage {
 		
 		add(new FeedbackPanel("mensajes"));
 		info("Sesion finalizada correctamente.");
-		add(new BookmarkablePageLink("nuevasesion",Login.class));
+		add(new BookmarkablePageLink("nuevasesion",Login2.class));
 		getSession().invalidate();
 
 	};

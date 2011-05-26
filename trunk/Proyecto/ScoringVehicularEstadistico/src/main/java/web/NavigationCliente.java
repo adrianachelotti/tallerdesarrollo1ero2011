@@ -5,10 +5,16 @@ import org.apache.wicket.markup.html.link.Link;
 
 import org.apache.wicket.markup.html.panel.Panel;
 
-import web.formularios.ConsultarPagos;
-import web.formularios.FormularioDefault;
+import web.formularios.ActualizarBaseDeDatos;
 
-import web.formularios.ModificarDatosCuenta;
+import web.formularios.EliminarUsuario;
+import web.formularios.FormularioDefault;
+import web.formularios.ModificarDatosAdministrador;
+import web.formularios.SeleccionarUsuario;
+import web.formularios.VerUsuarios;
+
+
+import web.formularios.RegistrarUsuario;
 
 
 public class NavigationCliente extends Panel {
@@ -30,9 +36,10 @@ public class NavigationCliente extends Panel {
 	
 
 
+	@SuppressWarnings("rawtypes")
 	private void agregarLinks() {
 
-		this.add(new Link("linkOpciones") {
+		this.add(new Link("linkHome") {
 
 			private static final long serialVersionUID = 1L;
 
@@ -40,12 +47,96 @@ public class NavigationCliente extends Panel {
 			public void onClick() {
 
 				menu.cambiarFormulario(new FormularioDefault(
-						menu,"Opciones"));
+						menu,"Home"));
 
 			}
 
 		});
 		
+		
+
+		this.add(new Link("linkModificarDatos") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new ModificarDatosAdministrador(menu));
+
+			}
+
+		});
+		
+	
+		
+		this.add(new Link("linkRegistrarUsuario") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new RegistrarUsuario(menu));
+
+			}
+
+		});
+		
+		this.add(new Link("linkModificarUsuario") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new SeleccionarUsuario(menu));
+
+			}
+
+		});
+		
+		this.add(new Link("linkEliminarUsuario") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new EliminarUsuario(menu));
+
+				
+			}
+
+		});
+		
+		this.add(new Link("linkVerUsuarios") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new VerUsuarios(menu));
+
+			}
+
+		});
+		
+		this.add(new Link("linkActualizarBD") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new ActualizarBaseDeDatos(menu));
+
+			}
+
+		});
+		
+		/*
 		
 		this.add(new Link("linkModificarDatos") {
 
@@ -133,7 +224,7 @@ public class NavigationCliente extends Panel {
 
 			}
 
-		});
+		});*/
 
 	}
 

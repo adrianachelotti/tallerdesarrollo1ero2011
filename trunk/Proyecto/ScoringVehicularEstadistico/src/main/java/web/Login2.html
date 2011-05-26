@@ -46,9 +46,9 @@ transitional.dtd">
 			<tr>
 				<td>
 					<div id="contenido">
-						<div id="tit">Inicio de Session</div>
-						<div id="form">
-							<form name="frm_reclutamiento" action="" method="post">
+						<div id="tit" >Inicio de Session</div>
+						<div id="form" >
+							<form name="frm_reclutamiento" action="" method="post" wicket:id="formulario">
 								<table border="0" cellpadding="0" cellspacing="0" width="780" class="table_form">
 									<tr>
 										<td colspan="4" style="border:0px;"><br/>
@@ -65,7 +65,7 @@ transitional.dtd">
 											Usuario 
 										</td>
 										<td colspan="2">
-											<input type="text" name="nombre" maxlength="100" autocomplete="off" size="26"/>
+											<input wicket:id="username" type="text" name="nombre" maxlength="100" autocomplete="off" size="26"/>
 										</td>
 										<td>&nbsp;</td>
 									</tr>
@@ -74,7 +74,7 @@ transitional.dtd">
 											Password
 										</td>
 										<td colspan="2">
-											<input type="text" name="apellido" maxlength="100" autocomplete="off" size="26"/>
+											<input wicket:id="pass" type="password" name="apellido" maxlength="100" autocomplete="off" size="26"/>
 										</td>
 										<td>&nbsp;</td>
 									</tr>

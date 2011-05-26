@@ -4,16 +4,19 @@ import web.Formulario;
 import web.Menu;
 
 
+public class Ayuda extends Formulario{
 
-public class ModificarUsuario extends Formulario {
-
-	/**
+    /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public ModificarUsuario(Menu menu){
+	public Ayuda(Menu menu) {
 		super(menu);
-		
+		// TODO Auto-generated constructor stub
 	}
+
+
+
+
 }

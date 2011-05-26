@@ -1,32 +1,29 @@
 
 <wicket:panel>
 
-            	<li>
-                    <a class="collapsed heading">Cuenta de usuario</a>
-                     <ul class="navigation">
-                        <li><a href="#" title="" wicket:id="linkOpciones">Opciones</a></li>
-                        <li><a href="#" title="" wicket:id="linkModificarDatos" >Modificar datos</a></li>
-                        <li><a href="#" title="" wicket:id="linkConsultarPagos"> Consultar pagos</a></li>
-                        <li><a href="#" title="" wicket:id="linkLogout">Log out</a></li>
-                    </ul>
-                </li>   
-                <!-- <li>
-                    <ul class="navigation">
-                        <li class="heading selected">Current Section</li>
-                        <li><a href="#" title="">Section link here</a></li>
-                        <li><a href="#" title="">Section link here</a></li>
-                        <li><a href="#" title="">Section link here</a></li>
-                    </ul>
-                </li>  -->
-                <li>
-                    <a class="collapsed heading">Consultas</a>
-                     <ul class="navigation">
-                        <li><a href="#" title="" wicket:id="linkRealizarConsulta">Realizar consulta</a></li>
-                        <li><a href="#" title="" wicket:id="linkHistorialInformes">Historial de informes</a></li>
-                        <li><a href="#" title="" wicket:id="linkEstadisticas">Estadisticas</a></li>
-                    </ul>
-                </li>        
-         
+
+<ul class="menu">
+			<li class="top"><a href="#" class="top_link" wicket:id="linkHome"><span>Home</span></a></li>
+			<li class="top"><a href="#" class="top_link" ><span>Cuenta de usuario</span></a>
+				<ul class="sub">
+				<li><a href="#" wicket:id="linkModificarDatos">Modificar datos</a></li>		
+				</ul>
+			</li>
+			<li class="top"><a href="#" class="top_link"><span>Usuarios</span></a>
+				<ul class="sub">
+				<li><a href="#" wicket:id="linkRegistrarUsuario">Registrar usuario</a></li>			
+				<li><a href="#" wicket:id="linkModificarUsuario">Modificar usuario</a></li>
+            	<li><a href="#" wicket:id="linkEliminarUsuario">Eliminar usuario</a></li>
+            	<li><a href="#" wicket:id="linkVerUsuarios">Ver usuarios</a></li>
+
+			</ul>
+			</li>
+	<li class="top"><a href="#" class="top_link" wicket:id="linkActualizarBD"><span>Actualizar base de datos</span></a>
+		
+	</li>
+</ul>
+
+          
 </wicket:panel>
 
          

@@ -1,7 +1,7 @@
 package web;
 
 import org.apache.wicket.markup.html.WebMarkupContainer;
-import org.apache.wicket.markup.html.basic.Label;
+
 import org.apache.wicket.markup.html.panel.Panel;
 
 
@@ -12,12 +12,9 @@ public abstract class Formulario extends Panel {
         private WebMarkupContainer contenido;
         
         
-        public Formulario(Menu menu, String nombre){
+        public Formulario(Menu menu){
                 super("formulario");
                 this.menu = menu;
-                WebMarkupContainer header=new WebMarkupContainer("header");
-                header.add(new Label("nombre",nombre));
-                this.add(header);
                 contenido=new WebMarkupContainer("contenido");
                 this.add(contenido);
         }

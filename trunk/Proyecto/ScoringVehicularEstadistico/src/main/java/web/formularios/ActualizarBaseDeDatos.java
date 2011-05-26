@@ -5,14 +5,14 @@ import web.Menu;
 
 
 
-public class ModificarUsuario extends Formulario {
+public class ActualizarBaseDeDatos extends Formulario {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public ModificarUsuario(Menu menu){
+	public ActualizarBaseDeDatos(Menu menu){
 		super(menu);
 		
 	}
