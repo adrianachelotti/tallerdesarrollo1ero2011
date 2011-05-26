@@ -1,7 +1,7 @@
 package hibernate.domain.usuarios;
 
 
-import hibernate.AdministradorUsuarios;
+
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -29,6 +29,12 @@ public class Usuario {
 	private String email;
 	
 	private Servicio servicio;
+	
+	private String sexo;
+	//TODO: estos puede ser un mapeos onetoone
+	private String provincia;
+	private String localidad;
+	private String rubro;
 	
 	
 	private Set<Permiso> permisos = new HashSet<Permiso>();
@@ -152,6 +158,38 @@ public class Usuario {
 	@OneToOne
 	public Servicio getServicio() {
 		return servicio;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setProvincia(String provincia) {
+		this.provincia = provincia;
+	}
+
+	public String getProvincia() {
+		return provincia;
+	}
+
+	public void setLocalidad(String localidad) {
+		this.localidad = localidad;
+	}
+
+	public String getLocalidad() {
+		return localidad;
+	}
+
+	public void setRubro(String rubro) {
+		this.rubro = rubro;
+	}
+
+	public String getRubro() {
+		return rubro;
 	}
 
 

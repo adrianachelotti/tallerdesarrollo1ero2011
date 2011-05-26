@@ -329,25 +329,27 @@
 			<tr>
 				<td>
 					<div id="contenido" wicket:id="contenido">
-						<div id="tit">Modificacion de usuarios</div>
+						<div id="tit">Actualizar Base de Datos</div>
 						<div id="form">
-							<form name="frm_reclutamiento" action="" method="post" wicket:id="formularioSeleccion">
+							<form name="frm_reclutamiento" action="" method="post">
 								<table border="0" cellpadding="0" cellspacing="0" width="780" class="table_form">
 									<tr>
 										<td colspan="4" style="border:0px;"><br/>
-										Complete el username del usuario a modificar  .<br/><br/>						
+										Complete el siguiente formulario para realizar la actualización de la base de datos  .<br/><br/>						
 										</td>
 									</tr>
 									
 									<tr>
-										<td>
-											Username
+										<td colspan="4" style="border:0px;">
+											<label><input type="checkbox" autocomplete="off" name="acepto_rubros" id="acepto_rubros" checked="checked"/>Realizar actualización automática en las fuentes donde sea posible </label><br/>
 										</td>
-										<td colspan="2">
-											<input type="text" name="nombre" maxlength="100" autocomplete="off" size="26"/>
+									</tr>
+									<tr>
+										<td colspan="4" style="border:0px;">
+											<label>Actualizar desde el siguiente archivo: <input type="file" name="fileField" id="fileField" /></label><br/>
 										</td>
-										<td>&nbsp;</td>
-									</tr>			
+									</tr>				
+													
 									
 									
 									<tr>

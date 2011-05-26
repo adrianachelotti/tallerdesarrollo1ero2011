@@ -1,15 +1,7 @@
 package web.formularios;
 
-import java.util.List;
 
 
-import hibernate.AdministradorTransacciones;
-import hibernate.domain.usuarios.Transaccion;
-
-import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.list.ListItem;
-import org.apache.wicket.markup.html.list.PageableListView;
-import org.apache.wicket.markup.html.navigation.paging.PagingNavigator;
 
 import web.Formulario;
 
@@ -23,22 +15,23 @@ public class ConsultarPagos extends Formulario {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private List data; // contiene los items que muestra el listview
-	private PageableListView listView; // listview con los datos
+	/*private List data; // contiene los items que muestra el listview
+	
+	private PageableListView listView; // listview con los datos*/
 
 	public ConsultarPagos(Menu menu) {
-		super(menu, "Consultar Pagos");
+		super(menu);
 
 		/* obtengo las transacciones del cliente */
-		data = AdministradorTransacciones.obtenerTransaccionesDeCliente(menu
+		/*data = AdministradorTransacciones.obtenerTransaccionesDeCliente(menu
 				.getUsuario().getUsername());
 
-		listView = new PageableListView("pagos", data, 10) {
+		listView = new PageableListView("pagos", data, 10) {*/
 
 			/**
 			 * 
 			 */
-			private static final long serialVersionUID = 1L;
+			/*private static final long serialVersionUID = 1L;
 
 			@Override
 			protected void populateItem(ListItem item) {
@@ -53,10 +46,10 @@ public class ConsultarPagos extends Formulario {
 			}
 		};
 
-		this.getContenido().add(listView);
+		/*this.getContenido().add(listView);
 
 		PagingNavigator pager = new PagingNavigator("pager", listView); // navegador
-		this.getContenido().add(pager);
+		this.getContenido().add(pager);*/
 
 	};
 }

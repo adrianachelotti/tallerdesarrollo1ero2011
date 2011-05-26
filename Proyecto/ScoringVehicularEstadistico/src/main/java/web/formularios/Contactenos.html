@@ -319,17 +319,17 @@
 
 	</script>
 
-
 	
 	<BODY onLoad="clearForms()" onUnload="clearForms()">
 	
-<wicket:panel>		
+		
+		<wicket:panel>
 
 		<table border="0" cellpadding="0" cellspacing="0" align="center" width="780">
 			<tr>
 				<td>
 					<div id="contenido" wicket:id="contenido">
-						<div id="tit">Registrar usuario</div>
+						<div id="tit">Contactenos</div>
 						<div id="form">
 							<form name="frm_reclutamiento" action="" method="post">
 								<table border="0" cellpadding="0" cellspacing="0" width="780" class="table_form">
@@ -342,37 +342,7 @@
 										<td colspan="4" >
 											<span class="alert">*</span> Dato Obligatorio
 										</td>
-									</tr>
-									<tr>
-										<td>
-											Tipo de usuario <span class="alert">*</span>
-										</td>
-										<td colspan="2">
-											<select name="tipo_doc" id="tipo_doc">
-											  <option value="C" selected="selected">Cliente</option>
-											  <option value="A">Administrador</option>
-											</select>
-										</td>
-										<td><span class="error" id="dni_error"></span></td>
-									</tr>
-									<tr>
-										<td>
-											Username
-										</td>
-										<td colspan="2">
-											<input type="text" name="nombre" maxlength="100" autocomplete="off" size="26"/>
-										</td>
-										<td>&nbsp;</td>
-									</tr>			
-									<tr>
-										<td>
-											Contrase&ntildea
-										</td>
-										<td colspan="2">
-											<input type="password" name="nombre" maxlength="100" autocomplete="off" size="26"/>
-										</td>
-										<td>&nbsp;</td>
-									</tr>						
+									</tr>									
 									<tr>
 										<td>
 											Nombre 
@@ -395,7 +365,7 @@
 										<td>
 											Tipo y N° de Documento <span class="alert">*</span>
 										</td>
-										<td colspan="2">
+										<td >
 											<select name="tipo_doc" id="tipo_doc">
 											  <option value="D" selected="selected">DNI</option>
 											  <option value="V">Libreta Cívica</option>
@@ -417,140 +387,12 @@
 									</tr>
 									<tr>
 										<td>
-											Sexo <span class="alert">*</span>
+											Consulta
 										</td>
 										<td colspan="2">
-											<label><input type="radio" name="sexo" value="M" autocomplete="off">Masculino</label><br/>
-											<label><input type="radio" name="sexo" value="F" autocomplete="off">Femenino</label>
-										</td>
-										<td><span class="error" id="sexo_error">Indique su sexo</span></td>
-									</tr>
-									<tr>
-										<td>
-											Fecha de nacimiento <span class="alert">*</span>
-										</td>
-										<td colspan="2">
-											<input type="text" name="fecha_nac_dia" id="fecha_nac_dia"  autocomplete="off" maxlength="2" size="1"/>&nbsp;/&nbsp;<input type="text" autocomplete="off" name="fecha_nac_mes" id="fecha_nac_mes" maxlength="2" size="1"/>&nbsp;/&nbsp;<input autocomplete="off" type="text" name="fecha_nac_anio" id="fecha_nac_anio" maxlength="4" size="2"/>
-										&nbsp;dd/mm/aaaa (Ej: 02/08/1973)</td>
-										<td><span class="error"id="date_error"></span></td>
-									</tr>
-									<tr>
-										<td>
-											Provincia (de residencia actual)<span class="alert">*</span>
-										</td>
-										<td colspan="2">
-											<select name="provincia" id="provincia" autocomplete="off">
-												<option value="">seleccionar</option>
-												
-													<option value="BUENOS AIRES">BUENOS AIRES</option>
-												
-													<option value="CAPITAL FEDERAL">CAPITAL FEDERAL</option>
-												
-													<option value="CATAMARCA">CATAMARCA</option>
-												
-													<option value="CHACO">CHACO</option>
-												
-													<option value="CHUBUT">CHUBUT</option>
-												
-													<option value="CORDOBA">CORDOBA</option>
-												
-													<option value="CORRIENTES">CORRIENTES</option>
-												
-													<option value="ENTRE RIOS">ENTRE RIOS</option>
-												
-													<option value="FORMOSA">FORMOSA</option>
-												
-													<option value="JUJUY">JUJUY</option>
-												
-													<option value="LA PAMPA">LA PAMPA</option>
-												
-													<option value="LA RIOJA">LA RIOJA</option>
-												
-													<option value="MENDOZA">MENDOZA</option>
-												
-													<option value="MISIONES">MISIONES</option>
-												
-													<option value="NEUQUEN">NEUQUEN</option>
-												
-													<option value="RIO NEGRO">RIO NEGRO</option>
-												
-													<option value="SALTA">SALTA</option>
-												
-													<option value="SAN JUAN">SAN JUAN</option>
-												
-													<option value="SAN LUIS">SAN LUIS</option>
-												
-													<option value="SANTA CRUZ">SANTA CRUZ</option>
-												
-													<option value="SANTA FE">SANTA FE</option>
-												
-													<option value="SANTIAGO DEL ESTERO">SANTIAGO DEL ESTERO</option>
-												
-													<option value="TIERRA DEL FUEGO">TIERRA DEL FUEGO</option>
-												
-													<option value="TUCUMAN">TUCUMAN</option>
-												
-											</select>
-										</td>
-										<td><span class="error" id="provincia_error">Seleccione su provincia</span></td>
-									</tr>
-									<tr>
-										<td>
-											Localidad (de residencia actual)<span class="alert">*</span>
-										</td>
-										<td colspan="2">
-											<select name="localidad" id="localidad" autocomplete="off">
-												<option value="">seleccionar</option>
-											</select>
-										</td>
-										<td><span class="error" id="localidad_error">Seleccione su localidad</span></td>
-									</tr>
-									<tr>
-										<td colspan="4" style="border:0px;">
-											Seleccione el servicio contratado por el usuario (Cliente):<span class="alert">*</span>
-										</td>
-									</tr>
-									<tr>
-										<td valign="top" width="220">&nbsp;</td>
-										<td valign="top" >
-											<label><input type="checkbox" name="tarjeta" value="1" autocomplete="off"/> Plan Premium</label><br/>
-											<label><input type="checkbox" name="tarjeta" value="2" autocomplete="off"/> Consultas Puntuales</label><br/>
-											<label><input type="checkbox" name="tarjeta" value="3" autocomplete="off"/> Plan Mixto</label><br/>											
+											  <textarea name="textarea" id="textarea" cols="45" rows="5"></textarea>
 										</td>
 										
-										<td width="130"><span class="error" id="tarjeta_error">Seleccione al menos un servicio</span></td>
-									</tr>				
-									<tr>
-										<td colspan="4" style="border:0px;">
-											<label><input type="checkbox" autocomplete="off" name="acepto_rubros" id="acepto_rubros" checked="checked"/>Indique de que rubro es la empresa del usuario (Cliente) :</label><br/>
-										</td>
-									</tr>				
-									<tr>
-										<td valign="top">
-											&nbsp;
-										</td>
-										<td valign="top">
-										
-												<label id="label_rubro"><input type="checkbox" autocomplete="off" name="rubro" value="1"/> Aseguradora</label><br/>
-										
-												<label id="label_rubro"><input type="checkbox" autocomplete="off" name="rubro" value="2"/> Empresa de Logistica</label><br/>
-										
-												<label id="label_rubro"><input type="checkbox" autocomplete="off" name="rubro" value="3"/> Empresa de transporte</label><br/>
-										
-											
-										
-										</td>
-										<td valign="top">
-											
-												<label id="label_rubro"><input type="checkbox" autocomplete="off" name="rubro" value="6"/> Empresa de finanzas</label><br/>
-										
-												<label id="label_rubro"><input type="checkbox" autocomplete="off" name="rubro" value="7"/> Prestadora</label><br/>
-										
-												<label id="label_rubro"><input type="checkbox" autocomplete="off" name="rubro" value="8"/> Otros</label><br/>										
-											
-										
-										</td>
-										<td><span class="error" id="rubro_error">Debe seleccionar al menos un rubro</span></td>
 									</tr>
 									
 									<tr>
@@ -568,5 +410,4 @@
 		</table>
 		</wicket:panel>
 	</BODY>
-	
 

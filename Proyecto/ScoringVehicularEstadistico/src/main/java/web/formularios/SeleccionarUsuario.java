@@ -3,18 +3,16 @@ package web.formularios;
 import java.util.List;
 
 
-import hibernate.AdministradorUsuarios;
-import hibernate.domain.usuarios.Cliente;
+
 
 import hibernate.domain.usuarios.Usuario;
 
-import org.apache.wicket.markup.html.basic.Label;
+
+import org.apache.wicket.markup.html.form.Form;
 
 
-import org.apache.wicket.markup.html.link.Link;
-import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.PageableListView;
-import org.apache.wicket.markup.html.navigation.paging.PagingNavigator;
+
 
 import web.Formulario;
 
@@ -28,57 +26,28 @@ public class SeleccionarUsuario extends Formulario {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@SuppressWarnings("unused")
 	private List<Usuario> data; // contiene los items que muestra el listview
+	@SuppressWarnings({ "unused", "rawtypes" })
 	private PageableListView listView; // listview con los datos
 
 	public SeleccionarUsuario(final Menu menu) {
-		super(menu, "Seleccionar usuario");
+		super(menu);
 
-		/* obtengo las transacciones del cliente */
-		data = AdministradorUsuarios.obtenerUsuarios();
+		
+		 Form<Void> formulario = new Form<Void>("formularioSeleccion") {
 
-		listView = new PageableListView("usuarios", data, 10) {
+				private static final long serialVersionUID = 1L;
 
-			/**
-			 * 
-			 */
-			private static final long serialVersionUID = 1L;
+				protected void onSubmit() {
 
-			@Override
-			protected void populateItem(ListItem item) {
+					menu.cambiarFormulario(new ModificarUsuario(menu));
 
-				final Usuario usuario = (Usuario) item.getModelObject();
+				}
+			};
+			this.getContenido().add(formulario);
 
-				item.add(new Label("username", usuario.getUsername()));
-				item.add(new Label("nombre", usuario.getNombre()));
-				item.add(new Label("apellido", usuario.getApellido()));
-				item.add(new Label("tipo", usuario instanceof Cliente?"Cliente":"Administrador"));
-				item.add(new Link("link") {
-
-                    
-                    private static final long serialVersionUID = 1L;
-
-                    @Override
-                    public void onClick() {
-                            
-                            menu.cambiarFormulario(new ModificarUsuario(menu,usuario));
-                            
-                            
-				
-
-                    }
-
-            });
-
-				
-
-			}
-		};
-
-		this.getContenido().add(listView);
-
-		PagingNavigator pager = new PagingNavigator("pager", listView); // navegador
-		this.getContenido().add(pager);
+		
 
 	};
 }
