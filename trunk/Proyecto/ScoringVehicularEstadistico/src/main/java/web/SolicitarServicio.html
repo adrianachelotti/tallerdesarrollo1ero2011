@@ -1,0 +1,530 @@
+
+<!--header.jsp -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<wicket:head>
+
+	<TITLE>Nuevos Rumbos</TITLE>
+	<META NAME="Generator" CONTENT="EditPlus">
+	<META NAME="Author" CONTENT="">
+	<META NAME="Keywords" CONTENT="">
+	<META NAME="Description" CONTENT="">
+	<meta http-equiv="X-UA-Compatible" content="IE=5">
+	<wicket:link>
+		<link rel="stylesheet" type="text/css" href="./styles/style.css" />
+	</wicket:link>
+</wicket:head>
+<div id="header">
+	<wicket:link>
+		<img width="380" height="220" src="./images/logonr.jpg" />
+	</wicket:link>
+</div>
+
+
+
+<script>
+
+		function clearForms(){
+		  var i;
+		  for (i = 0; (i < document.forms.length); i++) {
+		    document.forms[i].reset();
+		  }
+		}
+		function openPopupCenter(pageURL) {	
+
+			var left = (screen.width/2)-(700/2);
+
+			var top = (screen.height/2)-(600/2);
+
+			settings='height=600,width=700,top='+top+',left='+left+',scrollbars=yes,toolbar=no';	
+
+			var popup = window.open(pageURL,'BNA',settings);
+
+		} 
+
+		 
+
+	$(document).ready(function(){
+
+	
+
+
+
+		$("select#localidad").attr('disabled', 'disabled');
+
+		
+
+		$("select#provincia").change(function(){
+
+			var id_provincia = $("select#provincia").val();
+
+					
+
+			var xmlhttp;
+
+			if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+
+	  			xmlhttp=new XMLHttpRequest();
+
+	  		}else{// code for IE6, IE5
+
+	  			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+
+	  		}
+
+			
+
+			xmlhttp.onreadystatechange=function(){
+
+	  			if (xmlhttp.readyState==4 && xmlhttp.status==200){  			
+
+		  			if(xmlhttp.responseText!=""){
+
+		  				$("select#localidad").html("");
+
+		    			$("select#localidad").append(xmlhttp.responseText);
+
+						$("select#localidad").removeAttr('disabled');
+
+					}else{
+
+		  				$("select#localidad").html("");
+
+		    			$("select#localidad").append('<option value="">seleccionar</option>');
+
+						$("select#localidad").attr('disabled', 'disabled');				
+
+					}
+
+	    		}
+
+	  		}
+
+			
+
+			xmlhttp.open("GET","consultaLocalidades.do?id_provincia="+id_provincia,true);
+
+			xmlhttp.send();
+
+			
+
+		});
+
+	
+
+		$("#acepto_rubros").change(function(){
+
+			if (!$('#acepto_rubros').is(':checked')) {
+
+				$("input[name=rubro]").each(function() {
+
+					$(this).attr('disabled', 'disabled');
+
+					$(this).attr('checked', false);			
+
+				});				
+
+			}else{
+
+				$("input[name=rubro]").each(function() {
+
+					$(this).removeAttr('disabled');
+
+								
+
+				});				
+
+			}
+
+		});
+
+	
+
+		$('.error').css('visibility', 'hidden');
+
+		
+
+	    $(".btnSubmit").click(function(){
+
+	      // validate and process form here
+
+			var result = true;
+
+	
+
+			$('.error').css('visibility', 'hidden');
+
+	
+
+	  		var dni = $("input#dni").val();
+
+	  		if(!isNumeroEntero(dni)||dni==""){
+
+	  			$("span#dni_error").text('Ingrese Número de Documento (sólo números)');
+
+				$("span#dni_error").css('visibility', 'visible');
+
+			    result = false;				  		
+
+	  		}else{
+
+				if(!(dni.length==8||dni.length==7)){
+
+					$("span#dni_error").text('Número de Documento inválido');
+
+					$("span#dni_error").css('visibility', 'visible');
+
+			    	result = false;						  							
+
+				}
+
+	  		}	
+
+	
+
+	  		var mail = $("input#mail").val();
+
+			if(mail!=""){
+
+				if(!isMail(mail)){
+
+					$("span#mail_error").css('visibility', 'visible');
+
+			        result = false;						
+
+				}
+
+			}
+
+			
+
+			if (!$("input:checked[name=sexo]").is(':checked')){
+
+				$("span#sexo_error").css('visibility', 'visible');
+
+		        result = false;						
+
+			}
+
+			
+
+	  		var fecha_nac_dia = $("input#fecha_nac_dia").val();
+
+	  		var fecha_nac_mes = $("input#fecha_nac_mes").val();		
+
+	  		var fecha_nac_anio = $("input#fecha_nac_anio").val();
+
+	
+
+			if(fecha_nac_dia!=""||fecha_nac_mes!=""||fecha_nac_anio!=""){
+
+				if(!isDateSeparatedFields(fecha_nac_dia,fecha_nac_mes,fecha_nac_anio)){
+
+					$("span#date_error").text('La fecha ingresada no es válida');				
+
+					$("span#date_error").css('visibility', 'visible');
+
+					result = false;
+
+				}
+
+			}else{
+
+				$("span#date_error").text('Ingrese su fecha de nacimiento');			
+
+				$("span#date_error").css('visibility', 'visible');
+
+				result = false;
+
+			}
+
+	
+
+			var prov = $("select#provincia").val();
+
+			if (prov == "") {
+
+				$("span#provincia_error").css('visibility', 'visible');
+
+		        $("select#provincia").focus();
+
+		        result = false;
+
+			}
+
+	
+
+			var loc = $("select#localidad").val();
+
+			if (loc == "") {
+
+				$("span#localidad_error").css('visibility', 'visible');
+
+		        $("select#localidad").focus();
+
+		        result = false;
+
+			}
+
+	
+
+			if ($('#acepto_rubros').is(':checked')) {
+
+				var selectedRubros = new Array();
+
+				$("input:checked[name=rubro]").each(function() {selectedRubros.push($(this).val());});
+
+				if (selectedRubros.length == 0) {
+
+					$("span#rubro_error").css('visibility', 'visible');
+
+			        result = false;
+
+				}	
+
+			}
+
+	
+
+			var selectedTarjetas = new Array();
+
+			$("input:checked[name=tarjeta]").each(function() {selectedTarjetas.push($(this).val());});
+
+			if (selectedTarjetas.length == 0) {
+
+				$("span#tarjeta_error").css('visibility', 'visible');
+
+		        result = false;
+
+			}
+
+	
+
+			if (!$('#acepto').is(':checked')) {
+
+				$("span#acepto_error").css('visibility', 'visible');
+
+				result = false;
+
+			}
+
+	
+
+			return result;
+
+	
+
+	    });
+
+	  });
+
+	</script>
+
+
+<BODY onLoad="clearForms()" onUnload="clearForms()">
+
+
+
+	<table border="0" cellpadding="0" cellspacing="0" align="center"
+		width="780">
+		<tr>
+			<td>
+				<div id="contenido">
+					<div id="tit">Solicitud de servicio</div>
+					<div id="form">
+					<span class="textopanel" wicket:id="mensajes" />
+						<form name="frm_reclutamiento" action="" method="post" wicket:id="formulario">
+							<table border="0" cellpadding="0" cellspacing="0" width="780"
+								class="table_form">
+								<tr>
+									<td colspan="4" style="border: 0px;"><br />
+										
+										
+									</td>
+								</tr>
+								<tr>
+									<td colspan="4"><span class="alert">*</span> Dato
+										Obligatorio</td>
+								</tr>
+								<tr>
+									<td>Nombre de usuario <span class="alert">*</span></td>
+									<td colspan="2"><input wicket:id="Nombre de usuario" type="text" name="nombre"
+										maxlength="100" autocomplete="off" size="26" /></td>
+									<td><span wicket:id="usernameF"/></td>
+								</tr>
+								
+								<tr>
+									<td>Contraseña <span class="alert">*</span></td>
+									<td colspan="2"><input type="password"  wicket:id="Contraseña" name="nombre"
+										maxlength="100" autocomplete="off" size="26" /></td>
+									<td><span wicket:id="passF"/></td>
+								</tr>
+								<tr>
+									<td>Nombre <span class="alert">*</span></td>
+									<td colspan="2"><input wicket:id="Nombre" type="text" name="nombre"
+										maxlength="100" autocomplete="off" size="26" /></td>
+									<td><span wicket:id="nombreF"/></td>
+								</tr>
+								<tr>
+									<td>Apellido <span class="alert">*</span></td>
+									<td colspan="2"><input wicket:id="Apellido" type="text" name="apellido"
+										maxlength="100" autocomplete="off" size="26" /></td>
+									<td><span wicket:id="apellidoF"/></td>
+								</tr>
+								<tr>
+									<td>Tipo y N° de Documento <span class="alert">*</span></td>
+									<td colspan="2"><select wicket:id="Tipo de documento" name="tipo_doc" id="tipo_doc">
+											<option value="D" selected="selected">DNI</option>
+											<option value="V">Libreta Cívica</option>
+											<option value="E">Libreta de Enrolamiento</option>
+											<option value="P">Pasaporte</option>
+											<option value="C">Cédula de Identidad</option>
+									</select>&nbsp;<input wicket:id="Documento" type="text" name="dni" id="dni" maxlength="8"
+										autocomplete="off" size="26" /></td>
+									<td><span wicket:id="documentoF"/>
+									</td>
+								</tr>
+								<tr>
+									<td>E-mail <span class="alert">*</span></td>
+									<td colspan="2"><input wicket:id="Email" type="text" name="mail" id="mail"
+										maxlength="50" autocomplete="off" size="26" /></td>
+									<td><span wicket:id="emailF"/>
+									</td>
+								</tr>
+								<tr>
+									<td>Teléfono <span class="alert">*</span></td>
+									<td colspan="2"><input wicket:id="Telefono" type="text" name="mail" id="mail"
+										maxlength="50" autocomplete="off" size="26" /></td>
+									<td><span wicket:id="telefonoF"/>
+									</td>
+								</tr>
+								<tr>
+									<td>Sexo <span class="alert">*</span></td>
+									<td colspan="2"><span wicket:id="Sexo"></span></td>
+									<td>&nbsp;
+									</td>
+								</tr>
+								<tr>
+									<td>Fecha de nacimiento <span class="alert">*</span></td>
+									<td colspan="2"><input wicket:id="Fecha de nacimiento" type="text" name="fecha_nac_dia"
+										id="fecha_nac_dia" autocomplete="off" maxlength="10" size="10" /> dd/mm/aaaa</td>
+									<td><span class="error" wicket:id="fechaF" id="date_error"></span>
+									</td>
+								</tr>
+								<tr>
+									<td>Provincia (de residencia actual)<span class="alert">*</span>
+									</td>
+									<td colspan="2"><select wicket:id="Provincia" name="provincia" id="provincia"
+										autocomplete="off">
+											<option value="">seleccionar</option>
+
+											<option value="BUENOS AIRES">BUENOS AIRES</option>
+
+											<option value="CAPITAL FEDERAL">CAPITAL FEDERAL</option>
+
+											<option value="CATAMARCA">CATAMARCA</option>
+
+											<option value="CHACO">CHACO</option>
+
+											<option value="CHUBUT">CHUBUT</option>
+
+											<option value="CORDOBA">CORDOBA</option>
+
+											<option value="CORRIENTES">CORRIENTES</option>
+
+											<option value="ENTRE RIOS">ENTRE RIOS</option>
+
+											<option value="FORMOSA">FORMOSA</option>
+
+											<option value="JUJUY">JUJUY</option>
+
+											<option value="LA PAMPA">LA PAMPA</option>
+
+											<option value="LA RIOJA">LA RIOJA</option>
+
+											<option value="MENDOZA">MENDOZA</option>
+
+											<option value="MISIONES">MISIONES</option>
+
+											<option value="NEUQUEN">NEUQUEN</option>
+
+											<option value="RIO NEGRO">RIO NEGRO</option>
+
+											<option value="SALTA">SALTA</option>
+
+											<option value="SAN JUAN">SAN JUAN</option>
+
+											<option value="SAN LUIS">SAN LUIS</option>
+
+											<option value="SANTA CRUZ">SANTA CRUZ</option>
+
+											<option value="SANTA FE">SANTA FE</option>
+
+											<option value="SANTIAGO DEL ESTERO">SANTIAGO DEL
+												ESTERO</option>
+
+											<option value="TIERRA DEL FUEGO">TIERRA DEL FUEGO</option>
+
+											<option value="TUCUMAN">TUCUMAN</option>
+
+									</select></td>
+									<td>&nbsp;
+									</td>
+								</tr>
+								<tr>
+									<td>Localidad <span class="alert">*</span></td>
+									<td colspan="2"><input wicket:id="Localidad" type="text" name="localidad"
+										maxlength="100" autocomplete="off" size="26" /></td>
+									<td><span wicket:id="localidadF"/></td>
+								</tr>
+								<tr>
+									<td colspan="4" style="border: 0px;">Seleccione el
+										servicio que desea contratar:<span class="alert">*</span></td>
+								</tr>
+								<tr>
+									<td valign="top" width="220">&nbsp;</td>
+									<td valign="top" colspan="2"><span wicket:id="plan"></span></td>
+
+									<td width="270"><span wicket:id="planF"></span>							</td>
+							  </tr>
+								<tr>
+									<td colspan="4" style="border: 0px;"><label>Indique de que rubro
+											es su empresa :</label><br /></td>
+								</tr>
+								<tr>
+									<td valign="top" width="220">&nbsp;</td>
+									<td valign="top" colspan="2"><span wicket:id="rubros"></span></td>
+
+									<td width="270">&nbsp;
+									</td>
+									
+							  </tr>
+								<tr>
+									<td colspan="3"><label><input type="checkbox"
+											autocomplete="off" name="acepto" wicket:id="acepta" id="acepto" /> Acepto los
+											términos y condiciones <a href="#"
+											onClick='javascript:openPopupCenter("contrato.htm");'>(ver
+												términos y condiciones)</a>
+									</label><br /></td>
+									<td><span wicket:id="aceptaF"></span><br />
+									</td>
+								</tr>
+								<tr>
+									<td colspan="4" align="center"><input class="btnSubmit"
+										type="submit" value="Aceptar" /></td>
+								</tr>
+								
+							
+							</table>
+							<br />
+						</form>
+						<div align="center">
+						  <p><a class="destacado" wicket:id = "linkVolver">Volver</a>					      </p>
+						  <p>&nbsp;</p>
+					  </div>
+					</div>
+				</div></td>
+		</tr>
+	</table>
+</BODY>
+
