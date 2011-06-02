@@ -1,12 +1,5 @@
 package hibernate.domain.usuarios;
 
-
-
-
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-
 import javax.persistence.*;
 
 
@@ -27,17 +20,10 @@ public class Usuario {
 	private String apellido;
 	
 	private String email;
+	private boolean activado;
 	
-	private Servicio servicio;
+		
 	
-	private String sexo;
-	//TODO: estos puede ser un mapeos onetoone
-	private String provincia;
-	private String localidad;
-	private String rubro;
-	
-	
-	private Set<Permiso> permisos = new HashSet<Permiso>();
 		
 	public Usuario(){
 		
@@ -103,94 +89,33 @@ public class Usuario {
 		return apellido;
 	}
 
-	public void setPermisos(Set<Permiso> permisos) {
+	
+
+
+	
+
+	
 		
-		this.permisos = permisos;
+	public boolean esCliente(){
+		return this.getClass().getSimpleName().compareTo("Cliente")==0;
+	}
+	
+	public boolean esAdministrador(){
+		return this.getClass().getSimpleName().compareTo("Administrador")==0;
+	}
+	
+	public boolean esOperador(){
+		return this.getClass().getSimpleName().compareTo("Operador")==0;
 	}
 
-
-
-    @ManyToMany(
-
-            cascade = {CascadeType.PERSIST, CascadeType.MERGE},
-            
-            fetch=  FetchType.EAGER ,
-
-            mappedBy = "usuarios",
-
-            targetEntity = hibernate.domain.usuarios.Permiso.class
-
-        )
-	public Set<Permiso> getPermisos() {
-		return permisos;
+	public void setActivado(boolean activado) {
+		this.activado = activado;
 	}
 
-	public void agregarPermiso(Permiso permiso) {
-		permisos.add(permiso);
-		
+	public boolean isActivado() {
+		return activado;
 	}
 
-	public void eliminarTodosLosPermisos() {
-		permisos.clear();
-		
-		
-	}
-
-	public void eliminarPermiso(Permiso permiso) {
-		permisos.remove(permiso);
-		
-	}
-
-	public boolean tienePermiso(long id) {
-		Iterator<Permiso> it=permisos.iterator();
-		boolean encontrado=false;
-		while((!encontrado)&&(it.hasNext())){
-			if(it.next().getId()==id) encontrado=true;
-		}
-		
-		return encontrado;
-	}
-
-	public void setServicio(Servicio servicio) {
-		this.servicio = servicio;
-	}
-
-	@OneToOne
-	public Servicio getServicio() {
-		return servicio;
-	}
-
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
-	}
-
-	public String getSexo() {
-		return sexo;
-	}
-
-	public void setProvincia(String provincia) {
-		this.provincia = provincia;
-	}
-
-	public String getProvincia() {
-		return provincia;
-	}
-
-	public void setLocalidad(String localidad) {
-		this.localidad = localidad;
-	}
-
-	public String getLocalidad() {
-		return localidad;
-	}
-
-	public void setRubro(String rubro) {
-		this.rubro = rubro;
-	}
-
-	public String getRubro() {
-		return rubro;
-	}
 
 
 }

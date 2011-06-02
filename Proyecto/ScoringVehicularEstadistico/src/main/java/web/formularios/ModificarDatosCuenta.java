@@ -8,7 +8,7 @@ import java.util.List;
 
 import hibernate.AdministradorUsuarios;
 
-import hibernate.domain.usuarios.Permiso;
+
 
 import hibernate.domain.usuarios.Usuario;
 

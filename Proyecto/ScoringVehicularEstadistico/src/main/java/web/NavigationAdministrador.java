@@ -1,20 +1,25 @@
 package web;
 
 
+
+
 import org.apache.wicket.markup.html.link.Link;
 
 import org.apache.wicket.markup.html.panel.Panel;
 
 
+import web.formularios.ActualizarBaseDeDatos;
 import web.formularios.Ayuda;
-import web.formularios.ConsultarPagos;
-
-import web.formularios.FormularioDefault;
-import web.formularios.ModificarDatosCuenta;
-
 import web.formularios.Consulta;
 import web.formularios.ConsultaHistorial;
+import web.formularios.ConsultarPagos;
 import web.formularios.Contactenos;
+import web.formularios.EliminarUsuario;
+import web.formularios.FormularioDefault;
+import web.formularios.ModificarDatosAdministrador;
+import web.formularios.RegistrarUsuario;
+import web.formularios.SeleccionarUsuario;
+import web.formularios.VerUsuarios;
 
 
 public class NavigationAdministrador extends Panel {
@@ -32,7 +37,7 @@ public class NavigationAdministrador extends Panel {
 		
 		agregarLinks();
 		
-	}
+	};
 	
 
 
@@ -54,6 +59,7 @@ public class NavigationAdministrador extends Panel {
 		});
 		
 		
+
 		this.add(new Link("linkModificarDatos") {
 
 			private static final long serialVersionUID = 1L;
@@ -61,11 +67,108 @@ public class NavigationAdministrador extends Panel {
 			@Override
 			public void onClick() {
 
-				menu.cambiarFormulario(new ModificarDatosCuenta(menu));
+				menu.cambiarFormulario(new ModificarDatosAdministrador(menu));
 
 			}
 
 		});
+		
+	
+		
+		this.add(new Link("linkRegistrarUsuario") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new RegistrarUsuario(menu));
+
+			}
+
+		});
+		
+		this.add(new Link("linkModificarUsuario") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new SeleccionarUsuario(menu));
+
+			}
+
+		});
+		
+		this.add(new Link("linkEliminarUsuario") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new EliminarUsuario(menu));
+
+				
+			}
+
+		});
+		
+		this.add(new Link("linkVerUsuarios") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new VerUsuarios(menu));
+
+			}
+
+		});
+		
+		this.add(new Link("linkAdministrarPerfiles") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new FormularioDefault(
+						menu,"Administrar perfiles"));
+
+			}
+
+		});
+		
+		this.add(new Link("linkActualizarBD") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new ActualizarBaseDeDatos(menu));
+
+			}
+
+		});
+		
+		this.add(new Link("linkRespaldarBD") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new FormularioDefault(
+						menu,"Respaldar bd"));
+
+			}
+
+		});
+		
 		
 		this.add(new Link("linkVerPagos") {
 
@@ -130,8 +233,24 @@ public class NavigationAdministrador extends Panel {
 			}
 
 		});
+		
+		this.add(new Link("linkLogout") {
 
-	}
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				setResponsePage(new Logout());
+			}
+
+		});
+		
+		
+		
+	};
+		
+	
 
 	
 
