@@ -25,7 +25,6 @@
 		<mapping class="hibernate.domain.usuarios.Administrador" />
 		<mapping class="hibernate.domain.usuarios.Transaccion" />
 		<mapping class="hibernate.domain.usuarios.Servicio" />
-		<mapping class="hibernate.domain.usuarios.Permiso" />
 		<mapping class="hibernate.domain.conductores.Conductor" />
 		<mapping class="hibernate.domain.sistemaFinanciero.DeudaSistemaFinanciero" />
 		<mapping class="hibernate.domain.sistemaJudicial.ExpedienteJudicial" />
@@ -34,6 +33,8 @@
 		<mapping class="hibernate.domain.vehiculos.Siniestro" />
 		<mapping class="hibernate.domain.vehiculos.VerificacionTecnica" />
 		<mapping class="hibernate.domain.vehiculos.Vehiculo" />
+		<mapping class="hibernate.domain.usuarios.Rubro" />
+		
 		
 		
 		<!-- agregar un mapping class por cada clase que debe representarse como entidad en la base de datos -->
