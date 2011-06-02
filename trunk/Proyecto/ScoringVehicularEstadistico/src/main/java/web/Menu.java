@@ -1,17 +1,16 @@
 package web;
 
 import org.apache.wicket.markup.html.WebMarkupContainer;
-import org.apache.wicket.markup.html.WebPage;
+
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 
 import web.formularios.FormularioDefault;
 
 
-import hibernate.domain.usuarios.Cliente;
 import hibernate.domain.usuarios.Usuario;
 
-public class Menu extends WebPage{
+public class Menu extends AuthenticatedWebPage{
 	
 	private Usuario usuario;
 	Formulario formularioActual;
@@ -26,10 +25,10 @@ public class Menu extends WebPage{
 	public Menu(Usuario usuario){
 	
 		this.usuario=usuario;
-		
-
-
-		if(usuario instanceof Cliente) this.navigation=new NavigationCliente(this);
+		if(usuario.esCliente()) 
+			this.navigation=new NavigationCliente(this);
+		else if(usuario.esAdministrador())
+			this.navigation=new NavigationAdministrador(this);
 		else
 			this.navigation=new NavigationAdministrador(this);
 					

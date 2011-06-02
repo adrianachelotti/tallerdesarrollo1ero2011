@@ -1,9 +1,9 @@
 package web;
 
-import hibernate.AdministradorAdministradores;
-import hibernate.AdministradorClientes;
-import hibernate.domain.usuarios.Administrador;
-import hibernate.domain.usuarios.Cliente;
+
+
+import hibernate.AdministradorUsuarios;
+import hibernate.AppInit;
 import hibernate.domain.usuarios.Usuario;
 
 import org.apache.wicket.markup.html.WebPage;
@@ -13,6 +13,7 @@ import org.apache.wicket.markup.html.form.PasswordTextField;
 import org.apache.wicket.markup.html.form.TextField;
 
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
+import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.util.value.ValueMap;
@@ -26,8 +27,8 @@ public class Login2 extends WebPage {
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Login2() {
-
 		
+				
 		Form<Void> formulario = new Form<Void>("formulario") {
 
 			private static final long serialVersionUID = 1L;
@@ -41,20 +42,22 @@ public class Login2 extends WebPage {
 				if (sesion.signedIn()) {
 
 					Usuario usuario=sesion.getUsuario();
-					if(usuario instanceof Cliente){
-						setResponsePage(new Menu(AdministradorClientes.obtenerCliente(username)));
-						info("Sesión iniciada correctamente.");
-					}else if(usuario instanceof Administrador){
-						setResponsePage(new Menu(AdministradorAdministradores.obtenerAdministrador(username)));
-						info("Sesión iniciada correctamente.");
-					}
-					
+					setResponsePage(new Menu(AdministradorUsuarios.obtenerUsuario(usuario.getUsername())));
+					info("Sesión iniciada correctamente.");
+									
 				} else
 					info("El username y/o contraseña ingrsados son incorrectos.");
 			}
 		};
 
 		add(formulario);
+		formulario.add(new FeedbackPanel("mensajes"));
+		
+		if(AppInit.inicializarAplicacion()) info("No hay usuarios cargados en la base de datos. Ingrese al sistema usando username='admin' y constraseña='admin'.");
+		else{
+			info("Por favor, ingrese su nombre de usuario y constraseña.");
+		}
+	
 		
 
 		// text field de username
@@ -69,9 +72,12 @@ public class Login2 extends WebPage {
 
 
 		
-		formulario.add(new BookmarkablePageLink("linkContactenos",Contactenos.class));
+		formulario.add(new BookmarkablePageLink("linkSolicitarUsuario",SolicitarServicio.class));
 
-	};
+	}
+
+
+
 
 	
 

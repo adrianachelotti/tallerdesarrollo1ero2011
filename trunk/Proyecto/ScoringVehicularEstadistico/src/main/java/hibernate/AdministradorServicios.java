@@ -15,13 +15,13 @@ public class AdministradorServicios {
 
 	
 	@SuppressWarnings("unchecked")
-	public static Servicio obtenerServicio(long id) {
+	public static Servicio obtenerServicio(String codigo) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		List<Servicio> resultado = null;
 		Servicio servicio = null;
 
-		Query query = session.createQuery("from Servicio s where s.id ='"+ id + "'");
+		Query query = session.createQuery("from Servicio s where s.codigo ='"+ codigo + "'");
 		resultado = query.list();
 		session.getTransaction().commit();
 		if (!resultado.isEmpty())
@@ -31,7 +31,7 @@ public class AdministradorServicios {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static Servicio obtenerServicio(String descripcion) {
+	public static Servicio obtenerServicioPorDescripcion(String descripcion) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		List<Servicio> resultado = null;
@@ -46,6 +46,7 @@ public class AdministradorServicios {
 
 	}
 	
+	
 
 	
 	public static void agregarServicio(Servicio servicio) {
@@ -57,9 +58,9 @@ public class AdministradorServicios {
 	}
 
 	
-	public static boolean eliminarServicio(long id) {
+	public static boolean eliminarServicio(String codigo) {
 
-		Servicio servicio = obtenerServicio(id);
+		Servicio servicio = obtenerServicio(codigo);
 		boolean eliminado = false;
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();

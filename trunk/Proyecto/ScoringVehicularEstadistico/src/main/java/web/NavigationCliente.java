@@ -5,16 +5,18 @@ import org.apache.wicket.markup.html.link.Link;
 
 import org.apache.wicket.markup.html.panel.Panel;
 
-import web.formularios.ActualizarBaseDeDatos;
+import web.formularios.Ayuda;
+import web.formularios.ConsultarPagos;
 
-import web.formularios.EliminarUsuario;
 import web.formularios.FormularioDefault;
-import web.formularios.ModificarDatosAdministrador;
-import web.formularios.SeleccionarUsuario;
-import web.formularios.VerUsuarios;
+import web.formularios.ModificarDatosCuenta;
+
+import web.formularios.Consulta;
+import web.formularios.ConsultaHistorial;
+import web.formularios.Contactenos;
 
 
-import web.formularios.RegistrarUsuario;
+
 
 
 public class NavigationCliente extends Panel {
@@ -34,8 +36,6 @@ public class NavigationCliente extends Panel {
 		
 	}
 	
-
-
 	@SuppressWarnings("rawtypes")
 	private void agregarLinks() {
 
@@ -54,7 +54,6 @@ public class NavigationCliente extends Panel {
 		});
 		
 		
-
 		this.add(new Link("linkModificarDatos") {
 
 			private static final long serialVersionUID = 1L;
@@ -62,115 +61,13 @@ public class NavigationCliente extends Panel {
 			@Override
 			public void onClick() {
 
-				menu.cambiarFormulario(new ModificarDatosAdministrador(menu));
+				menu.cambiarFormulario(new ModificarDatosCuenta(menu));
 
 			}
 
 		});
 		
-	
-		
-		this.add(new Link("linkRegistrarUsuario") {
-
-			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void onClick() {
-
-				menu.cambiarFormulario(new RegistrarUsuario(menu));
-
-			}
-
-		});
-		
-		this.add(new Link("linkModificarUsuario") {
-
-			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void onClick() {
-
-				menu.cambiarFormulario(new SeleccionarUsuario(menu));
-
-			}
-
-		});
-		
-		this.add(new Link("linkEliminarUsuario") {
-
-			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void onClick() {
-
-				menu.cambiarFormulario(new EliminarUsuario(menu));
-
-				
-			}
-
-		});
-		
-		this.add(new Link("linkVerUsuarios") {
-
-			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void onClick() {
-
-				menu.cambiarFormulario(new VerUsuarios(menu));
-
-			}
-
-		});
-		
-		this.add(new Link("linkActualizarBD") {
-
-			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void onClick() {
-
-				menu.cambiarFormulario(new ActualizarBaseDeDatos(menu));
-
-			}
-
-		});
-		
-		/*
-		
-		this.add(new Link("linkModificarDatos") {
-
-			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void onClick() {
-
-				menu.cambiarFormulario(new ModificarDatosCuenta(menu ));
-				menu.mostrarMensajes(true);
-				info("Modifique los datos de la cuenta y luego seleccione Aplicar cambios.");
-
-			}
-
-		});
-		
-		this.add(new Link("linkLogout") {
-
-			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void onClick() {
-				
-
-                this.getRequestCycle().setResponsePage(Logout.class);
-                this.getRequestCycle().setRedirect(true);
-                
-				
-			}
-
-		});
-		
-		
-		this.add(new Link("linkConsultarPagos") {
+		this.add(new Link("linkVerPagos") {
 
 			private static final long serialVersionUID = 1L;
 
@@ -191,42 +88,64 @@ public class NavigationCliente extends Panel {
 			@Override
 			public void onClick() {
 
-				menu.cambiarFormulario(new FormularioDefault(
-						menu, "Realizar consulta"));
+				menu.cambiarFormulario(new Consulta(menu));
 
 			}
 
 		});
 		
-		this.add(new Link("linkHistorialInformes") {
+		
+		this.add(new Link("linkVerHistorial") {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
 			public void onClick() {
 
-				menu.cambiarFormulario(new FormularioDefault(
-						menu, "Historial informe"));
-
+				menu.cambiarFormulario(new ConsultaHistorial(menu));
 			}
 
 		});
 		
-		this.add(new Link("linkEstadisticas") {
+		this.add(new Link("linkAyuda") {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
 			public void onClick() {
 
-				menu.cambiarFormulario(new FormularioDefault(
-						menu,"Estadisticas"));
-
+				menu.cambiarFormulario(new Ayuda(menu));
 			}
 
-		});*/
+		});
+		
+		this.add(new Link("linkContactenos") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new Contactenos(menu));
+			}
+
+		});
+		
+		this.add(new Link("linkLogout") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				setResponsePage(new Logout());
+			}
+
+		});
 
 	}
+	
+
 
 	
 
