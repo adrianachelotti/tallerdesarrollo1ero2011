@@ -23,6 +23,7 @@
 		<mapping class="hibernate.domain.usuarios.Usuario" />
 		<mapping class="hibernate.domain.usuarios.Cliente" />
 		<mapping class="hibernate.domain.usuarios.Administrador" />
+		<mapping class="hibernate.domain.usuarios.Operador" />
 		<mapping class="hibernate.domain.usuarios.Transaccion" />
 		<mapping class="hibernate.domain.usuarios.Servicio" />
 		<mapping class="hibernate.domain.conductores.Conductor" />
