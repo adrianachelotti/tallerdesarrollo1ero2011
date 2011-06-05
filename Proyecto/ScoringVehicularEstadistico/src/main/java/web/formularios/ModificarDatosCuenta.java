@@ -13,6 +13,7 @@ import hibernate.AdministradorUsuarios;
 
 
 
+import hibernate.domain.usuarios.Cliente;
 import hibernate.domain.usuarios.Rubro;
 import hibernate.domain.usuarios.Servicio;
 import hibernate.domain.usuarios.Usuario;
@@ -94,7 +95,7 @@ public class ModificarDatosCuenta extends Formulario {
 	
 		
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public ModificarDatosCuenta(Menu menu) {
 		super(menu);
 		this.usuario = menu.getUsuario();
@@ -168,6 +169,7 @@ public class ModificarDatosCuenta extends Formulario {
 		emailTF = new TextField<String>("Email", new Model<String>(),	String.class);
 		emailTF.setRequired(true);
 		emailTF.add(EmailAddressValidator.getInstance());
+		emailTF.setDefaultModelObject(usuario.getEmail());
 		formulario.add(emailTF);
 		formulario.add(new FeedbackLabel("emailF", emailTF));
 		
@@ -257,10 +259,53 @@ public class ModificarDatosCuenta extends Formulario {
 		formulario.add(serviciosCBMC);
 		
 		
+		if(usuario.esCliente()) {
+			cargarValoresDefaultDeCliente();
+			habilitarOpcionesCliente(true);
+		}else habilitarOpcionesCliente(false);
+		
+		
+		
 		
 		
 		
 
+	}
+	
+	
+	private void cargarValoresDefaultDeCliente() {
+		Cliente cliente=(Cliente) usuario;
+		tipoDocumentoDD.setDefaultModelObject(cliente.getTipoDocumento());
+		documentoTF.setDefaultModelObject(cliente.getDocumento());
+		
+		telefonoTF.setDefaultModelObject(cliente.getTelefono());
+		sexoR.setDefaultModelObject(cliente.getSexo());
+		fechaTF.setDefaultModelObject(cliente.getFechaNacimiento());
+		provinciaDD.setDefaultModelObject(cliente.getProvincia());
+		localidadTF.setDefaultModelObject(cliente.getLocalidad());
+		planR.setDefaultModelObject(cliente.getServicio().getDescripcion());
+		
+		Iterator<Rubro> iteradorRubros=cliente.getRubros().iterator();
+		
+		while(iteradorRubros.hasNext()){
+			rubrosSeleccionados.add(iteradorRubros.next().getDescripcion());
+			
+		}
+		serviciosCBMC.setDefaultModelObject(rubrosSeleccionados);
+		
+		
+	}
+
+	protected void habilitarOpcionesCliente(boolean b) {
+		tipoDocumentoDD.setEnabled(b);
+		documentoTF.setEnabled(b);
+		telefonoTF.setEnabled(b);
+		sexoR.setEnabled(b);
+		provinciaDD.setEnabled(b);
+		localidadTF.setEnabled(b);
+		planR.setEnabled(b);
+		serviciosCBMC.setEnabled(b);
+		
 	}
 
 	
