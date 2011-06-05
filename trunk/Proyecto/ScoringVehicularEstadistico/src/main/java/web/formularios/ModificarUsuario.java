@@ -239,6 +239,7 @@ super(menu);
 		emailTF = new TextField<String>("Email", new Model<String>(),	String.class);
 		emailTF.setRequired(true);
 		emailTF.add(EmailAddressValidator.getInstance());
+		emailTF.setDefaultModelObject(usuario.getEmail());
 		formulario.add(emailTF);
 		formulario.add(new FeedbackLabel("emailF", emailTF));
 		
@@ -341,7 +342,6 @@ super(menu);
 		Cliente cliente=(Cliente) usuario;
 		tipoDocumentoDD.setDefaultModelObject(cliente.getTipoDocumento());
 		documentoTF.setDefaultModelObject(cliente.getDocumento());
-		emailTF.setDefaultModelObject(cliente.getEmail());
 		telefonoTF.setDefaultModelObject(cliente.getTelefono());
 		sexoR.setDefaultModelObject(cliente.getSexo());
 		fechaTF.setDefaultModelObject(cliente.getFechaNacimiento());
@@ -363,7 +363,6 @@ super(menu);
 	protected void habilitarOpcionesCliente(boolean b) {
 		tipoDocumentoDD.setEnabled(b);
 		documentoTF.setEnabled(b);
-		emailTF.setEnabled(b);
 		telefonoTF.setEnabled(b);
 		sexoR.setEnabled(b);
 		provinciaDD.setEnabled(b);
