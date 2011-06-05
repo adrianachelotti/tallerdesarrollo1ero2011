@@ -6,6 +6,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
@@ -19,6 +22,7 @@ public class Cliente extends Usuario{
 	private Date fechaNacimiento;
 	private String provincia;
 	private String localidad;
+	private String telefono;
 	private String sexo;
 	private Set<Rubro> rubros=new HashSet<Rubro>();
 	private Servicio servicio;
@@ -41,7 +45,11 @@ public class Cliente extends Usuario{
 		this.rubros = rubros;
 	}
 
-	@ManyToMany
+	  @ManyToMany(fetch = FetchType.EAGER)
+	  @JoinTable(
+	      name="rubros_clientes",
+	      joinColumns={@JoinColumn(name="usuario_id", referencedColumnName="usuario_id")},
+	      inverseJoinColumns={@JoinColumn(name="rubro_id", referencedColumnName="rubro_id")})
 	public Set<Rubro> getRubros() {
 		return rubros;
 	}
@@ -111,6 +119,24 @@ public class Cliente extends Usuario{
 		rubros.add(rubro);
 		
 	}
+
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+
+	public void borrarRubros() {
+		this.rubros.clear();
+		
+	}
+
+
 
 
 

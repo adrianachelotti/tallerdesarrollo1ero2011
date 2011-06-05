@@ -7,6 +7,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 
+import hibernate.domain.usuarios.Cliente;
 import hibernate.domain.usuarios.Rubro;
 import hibernate.domain.usuarios.Usuario;
 import hibernate.util.HibernateUtil;
@@ -182,8 +183,8 @@ public class AdministradorUsuarios {
 		return rubro;
 		
 	}
-	
-	
+
+		
 
 	
 
