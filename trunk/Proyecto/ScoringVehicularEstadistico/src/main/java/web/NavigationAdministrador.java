@@ -16,9 +16,9 @@ import web.formularios.ConsultarPagos;
 import web.formularios.Contactenos;
 import web.formularios.EliminarUsuario;
 import web.formularios.FormularioDefault;
-import web.formularios.ModificarDatosAdministrador;
+import web.formularios.ModificarDatosCuenta;
 import web.formularios.RegistrarUsuario;
-import web.formularios.SeleccionarUsuario;
+import web.formularios.SeleccionarUsuarioAModificar;
 import web.formularios.VerUsuarios;
 
 
@@ -67,7 +67,7 @@ public class NavigationAdministrador extends Panel {
 			@Override
 			public void onClick() {
 
-				menu.cambiarFormulario(new ModificarDatosAdministrador(menu));
+				menu.cambiarFormulario(new ModificarDatosCuenta(menu));
 
 			}
 
@@ -95,7 +95,7 @@ public class NavigationAdministrador extends Panel {
 			@Override
 			public void onClick() {
 
-				menu.cambiarFormulario(new SeleccionarUsuario(menu));
+				menu.cambiarFormulario(new SeleccionarUsuarioAModificar(menu));
 
 			}
 

@@ -9,7 +9,7 @@ import hibernate.domain.usuarios.Servicio;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -31,7 +31,7 @@ import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.util.value.ValueMap;
 import org.apache.wicket.validation.validator.EmailAddressValidator;
-import org.apache.wicket.validation.validator.RangeValidator;
+
 import org.apache.wicket.validation.validator.StringValidator;
 
 import web.utils.ErrorLevelsFeedbackMessageFilter;
@@ -44,7 +44,7 @@ import web.validators.UsernameValidator;
 
 public class SolicitarServicio extends WebPage {
 	
-	public final static int EDADMINIMA=21;
+	
 	
 	//Datos
 	
@@ -82,11 +82,12 @@ public class SolicitarServicio extends WebPage {
 	
 	
 	private CheckBox aceptaCB;
+	@SuppressWarnings("unused")
 	private boolean acepta = true;
 	
 	
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public SolicitarServicio(){
 		
 		
@@ -108,6 +109,7 @@ public class SolicitarServicio extends WebPage {
 				cliente.setProvincia(provinciaModel.getObject());
 				cliente.setLocalidad(localidadTF.getModelObject());
 				cliente.setSexo(sexo);
+				cliente.setTelefono(telefonoTF.getModelObject());
 				cliente.setServicio(AdministradorServicios.obtenerServicioPorDescripcion(plan));
 				cliente.setActivado(false);
 				Iterator<String> iteradorRubros=rubrosSeleccionados.iterator();
