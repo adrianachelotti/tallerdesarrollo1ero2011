@@ -8,232 +8,174 @@
 						<div id="tit">Modificacion de cuenta de usuario</div>
 						<div id="form">
 							<form name="frm_reclutamiento" wicket:id="formularioModificarDatos" action="" method="post">
-								<table border="0" cellpadding="0" cellspacing="0" width="780" class="table_form">
-									<tr>
-										<td colspan="4" style="border:0px;"><div align="left"><br/>
-										Complete el formulario  .<br/>
-										<br/>						
-										</div></td>
-									</tr>
-									<tr>
-										<td colspan="4" >
-									  <div align="left"><span class="alert">*</span> Dato Obligatorio							          </div></td>
-								  </tr>									
-									<tr>
-										<td>
-										<div align="left">Nombre									    </div></td>
-										<td colspan="2">
-											<div align="left">
-											  <input type="text" wicket:id=nombre name="nombre" maxlength="100" autocomplete="off" size="26"/>
-									        </div></td>
-										<td><div align="left"></div></td>
-									</tr>
-									<tr>
-										<td>
-										<div align="left">Apellido									    </div></td>
-										<td colspan="2">
-											<div align="left">
-											  <input type="text" wicket:id="apellido" name="apellido" maxlength="100" autocomplete="off" size="26"/>
-									        </div></td>
-										<td><div align="left"></div></td>
-									</tr>
-									<tr>
-										<td>
-										<div align="left">Tipo y N° de Documento <span class="alert">*</span>									        </div></td>
-										<td colspan="2">
-											<div align="left">
-											<select name="tipo_doc" id="tipo_doc">
-											  <option value="D" selected="selected">DNI</option>
-											  <option value="V">Libreta Cívica</option>
-											  <option value="E">Libreta de Enrolamiento</option>
-											  <option value="P">Pasaporte</option>
-											  <option value="C">Cédula de Identidad</option>
-											  </select>
-											&nbsp;
-											<input type="text" name="dni" id="dni" maxlength="8" autocomplete="off" size="26"/>
-										    </div></td>
-										<td><div align="left"><span class="error" id="dni_error"></span></div></td>
-									</tr>
-									<tr>
-										<td>
-										<div align="left">E-mail									    </div></td>
-										<td colspan="2">
-											<div align="left">
-											  <input type="text" name="mail" wicket:id="email" id="mail" maxlength="50" autocomplete="off" size="26"/>
-									        </div></td>
-										<td><div align="left"><span class="error" id="mail_error">La dirección de correo no es válida</span></div></td>
-									</tr>
-									<tr>
-										<td>
-										<div align="left">Sexo <span class="alert">*</span>										    </div></td>
-										<td colspan="2">
-											<label>
-											<div align="left">
-											  <input type="radio" name="sexo" value="M" autocomplete="off">
-											  Masculino</div>
-											</label>
-											<div align="left"><br/>
-										  </div>
-											<label>
-											<div align="left">
-											  <input type="radio" name="sexo" value="F" autocomplete="off">
-											  Femenino</div>
-											</label>										</td>
-										<td><div align="left"><span class="error" id="sexo_error">Indique su sexo</span></div></td>
-									</tr>
-									<tr>
-										<td>
-										<div align="left">Fecha de nacimiento <span class="alert">*</span>										    </div></td>
-										<td colspan="2">
-											<div align="left">
-											  <input type="text" name="fecha_nac_dia" id="fecha_nac_dia"  autocomplete="off" maxlength="2" size="1"/>
-											  &nbsp;/&nbsp;
-											  <input type="text" autocomplete="off" name="fecha_nac_mes" id="fecha_nac_mes" maxlength="2" size="1"/>
-											  &nbsp;/&nbsp;
-											  <input autocomplete="off" type="text" name="fecha_nac_anio" id="fecha_nac_anio" maxlength="4" size="2"/>
-  &nbsp;dd/mm/aaaa (Ej: 02/08/1973)</div></td>
-										<td><div align="left"><span class="error"id="date_error"></span></div></td>
-									</tr>
-									<tr>
-										<td>
-										<div align="left">Provincia (de residencia actual)<span class="alert">*</span>										    </div></td>
-										<td colspan="2">
-											<div align="left">
-											  <select name="provincia" id="provincia" autocomplete="off">
-											    <option value="">seleccionar</option>
-											    
-											    <option value="BUENOS AIRES">BUENOS AIRES</option>
-											    
-											    <option value="CAPITAL FEDERAL">CAPITAL FEDERAL</option>
-											    
-											    <option value="CATAMARCA">CATAMARCA</option>
-											    
-											    <option value="CHACO">CHACO</option>
-											    
-											    <option value="CHUBUT">CHUBUT</option>
-											    
-											    <option value="CORDOBA">CORDOBA</option>
-											    
-											    <option value="CORRIENTES">CORRIENTES</option>
-											    
-											    <option value="ENTRE RIOS">ENTRE RIOS</option>
-											    
-											    <option value="FORMOSA">FORMOSA</option>
-											    
-											    <option value="JUJUY">JUJUY</option>
-											    
-											    <option value="LA PAMPA">LA PAMPA</option>
-											    
-											    <option value="LA RIOJA">LA RIOJA</option>
-											    
-											    <option value="MENDOZA">MENDOZA</option>
-											    
-											    <option value="MISIONES">MISIONES</option>
-											    
-											    <option value="NEUQUEN">NEUQUEN</option>
-											    
-											    <option value="RIO NEGRO">RIO NEGRO</option>
-											    
-											    <option value="SALTA">SALTA</option>
-											    
-											    <option value="SAN JUAN">SAN JUAN</option>
-											    
-											    <option value="SAN LUIS">SAN LUIS</option>
-											    
-											    <option value="SANTA CRUZ">SANTA CRUZ</option>
-											    
-											    <option value="SANTA FE">SANTA FE</option>
-											    
-											    <option value="SANTIAGO DEL ESTERO">SANTIAGO DEL ESTERO</option>
-											    
-											    <option value="TIERRA DEL FUEGO">TIERRA DEL FUEGO</option>
-											    
-											    <option value="TUCUMAN">TUCUMAN</option>
-										      </select>
-									        </div></td>
-										<td><div align="left"><span class="error" id="provincia_error">Seleccione su provincia</span></div></td>
-									</tr>
-									<tr>
-										<td>
-										<div align="left">Localidad (de residencia actual)<span class="alert">*</span>										    </div></td>
-										<td colspan="2">
-											<div align="left">
-											  <select name="localidad" id="localidad" autocomplete="off">
-											    <option value="">seleccionar</option>
-										      </select>
-									        </div></td>
-										<td><div align="left"><span class="error" id="localidad_error">Seleccione su localidad</span></div></td>
-									</tr>
-													
-									<tr>
-										<td colspan="4" style="border:0px;">
-											<label>
-											<div align="left">
-											  <input type="checkbox" autocomplete="off" name="acepto_rubros" id="acepto_rubros" checked="checked"/>
-											  Indique de que rubro es su empresa :</div>
-											</label>
-											<div align="left"><br/>
-									        </div></td>
-									</tr>				
-									<tr>
-										<td valign="top">
-											
-										  <div align="left"></div></td>
-										<td valign="top">
+								<table border="0" cellpadding="0" cellspacing="0" width="780"
+								class="table_form">
+								<tr>
+									<td colspan="4" style="border: 0px;"><br />
+										<span class="textopanel" wicket:id="mensajes" />
 										
-												<label id="label_rubro">
-												<div align="left">
-												  <input type="checkbox" autocomplete="off" name="rubro" value="1"/> 
-												  Aseguradora</div>
-												</label>
-												<div align="left"><br/>
-										  </div>
-												<label id="label_rubro">
-												<div align="left">
-												  <input type="checkbox" autocomplete="off" name="rubro" value="2"/> 
-												  Empresa de Logistica</div>
-												</label>
-												<div align="left"><br/>
-										  </div>
-												<label id="label_rubro">
-												<div align="left">
-												  <input type="checkbox" autocomplete="off" name="rubro" value="3"/> 
-												  Empresa de transporte</div>
-												</label>
-												<div align="left"><br/>
-									            </div></td>
-										<td valign="top">
-											
-												<label id="label_rubro">
-												<div align="left">
-												  <input type="checkbox" autocomplete="off" name="rubro" value="6"/> 
-												  Empresa de finanzas</div>
-												</label>
-												<div align="left"><br/>
-										  </div>
-												<label id="label_rubro">
-												<div align="left">
-												  <input type="checkbox" autocomplete="off" name="rubro" value="7"/> 
-												  Prestadora</div>
-												</label>
-												<div align="left"><br/>
-										  </div>
-												<label id="label_rubro">
-												<div align="left">
-												  <input type="checkbox" autocomplete="off" name="rubro" value="8"/> 
-												  Otros</div>
-												</label>
-												<div align="left"><br/>										
-									            </div></td>
-										<td><div align="left"><span class="error" id="rubro_error">Debe seleccionar al menos un rubro</span></div></td>
-									</tr>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="4"><span class="alert">*</span> Dato
+										Obligatorio</td>
+								</tr>
+								
+								
+								<tr>
+									<td>Contraseña <span class="alert">*</span></td>
+									<td colspan="2"><input type="password"  wicket:id="Contraseña" name="nombre"
+										maxlength="100" autocomplete="off" size="26" /></td>
+									<td><span wicket:id="passF"/></td>
+								</tr>
+								<tr>
+									<td>Nombre <span class="alert">*</span></td>
+									<td colspan="2"><input wicket:id="Nombre" type="text" name="nombre"
+										maxlength="100" autocomplete="off" size="26" /></td>
+									<td><span wicket:id="nombreF"/></td>
+								</tr>
+								<tr>
+									<td>Apellido <span class="alert">*</span></td>
+									<td colspan="2"><input wicket:id="Apellido" type="text" name="apellido"
+										maxlength="100" autocomplete="off" size="26" /></td>
+									<td><span wicket:id="apellidoF"/></td>
+								</tr>
+								<tr>
+									<td>Tipo y N° de Documento <span class="alert">*</span></td>
+									<td colspan="2"><select wicket:id="Tipo de documento" name="tipo_doc" id="tipo_doc">
+											<option value="D" selected="selected">DNI</option>
+											<option value="V">Libreta Cívica</option>
+											<option value="E">Libreta de Enrolamiento</option>
+											<option value="P">Pasaporte</option>
+											<option value="C">Cédula de Identidad</option>
+									</select>&nbsp;<input wicket:id="Documento" type="text" name="dni" id="dni" maxlength="8"
+										autocomplete="off" size="26" /></td>
+									<td><span wicket:id="documentoF"/>
+									</td>
+								</tr>
+								<tr>
+									<td>E-mail <span class="alert">*</span></td>
+									<td colspan="2"><input wicket:id="Email" type="text" name="mail" id="mail"
+										maxlength="50" autocomplete="off" size="26" /></td>
+									<td><span wicket:id="emailF"/>
+									</td>
+								</tr>
+								<tr>
+									<td>Teléfono <span class="alert">*</span></td>
+									<td colspan="2"><input wicket:id="Telefono" type="text" name="mail" id="mail"
+										maxlength="50" autocomplete="off" size="26" /></td>
+									<td><span wicket:id="telefonoF"/>
+									</td>
+								</tr>
+								<tr>
+									<td>Sexo <span class="alert">*</span></td>
+									<td colspan="2"><span wicket:id="Sexo"></span></td>
+									<td>&nbsp;
+									</td>
+								</tr>
+								<tr>
+									<td>Fecha de nacimiento <span class="alert">*</span></td>
+									<td colspan="2"><input wicket:id="Fecha de nacimiento" type="text" name="fecha_nac_dia"
+										id="fecha_nac_dia" autocomplete="off" maxlength="10" size="10" /> dd/mm/aaaa</td>
+									<td><span class="error" wicket:id="fechaF" id="date_error"></span>
+									</td>
+								</tr>
+								<tr>
+									<td>Provincia (de residencia actual)<span class="alert">*</span>
+									</td>
+									<td colspan="2"><select wicket:id="Provincia" name="provincia" id="provincia"
+										autocomplete="off">
+											<option value="">seleccionar</option>
+
+											<option value="BUENOS AIRES">BUENOS AIRES</option>
+
+											<option value="CAPITAL FEDERAL">CAPITAL FEDERAL</option>
+
+											<option value="CATAMARCA">CATAMARCA</option>
+
+											<option value="CHACO">CHACO</option>
+
+											<option value="CHUBUT">CHUBUT</option>
+
+											<option value="CORDOBA">CORDOBA</option>
+
+											<option value="CORRIENTES">CORRIENTES</option>
+
+											<option value="ENTRE RIOS">ENTRE RIOS</option>
+
+											<option value="FORMOSA">FORMOSA</option>
+
+											<option value="JUJUY">JUJUY</option>
+
+											<option value="LA PAMPA">LA PAMPA</option>
+
+											<option value="LA RIOJA">LA RIOJA</option>
+
+											<option value="MENDOZA">MENDOZA</option>
+
+											<option value="MISIONES">MISIONES</option>
+
+											<option value="NEUQUEN">NEUQUEN</option>
+
+											<option value="RIO NEGRO">RIO NEGRO</option>
+
+											<option value="SALTA">SALTA</option>
+
+											<option value="SAN JUAN">SAN JUAN</option>
+
+											<option value="SAN LUIS">SAN LUIS</option>
+
+											<option value="SANTA CRUZ">SANTA CRUZ</option>
+
+											<option value="SANTA FE">SANTA FE</option>
+
+											<option value="SANTIAGO DEL ESTERO">SANTIAGO DEL
+												ESTERO</option>
+
+											<option value="TIERRA DEL FUEGO">TIERRA DEL FUEGO</option>
+
+											<option value="TUCUMAN">TUCUMAN</option>
+
+									</select></td>
+									<td>&nbsp;
+									</td>
+								</tr>
+								<tr>
+									<td>Localidad <span class="alert">*</span></td>
+									<td colspan="2"><input wicket:id="Localidad" type="text" name="localidad"
+										maxlength="100" autocomplete="off" size="26" /></td>
+									<td><span wicket:id="localidadF"/></td>
+								</tr>
+								<tr>
+									<td colspan="4" style="border: 0px;">Seleccione el
+										servicio que desea contratar:<span class="alert">*</span></td>
+								</tr>
+								<tr>
+									<td valign="top" width="220">&nbsp;</td>
+									<td valign="top" colspan="2"><span wicket:id="plan"></span></td>
+
+									<td width="270"><span wicket:id="planF"></span>							</td>
+							  </tr>
+								<tr>
+									<td colspan="4" style="border: 0px;"><label>Indique de que rubro
+											es su empresa :</label><br /></td>
+								</tr>
+								<tr>
+									<td valign="top" width="220">&nbsp;</td>
+									<td valign="top" colspan="2"><span wicket:id="rubros"></span></td>
+
+									<td width="270">&nbsp;
+									</td>
 									
-									<tr>
-										<td colspan="4" align="center">
-											<input class="btnSubmit" type="submit" value="Aceptar"/>										</td>
-									</tr>									
-								</table>
-								<br/>
+							  </tr>
+								
+								<tr>
+									<td colspan="4" align="center"><input class="btnSubmit"
+										type="submit" value="Aceptar" /></td>
+								</tr>
+								
+							
+							</table>
 							</form>
 						</div>
 					</div>

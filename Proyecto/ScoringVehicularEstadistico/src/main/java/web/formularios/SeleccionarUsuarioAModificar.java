@@ -24,7 +24,7 @@ import web.validators.ExisteUsuarioValidator;
 
 
 
-public class EliminarUsuario extends Formulario {
+public class SeleccionarUsuarioAModificar extends Formulario {
 
 	/**
 	 * 
@@ -36,21 +36,19 @@ public class EliminarUsuario extends Formulario {
 	FeedbackPanel panel;
 
 	@SuppressWarnings("unchecked")
-	public EliminarUsuario(final Menu menu) {
+	public SeleccionarUsuarioAModificar(final Menu menu) {
 		super(menu);
 		
 		
 
 		
-		 Form<Void> formulario = new Form<Void>("formularioEliminar") {
+		 Form<Void> formulario = new Form<Void>("formularioSeleccion") {
 
 				private static final long serialVersionUID = 1L;
 
 				protected void onSubmit() {
 
-					AdministradorUsuarios.eliminarUsuario(usernameTF.getModelObject());
-					info("Usuario eliminado con exito.");
-					this.setVisible(false);
+					menu.cambiarFormulario(new ModificarUsuario(menu,AdministradorUsuarios.obtenerUsuario(usernameTF.getModelObject())));
 
 				}
 			};
