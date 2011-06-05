@@ -15,11 +15,23 @@ public class UsernameValidator extends AbstractValidator{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private String usernameViejo;
+
+	public UsernameValidator(String username) {
+		usernameViejo=username;
+		
+	}
+	
+	public UsernameValidator(){
+		usernameViejo=null;
+		
+	}
 
 	@SuppressWarnings({ "unchecked" })
 	@Override
 	protected void onValidate(IValidatable usuario) {
         String value = ( String )usuario.getValue();
+        if((usernameViejo!=null)&&(usernameViejo.compareTo(value)==0)) return;
 	    if(AdministradorUsuarios.existeUsuario(value))	error( usuario);
 	    
 		

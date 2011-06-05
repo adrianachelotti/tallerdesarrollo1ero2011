@@ -6,6 +6,7 @@ import hibernate.AdministradorUsuarios;
 import hibernate.AppInit;
 import hibernate.domain.usuarios.Usuario;
 
+import org.apache.wicket.feedback.FeedbackMessage;
 import org.apache.wicket.markup.html.WebPage;
 
 import org.apache.wicket.markup.html.form.Form;
@@ -17,6 +18,10 @@ import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.util.value.ValueMap;
+
+import web.utils.ErrorLevelsFeedbackMessageFilter;
+import web.utils.FeedbackLabel;
+import web.validators.ExisteUsuarioValidator;
 
 public class Login2 extends WebPage {
 
@@ -51,7 +56,8 @@ public class Login2 extends WebPage {
 		};
 
 		add(formulario);
-		formulario.add(new FeedbackPanel("mensajes"));
+		FeedbackPanel panel=new FeedbackPanel("mensajes");
+		formulario.add(panel);
 		
 		if(AppInit.inicializarAplicacion()) info("No hay usuarios cargados en la base de datos. Ingrese al sistema usando username='admin' y constraseña='admin'.");
 		else{
@@ -63,12 +69,18 @@ public class Login2 extends WebPage {
 		// text field de username
 		usernameTF = new TextField<String>("username", new Model<String>(),	String.class);
 		usernameTF.setRequired(true);
+		usernameTF.add(new ExisteUsuarioValidator());
+		
 		formulario.add(usernameTF);
 
 		// textfield de contraseña
 		passTF = new PasswordTextField("pass", new PropertyModel<String>(properties, "password"));
 		passTF.setRequired(true);
 		formulario.add(passTF);
+		
+		
+
+		
 
 
 		

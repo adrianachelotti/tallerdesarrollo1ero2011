@@ -256,3 +256,53 @@ td.footer{
   background-color:#E5E5E5;
  }
  
+ 
+.feedbacklabel {
+    color: red;
+    font-family: Arial;
+	font-size: 14px;
+}
+
+
+.table td{
+	font-family: Arial;
+	font-size: 14px;
+	color: #333;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #CCC;
+}
+
+.table th{
+	font-family: Arial;
+	font-size: 14px;
+	font-weight:bold;
+	color: #333;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #CCC;
+}
+
+.table td a{
+	color:#0062a8;
+	text-decoration:none;
+}
+
+.table td a:hover{
+	color:#0062a8;
+	text-decoration:underline;	
+}
+
+.table td a:visited{
+	color:#0062a8;
+	text-decoration:none;	
+}
+
+
+
+
+ 
