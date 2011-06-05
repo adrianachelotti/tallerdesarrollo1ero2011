@@ -20,7 +20,7 @@ public class Usuario {
 	private String apellido;
 	
 	private String email;
-	private boolean activado;
+	private Boolean activado=false;
 	
 		
 	
@@ -34,6 +34,7 @@ public class Usuario {
 		this.pass=pass;
 		this.nombre=nombre;
 		this.email=email;
+		
 	}
 
 	@Id
