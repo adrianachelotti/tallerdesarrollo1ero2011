@@ -14,54 +14,104 @@
 						<div id="form">
 							<form name="frm_reclutamiento" wicket:id="formularioVer"
 								action="" method="post">
-								<table border="0" cellpadding="5" cellspacing="0" width="1000"
-									class="table">
+								<table border="0" cellpadding="5" cellspacing="0" width="1024"
+									class="table" wicket:id="theContainer">
 <thead>
 										<!--  HEADINGS -->
 										<tr>
-											<th>Username</th>
-											<th>Nombre</th>
-											<th>Apellido</th>
-											<th>Perfil</th>
-											<th>Email</th>
-											<th>Teléfono</th>
-											<th>Servicio</th>
-											<th>Modificar</th>
-											<th>Activado</th>
-											<th>Eliminar</th>
-
-										</tr>
+											<th width="101">Username</th>
+											<th width="103">Nombre</th>
+											<th width="93">Apellido</th>
+											<th width="71">Perfil</th>
+											<th width="98">Email</th>
+											<th width="95">Teléfono</th>
+											<th width="163">Servicio</th>
+											<th width="76">Modificar</th>
+											<th width="67">Activado</th>
+											<th width="57">Eliminar</th>
+					</tr>
 									</thead>
+									
+									
+									 
+                        <!-- COMPONENTES DE LA CONSULTA -->
+                        <tr>
+                        <td>
+                          
+                          <div align="left">
+                            <input class="componentetabla" type="text" size="15" wicket:id="usernameTB"  />
+                          </div></td>
+                        <td>
+                          
+                          <div align="left">
+                            <input class="componentetabla" type="text" size="15" wicket:id="nombreTB"  />
+                          </div></td>
+                        
+                        <td>
+                          
+                          <div align="left">
+                            <input class="componentetabla" type="text" size="15" wicket:id="apellidoTB"  />
+                          </div></td>
+                        
+                        <td>
+                          
+                          <div align="left">
+                            <select wicket:id="tipo" class="componentetabla" ></select>
+
+                          </div></td>
+                        
+                        <td>
+                          
+                          <div align="left">
+                            <!--NADA-->
+                          </div></td>
+                        
+                        <td>
+                          
+                          <div align="left">
+                            <!--NADA-->
+                          </div></td>
+                        
+                        <td>
+                          
+                          <div align="left">
+                            <select wicket:id="servicio" class="componentetabla" ></select>
+                          </div></td>
+                        <td>
+                          
+                          <div align="left">
+                            <!--NADA-->
+                          </div></td>
+                        <td>
+                          
+                          <div align="left">
+                            <!--NADA-->
+                          </div></td>
+                        <td>
+                          
+                          <div align="left">
+                            <!--NADA-->
+                          </div></td>
+                        </tr>
+                        
+									
+									
 									<tr wicket:id="usuarios">
 
 										
 
 
-										<td><span wicket:id="username" />
-										</td>
-										<td><span wicket:id="nombre" />
-										</td>
-										<td><span wicket:id="apellido" />
-										</td>
-										<td><span wicket:id="tipo" />
-										</td>
-										<td><span wicket:id="email" />
-										</td>
-										<td><span wicket:id="telefono" />
-										</td>
-										<td><span wicket:id="servicio" />
-										</td>
-										<td><a href="#" wicket:id="link">Modificar</a>
-										</td>
+										<td><span wicket:id="username" />										</td>
+										<td><span wicket:id="nombre" />										</td>
+										<td><span wicket:id="apellido" />										</td>
+										<td><span wicket:id="tipo" /></td>
+									  <td><span wicket:id="email" />										</td>
+										<td><span wicket:id="telefono" /></td>
+									  <td><span wicket:id="servicio" />										</td>
+										<td><a href="#" wicket:id="link">Modificar</a>										</td>
 										
-										<td><input type="checkbox" wicket:id="checkActivar" />
-										</td>
-										<td><input type="checkbox" wicket:id="checkEliminar" />
-										</td>
-										
-
-
-
+										<td><input type="checkbox" wicket:id="checkActivar" />										</td>
+										<td><input type="checkbox" wicket:id="checkEliminar" />										</td>
 									</tr>
 									<tr>
                         <td colspan="10"><span wicket:id="pager">navigation
@@ -75,12 +125,8 @@
                                  id="enviar" class="btnSubmit" value="Aplicar" />
                         </div></td>
                 </tr>
-									
-
-
-
 							  </table>
-							</form>
+						  </form>
 							
 						
 							
