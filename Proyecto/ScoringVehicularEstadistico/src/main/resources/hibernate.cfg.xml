@@ -26,6 +26,7 @@
 		<mapping class="hibernate.domain.usuarios.Operador" />
 		<mapping class="hibernate.domain.usuarios.Transaccion" />
 		<mapping class="hibernate.domain.usuarios.Servicio" />
+		<mapping class="hibernate.domain.consultas.Consulta" />
 		<mapping class="hibernate.domain.conductores.Conductor" />
 		<mapping class="hibernate.domain.sistemaFinanciero.DeudaSistemaFinanciero" />
 		<mapping class="hibernate.domain.sistemaJudicial.ExpedienteJudicial" />
