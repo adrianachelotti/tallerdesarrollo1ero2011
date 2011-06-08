@@ -6,7 +6,7 @@ import hibernate.AdministradorUsuarios;
 import hibernate.AppInit;
 import hibernate.domain.usuarios.Usuario;
 
-import org.apache.wicket.feedback.FeedbackMessage;
+
 import org.apache.wicket.markup.html.WebPage;
 
 import org.apache.wicket.markup.html.form.Form;

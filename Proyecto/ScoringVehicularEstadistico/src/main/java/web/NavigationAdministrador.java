@@ -10,7 +10,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 
 import web.formularios.ActualizarBaseDeDatos;
 import web.formularios.Ayuda;
-import web.formularios.Consulta;
+import web.formularios.Consultar;
 import web.formularios.ConsultaHistorial;
 import web.formularios.ConsultarPagos;
 import web.formularios.Contactenos;
@@ -191,7 +191,7 @@ public class NavigationAdministrador extends Panel {
 			@Override
 			public void onClick() {
 
-				menu.cambiarFormulario(new Consulta(menu));
+				menu.cambiarFormulario(new Consultar(menu));
 
 			}
 
