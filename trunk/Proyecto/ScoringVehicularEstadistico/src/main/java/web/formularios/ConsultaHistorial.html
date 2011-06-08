@@ -3,72 +3,110 @@
 <html>
 <body>
 	<wicket:panel>
-		
-		<br>
-		
 
-		<table border="0" cellpadding="0" cellspacing="0" align="center" width="780">
-			<tr>
-				<td>
-					<div class="contentbox" wicket:id="contenido">
-						<div id="tit">Historial de consultas</div>
-						<div id="form">
-						<br>
-							<form wicket:id="formularioHistorial" name="frm_reclutamiento" action="" method="post">
-								<table border="0" cellpadding="0" cellspacing="0" width="780" class="table_form">
-												<thead>
-					<!--  HEADINGS -->
-					<tr>
-						<th class="alert">Tipo de documento</th>
-						<th>Número de documento</th>
-						<th>Nombre</th>
-						<th>Apellido</th>
-						<th>Patente</th>
-						<th>Fecha</th>
-						<th>Ver consulta</th>
+		<div class="contentbox">
 
-					</tr>
-				</thead>
-									<tr>
-										<td>DNI</td>
-										<td>3320675</td>
-										<td>Juan</td>
-										<td>Perez</td>
-										<td>ABC123</td>
-										<td>01/01/2011</td>
-										<td><a wicket:id="link1" href="#">Ver consulta</a></td>
-									</tr>
-									<tr>
-										<td>DNI</td>
-										<td>3021875</td>
-										<td>Ana</td>
-										<td>García</td>
-										<td>DEF321</td>
-										<td>24/01/2011</td>
-										<td><a wicket:id="link2" href="#">Ver consulta</a></td>
-									</tr>
-									<tr>
-										<td>DNI</td>
-										<td>3320675</td>
-										<td>Juan</td>
-										<td>Perez</td>
-										<td>ABC123</td>
-										<td>01/01/2011</td>
-										<td><a wicket:id="link3" href="#">Ver consulta</a></td>
-									</tr>
-									
+			<table border="0" cellpadding="0" cellspacing="0" align="center"
+				width="800">
+				<tr>
+					<td>
+						<div id="contenido" wicket:id="contenido">
+							<div id="tit">Historial de consultas</div>
+							<span class="textopanel" wicket:id="mensajes" /> <br>
+
+							<div id="form">
+								<form name="frm_reclutamiento" wicket:id="formularioVer"
+									action="" method="post">
+									<table border="0" cellpadding="5" cellspacing="0" width="800"
+										class="table" wicket:id="theContainer">
+										<thead>
+											<!--  HEADINGS -->
+											<tr>
+												<th>Tipo de documento</th>
+												<th>Documento</th>
+												<th>Apellido</th>
+												<th>Nombre</th>
+
+												<th>Fecha</th>
+												<th>Ver</th>
+
+											</tr>
+										</thead>
 
 
-								</table>
-								<br/>
-							</form>
+
+
+
+										<tr wicket:id="consultas">
+
+
+
+
+											<td><span wicket:id="tipoDoc" />
+											</td>
+											<td><span wicket:id="documento" />
+											</td>
+											<td><span wicket:id="apellido" />
+											</td>
+											<td><span wicket:id="nombre" /></td>
+											<td><span wicket:id="fecha" />
+											</td>
+											<td><a href="#" wicket:id="link">Ver consulta</a>
+											</td>
+
+
+										</tr>
+										<tr>
+											<td colspan="10"><span wicket:id="pager">navigation
+													controls here</span>
+											</td>
+										</tr>
+								
+
+										
+									</table><br><br><br>
+									<table class="table_form" align="left" width="800">
+<tr>
+											<td colspan="3" class="titulo"><b>Rango de fechas</b>
+											</td>
+
+										</tr>
+
+											<tr>
+											<td width="98">Fecha desde:</td>
+											<td width="147"> <input type="text" size="15"
+												wicket:id="desde" />
+											</td>
+											<td width="539"><span class="error" wicket:id="desdeF" id="date_error"/></td>
+									  </tr>
+										<tr>
+											<td>Fecha hasta</td><td><input  type="text" size="15"
+												wicket:id="hasta" />
+											</td>
+											<td><span class="error" wicket:id="hastaF" id="date_error"/></td>
+										</tr>
+										<tr>
+											<td colspan="10"><div align="center">
+													<input name="registrar" type="submit" id="enviar"
+														class="btnSubmit" value="Aplicar" />
+												</div>
+											</td>
+										</tr>
+										</table>
+								</form>
+
+
+
+
+							</div>
 						</div>
-					</div>
-				</td>
-			</tr>
-		</table>
-		</wicket:panel>
-		</body>
-		</html>
-	
+					</td>
+				</tr>
+			</table>
+		</div>
+	</wicket:panel>
+</body>
+</html>
+
+
 

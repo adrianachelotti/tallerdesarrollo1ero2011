@@ -9,27 +9,59 @@
 				<td>
 					<div id="contenido" wicket:id="contenido">
 						<div id="tit">Resultado de la Consulta</div>
+						<span class="textopanel" wicket:id="mensajes" />
 						<div id="form">
-							<form name="frm_reclutamiento" method="post">
-								<table border="0" cellpadding="0" cellspacing="0" width="780" class="table_form">
+							
+								<table border="0" cellpadding="5" cellspacing="0" width="800"
+									class="table" >
+<thead>
+										<!--  HEADINGS -->
+										<tr>
+											<th >Tipo de documento</th>
+											<th >Documento</th>
+											<th >Nombre</th>
+											<th >Apellido</th>
+											<th >Sexo</th>
+											<th >Lugar de residencia</th>
+											<th >Profesión</th>
+											<th >Fecha nacimiento</th>
+											
+											<th >Seleccionar</th>
+											
+					</tr>
+									</thead>
 									
-								
-									<tr>
-										<td>
-											<a href="#" wicket:id="link1">Resultado 1</a><br>
-											<a href="#" wicket:id="link2">Resultado 2</a><br>
-											<a href="#" wicket:id="link3">Resultado 3</a><br>
-											<a href="#" wicket:id="link4">Resultado 4</a><br>
-											<a href="#" wicket:id="link5">Resultado 5</a><br>
-											<a href="#" wicket:id="link6">Resultado 6</a><br>
-										</td>
+									
+						
+									
+									
+									<tr wicket:id="consultas">
+
 										
-									</tr>							
-								
-																
-								</table>
-								<br/>
-							</form>
+
+
+										<td><span wicket:id="tipoDoc" /></td>
+									  <td><span wicket:id="documento" /></td>									
+										<td><span wicket:id="nombre" />	</td>
+										<td><span wicket:id="apellido" /></td>										
+									  <td><span wicket:id="sexo" /></td>
+									  <td><span wicket:id="residencia" /></td>
+									  <td><span wicket:id="profesion" /></td>
+									  <td><span wicket:id="fechanacimiento" /></td>
+										
+									  
+										<td><a href="#" wicket:id="link">Seleccionar</a></td>
+										
+																		
+									</tr>
+									<tr>
+                        <td colspan="10"><span wicket:id="pager">navigation
+                        controls here</span></td>
+                </tr>
+									
+									
+							  </table>
+						  
 						</div>
 					</div>
 				</td>
