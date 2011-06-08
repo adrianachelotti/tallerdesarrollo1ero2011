@@ -302,7 +302,26 @@ td.footer{
 	text-decoration:none;	
 }
 
+.componentetabla{
+	font-family: Arial;
+	font-size: 10px;
+	color: #000;
+	
+	};
+	
+.titulo{
+		color:#333;
+	font-family: Arial;
+	font-size: 28px;
+		
+}
 
+.infocuenta{
+		color:#FFF;
+	font-family: Arial;
+	font-size: 12px;
+		
+}
 
 
  
