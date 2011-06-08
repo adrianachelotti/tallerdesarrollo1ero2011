@@ -19,8 +19,6 @@ import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.util.value.ValueMap;
 
-import web.utils.ErrorLevelsFeedbackMessageFilter;
-import web.utils.FeedbackLabel;
 import web.validators.ExisteUsuarioValidator;
 
 public class Login2 extends WebPage {
