@@ -6,6 +6,8 @@ import hibernate.domain.vehiculos.Infraccion;
 import hibernate.domain.vehiculos.Vehiculo;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Iterator;
 
 import java.util.Set;
 
@@ -42,10 +44,11 @@ public class Conductor {
 	private Integer cantidadCerosEnScoring;
 	private Integer edad;
 	private Set<Infraccion> infracciones;
-	private Set<DeudaSistemaFinanciero> deudasSistemaFinanciero;
-	private Set<ExpedienteJudicial> expedientesJudiciales;
-	private Set<Vehiculo> vehiculos;
+	private Set<DeudaSistemaFinanciero> deudasSistemaFinanciero=new HashSet<DeudaSistemaFinanciero>();
+	private Set<ExpedienteJudicial> expedientesJudiciales=new HashSet<ExpedienteJudicial>();
+	private Set<Vehiculo> vehiculos=new HashSet<Vehiculo>();
 	
+
 
 
     @OneToMany (cascade = CascadeType.ALL,fetch= FetchType.EAGER)
@@ -196,14 +199,26 @@ public class Conductor {
 		this.vehiculos = vehiculos;
 	}
 	
-    @OneToMany (cascade = CascadeType.ALL,fetch= FetchType.EAGER)
-    @Cascade(org.hibernate.annotations.CascadeType.DELETE_ORPHAN)
+    @ManyToMany (cascade = {CascadeType.ALL}, fetch= FetchType.EAGER)
     @JoinTable(
         name="conductor_vehiculo",
         joinColumns = @JoinColumn( name="conductor_id"),
         inverseJoinColumns = @JoinColumn( name="vehiculo_id"))
 	public Set<Vehiculo> getVehiculos() {
 		return vehiculos;
+	}
+	public void agregarVehiculo(Vehiculo v1) {
+		vehiculos.add(v1);
+		
+	}
+	public boolean conduce(String patente) {
+		Iterator<Vehiculo> itVehiculos=vehiculos.iterator();
+		boolean encontrado=false;
+		while((!encontrado)&&(itVehiculos.hasNext())){
+			if(itVehiculos.next().getPatente().compareTo(patente)==0) encontrado=true;
+		}
+		
+		return encontrado;
 	}
 	
 }
