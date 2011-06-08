@@ -16,6 +16,10 @@ import org.apache.wicket.request.IRequestCodingStrategy;
 import org.apache.wicket.request.IRequestCycleProcessor;
 
 public class MyApp extends WebApplication {
+	
+	
+   
+
 
 	@Override
 	public Class<? extends Page> getHomePage() {
@@ -30,6 +34,7 @@ public class MyApp extends WebApplication {
 	@Override
 	protected void init() {
 		super.init();
+		getDebugSettings().setAjaxDebugModeEnabled(false);
 		getSecuritySettings().setAuthorizationStrategy(
 				new IAuthorizationStrategy() {
 					public boolean isActionAuthorized(Component component,Action action) {

@@ -11,7 +11,7 @@ import web.formularios.ConsultarPagos;
 import web.formularios.FormularioDefault;
 import web.formularios.ModificarDatosCuenta;
 
-import web.formularios.Consulta;
+import web.formularios.Consultar;
 import web.formularios.ConsultaHistorial;
 import web.formularios.Contactenos;
 
@@ -88,7 +88,7 @@ public class NavigationCliente extends Panel {
 			@Override
 			public void onClick() {
 
-				menu.cambiarFormulario(new Consulta(menu));
+				menu.cambiarFormulario(new Consultar(menu));
 
 			}
 

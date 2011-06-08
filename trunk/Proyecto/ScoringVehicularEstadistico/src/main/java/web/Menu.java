@@ -8,6 +8,7 @@ import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import web.formularios.FormularioDefault;
 
 
+import hibernate.domain.usuarios.Cliente;
 import hibernate.domain.usuarios.Usuario;
 
 public class Menu extends AuthenticatedWebPage{
@@ -36,6 +37,16 @@ public class Menu extends AuthenticatedWebPage{
 		
 		this.formularioActual = new FormularioDefault(this,"Default");
 		add(this.formularioActual);
+		
+		String textoCuenta="Bienvenido <b>"+usuario.getNombre()+"</b> !";
+		if(usuario.esOperador()) textoCuenta+="<br> Usted ha ingresado como <b>Operador</b>";
+		if(usuario.esAdministrador()) textoCuenta+="<br> Usted ha ingresado como <b>Administrador</b>";
+		if(!usuario.esOperador()) textoCuenta+="<br><b>Total de consultas realizadas:</b> "+usuario.getCantidadConsultas();
+		if(usuario.esCliente()) textoCuenta+="<br> <b>Servicio contratado:</b> "+((Cliente)usuario).getServicio().getDescripcion();
+		
+		Label lCuenta=new Label("infoCuenta",textoCuenta);
+		lCuenta.setEscapeModelStrings(false);
+		add(lCuenta);
 		
 		
 		
