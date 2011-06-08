@@ -13,7 +13,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -29,32 +29,19 @@ import org.hibernate.annotations.Cascade;
 @Table(name="vehiculos")
 public class Vehiculo {
 
-	String patente;
-	Integer modelo;
-	String estadoInterior;
-	String estadoExterior;
-	String estadoMecanica;
-	Set<VerificacionTecnica> verificacionesTecnicas;
-	Set<Siniestro> siniestros;
+	private String patente;
+	private String modelo;
+	private String marca;
+	private String estadoInterior;
+	private String estadoExterior;
+	private String estadoMecanica;
+	private Set<VerificacionTecnica> verificacionesTecnicas;
+	private Set<Siniestro> siniestros;
+	private Set<Conductor> conductores;
 	
-private Conductor conductor;
-	
-	public void setConductor(Conductor conductor) {
-		this.conductor = conductor;
-	}
-	
-    @ManyToOne(
 
-            cascade = { CascadeType.PERSIST, CascadeType.MERGE },
-            fetch = FetchType.EAGER,
-            targetEntity = hibernate.domain.conductores.Conductor.class
-
-            )
-
-	public Conductor getConductor() {
-		return conductor;
-	}
 	
+
 	
 	
     @OneToMany (cascade = CascadeType.ALL,fetch= FetchType.EAGER)
@@ -92,10 +79,10 @@ private Conductor conductor;
 	public void setPatente(String patente) {
 		this.patente = patente;
 	}
-	public Integer getModelo() {
+	public String getModelo() {
 		return modelo;
 	}
-	public void setModelo(Integer modelo) {
+	public void setModelo(String modelo) {
 		this.modelo = modelo;
 	}
 	public String getEstadoInterior() {
@@ -115,6 +102,29 @@ private Conductor conductor;
 	}
 	public void setEstadoMecanica(String estadoMecanica) {
 		this.estadoMecanica = estadoMecanica;
+	}
+
+	public void setConductores(Set<Conductor> conductores) {
+		this.conductores = conductores;
+	}
+
+	
+    @ManyToMany(
+
+            cascade = { CascadeType.ALL },
+            fetch = FetchType.EAGER,
+            targetEntity = hibernate.domain.conductores.Conductor.class,
+            mappedBy = "vehiculos"
+
+            )
+	public Set<Conductor> getConductores() {
+		return conductores;
+	}
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+	public String getMarca() {
+		return marca;
 	}
 	
 	

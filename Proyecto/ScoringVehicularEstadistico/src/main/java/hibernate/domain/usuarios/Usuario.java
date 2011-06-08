@@ -21,6 +21,7 @@ public class Usuario {
 	
 	private String email;
 	private Boolean activado=false;
+	private Integer cantidadConsultas=0;
 	
 		
 	
@@ -115,6 +116,17 @@ public class Usuario {
 
 	public boolean isActivado() {
 		return activado;
+	}
+
+	public Integer getCantidadConsultas() {
+		return cantidadConsultas;
+	}
+	
+	public void setCantidadConsultas(Integer valor) {
+		cantidadConsultas=valor;
+	}
+	public void aumentarConsutlas(){
+		cantidadConsultas++;
 	}
 
 
