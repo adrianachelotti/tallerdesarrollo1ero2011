@@ -189,7 +189,7 @@ super(menu);
    		formulario.add(new FeedbackLabel("usernameF", usernameTF));
 		
 		// text field de pass
-		passTF = new PasswordTextField("Contraseña", new PropertyModel<String>(properties, "password"));
+		passTF = new PasswordTextField("ContraseÃ±a", new PropertyModel<String>(properties, "password"));
 		passTF.setResetPassword(false);
 		passTF.setDefaultModelObject(usuario.getPass());
 		passTF.setRequired(true);
@@ -224,7 +224,7 @@ super(menu);
 		
 		//dd tipo doc
 		tipoDocumentoModel = new Model<String>("DNI");
-        tipoDocumentoDD = new DropDownChoice<String>("Tipo de documento",tipoDocumentoModel, Arrays.asList(new String[] { "DNI","Libreta Cívica","Libreta de Enrolamiento","Pasaporte", "Cédula de Identidad" })) ;
+        tipoDocumentoDD = new DropDownChoice<String>("Tipo de documento",tipoDocumentoModel, Arrays.asList(new String[] { "DNI","Libreta CÃ­vica","Libreta de Enrolamiento","Pasaporte", "CÃ©dula de Identidad" })) ;
         tipoDocumentoDD.setRequired(true);
         formulario.add(tipoDocumentoDD);
         

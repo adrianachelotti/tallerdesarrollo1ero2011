@@ -1,67 +1,179 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<body>
-	<wicket:panel>
-		
-		<br>
-		
+<wicket:panel>
+	<div class="contentbox">
 
-		<table border="0" cellpadding="0" cellspacing="0" align="center" width="780">
+		<table border="0" cellpadding="0" cellspacing="0" align="center"
+			width="1024">
 			<tr>
 				<td>
-					<div class="contentbox" wicket:id="contenido">
-						<div id="tit">Resultado de la Consulta</div>
+					<div id="contenido" wicket:id="contenido">
+						<div id="titVerUsuarios">Ver usuarios</div>
+						<span class="textopanel" wicket:id="mensajes" /> <br>
+
 						<div id="form">
-						<br>
-							<form name="frm_reclutamiento" action="" method="post">
-								<table border="0" cellpadding="0" cellspacing="0" width="780" class="table_form">
-												<thead>
-					<!--  HEADINGS -->
-					<tr>
-						<th class="alert">Fecha</th>
-						<th>Monto</th>
-						<th>Concepto</th>
-						<th>Forma de pago</th>
-						<th>Pendiente</th>
+							<form name="frm_reclutamiento" wicket:id="formularioVer"
+								action="" method="post">
+								<table border="0" cellpadding="5" cellspacing="0" width="800"
+									class="table" wicket:id="theContainer">
+									<thead>
+										<!--  HEADINGS -->
+										<tr>
+											<th width="101">Username</th>
+											<th width="103">Nombre</th>
+											<th width="93">Apellido</th>
+											<th width="71">Servicio</th>
+											<th width="95">Forma de pago</th>
+											<th width="163">Fecha</th>
+											<th width="76">Concepto</th>
+											<th width="67">Monto</th>
 
-					</tr>
-				</thead>
+										</tr>
+									</thead>
+
+
+
+									<!-- COMPONENTES DE LA CONSULTA -->
 									<tr>
-										<td>20/03/2011</td>
-										<td>$100</td>
-										<td>Servicio consultas puntuales</td>
-										<td>Tarjeta de credito</td>
-										<td>NO</td>
+										<td>
+
+											<div align="left">
+												<input class="componentetabla" type="text" size="15"
+													wicket:id="usernameTB" />
+											</div>
+										</td>
+										<td>
+
+											<div align="left">
+												<input class="componentetabla" type="text" size="15"
+													wicket:id="nombreTB" />
+											</div>
+										</td>
+
+										<td>
+
+											<div align="left">
+												<input class="componentetabla" type="text" size="15"
+													wicket:id="apellidoTB" />
+											</div>
+										</td>
+
+										<td>
+
+											<div align="left">
+												<select wicket:id="servicioDD" class="componentetabla"></select>
+											</div>
+										</td>
+										
+										<td>
+
+											<div align="left">
+												<select wicket:id="formaPagoDD" class="componentetabla"></select>
+
+											</div>
+										</td>
+
+										<td>
+
+
+
+											<div align="left">
+												<!--NADA-->
+											</div>
+										</td>
+
+										<td>
+
+											<div align="left">
+												<!--NADA-->
+											</div>
+										</td>
+
+
+
+
+<td>
+
+										<div align="left">
+											<!--NADA-->
+										</div>
+										</td>
+										<td>
+
+											<div align="left">
+												<!--NADA-->
+											</div>
+										</td>
+
+
+
+									</tr>
+
+									<tr wicket:id="pagos">
+
+
+
+
+										<td><span wicket:id="username" /></td>
+										<td><span wicket:id="nombre" /></td>
+										<td><span wicket:id="apellido" /></td>
+										<td><span wicket:id="servicio" />
+										</td>
+										<td><span wicket:id="formaPago" />
+										</td>
+										<td><span wicket:id="fecha" />
+										</td>
+										<td><span wicket:id="concepto" />
+										</td>
+										<td><span wicket:id="monto" />
+										</td>
+
 									</tr>
 									<tr>
-										<td>20/04/2011</td>
-										<td>$100</td>
-										<td>Servicio consultas puntuales</td>
-										<td>Efectivo</td>
-										<td>NO</td>
+										<td colspan="10"><span wicket:id="pager">navigation
+												controls here</span>
+										</td>
 									</tr>
 
 
-									<tr>
-										<td>20/05/2011</td>
-										<td>$100</td>
-										<td>Servicio consultas puntuales</td>
-										<td>-</td>
-										<td>SI</td>
-									</tr>
-
-
+									
 								</table>
-								<br/>
+								<table class="table_form" align="left" width="800">
+									<tr>
+										<td colspan="3" class="titulo"><b>Rango de fechas</b></td>
+
+									</tr>
+
+									<tr>
+										<td width="98">Fecha desde:</td>
+										<td width="147"><input type="text" size="15"
+											wicket:id="desde" /></td>
+										<td width="539"><span class="error" wicket:id="desdeF"
+											id="date_error" />
+										</td>
+									</tr>
+									<tr>
+										<td>Fecha hasta</td>
+										<td><input type="text" size="15" wicket:id="hasta" /></td>
+										<td><span class="error" wicket:id="hastaF"
+											id="date_error" />
+										</td>
+									</tr>
+									<tr>
+										<td colspan="10"><div align="center">
+												<input name="registrar" type="submit" id="enviar"
+													class="btnSubmit" value="Aplicar" />
+											</div></td>
+									</tr>
+								</table>
 							</form>
+
+
+
+
 						</div>
 					</div>
 				</td>
 			</tr>
 		</table>
-		</wicket:panel>
-		</body>
-		</html>
-	
-
+	</div>
+</wicket:panel>

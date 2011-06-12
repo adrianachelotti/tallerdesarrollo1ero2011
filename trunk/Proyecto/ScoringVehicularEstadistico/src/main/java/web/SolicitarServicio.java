@@ -150,7 +150,7 @@ public class SolicitarServicio extends WebPage {
    		formulario.add(new FeedbackLabel("usernameF", usernameTF));
 		
 		// text field de pass
-		passTF = new PasswordTextField("Contraseña", new PropertyModel<String>(properties, "password"));
+		passTF = new PasswordTextField("ContraseÃ±a", new PropertyModel<String>(properties, "password"));
 		passTF.setRequired(true);
 		passTF.add(StringValidator.maximumLength(20));
 		passTF.add(StringValidator.minimumLength(5));
@@ -173,7 +173,7 @@ public class SolicitarServicio extends WebPage {
 		
 		//dd tipo doc
 		tipoDocumentoModel = new Model<String>("DNI");
-        tipoDocumentoDD = new DropDownChoice<String>("Tipo de documento",tipoDocumentoModel, Arrays.asList(new String[] { "DNI","Libreta Cívica","Libreta de Enrolamiento","Pasaporte", "Cédula de Identidad" })) ;
+        tipoDocumentoDD = new DropDownChoice<String>("Tipo de documento",tipoDocumentoModel, Arrays.asList(new String[] { "DNI","Libreta CÃ­vica","Libreta de Enrolamiento","Pasaporte", "CÃ©dula de Identidad" })) ;
         tipoDocumentoDD.setRequired(true);
         formulario.add(tipoDocumentoDD);
         
@@ -281,7 +281,7 @@ public class SolicitarServicio extends WebPage {
 		//ch acepta
 		aceptaCB = new CheckBox("acepta",new PropertyModel<Boolean>(this, "acepta"));
 		aceptaCB.setRequired(true);
-		Model textoAcepta = new Model("Debe aceptar términos y condiciones.");
+		Model textoAcepta = new Model("Debe aceptar tÃ©rminos y condiciones.");
 		formulario.add(new FeedbackLabel("aceptaF", aceptaCB,textoAcepta));
 		formulario.add(aceptaCB);
 		

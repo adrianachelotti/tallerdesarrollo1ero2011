@@ -48,6 +48,10 @@ public class EliminarUsuario extends Formulario {
 
 				protected void onSubmit() {
 
+					if(usernameTF.getModelObject().compareTo(menu.getUsuario().getUsername())==0){
+						info("No puede eliminarse a sí mismo.");
+						return;
+					}
 					AdministradorUsuarios.eliminarUsuario(usernameTF.getModelObject());
 					info("Usuario eliminado con exito.");
 					this.setVisible(false);

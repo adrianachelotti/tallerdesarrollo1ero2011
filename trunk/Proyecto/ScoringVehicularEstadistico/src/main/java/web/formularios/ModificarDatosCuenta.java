@@ -121,7 +121,7 @@ public class ModificarDatosCuenta extends Formulario {
         
 		
 		// text field de pass
-		passTF = new PasswordTextField("Contraseña", new PropertyModel<String>(properties, "password"));
+		passTF = new PasswordTextField("ContraseÃ±a", new PropertyModel<String>(properties, "password"));
 		passTF.setDefaultModelObject(usuario.getPass());
 		passTF.setResetPassword(false);
 		passTF.setRequired(true);
@@ -152,7 +152,7 @@ public class ModificarDatosCuenta extends Formulario {
 		
 		//dd tipo doc
 		tipoDocumentoModel = new Model<String>("DNI");
-        tipoDocumentoDD = new DropDownChoice<String>("Tipo de documento",tipoDocumentoModel, Arrays.asList(new String[] { "DNI","Libreta Cívica","Libreta de Enrolamiento","Pasaporte", "Cédula de Identidad" })) ;
+        tipoDocumentoDD = new DropDownChoice<String>("Tipo de documento",tipoDocumentoModel, Arrays.asList(new String[] { "DNI","Libreta Cï¿½vica","Libreta de Enrolamiento","Pasaporte", "Cï¿½dula de Identidad" })) ;
         tipoDocumentoDD.setRequired(true);
         formulario.add(tipoDocumentoDD);
         

@@ -119,6 +119,18 @@ list-style-type: none;
 	text-align: left;	
 }
 
+
+#titVerUsuarios{
+	color:#333;
+	font-family: Arial;
+	font-size: 28px;
+	border-bottom: 3px solid #0062a8;
+	width: 1000px;
+	padding-bottom: 5px;
+	text-align: left;	
+}
+
+
 #label_rubro{
 	text-transform: capitalize;
 }

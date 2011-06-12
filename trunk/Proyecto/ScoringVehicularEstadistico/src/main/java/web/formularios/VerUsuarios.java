@@ -73,7 +73,7 @@ public class VerUsuarios extends Formulario {
 
             @Override
             protected void onUpdate(AjaxRequestTarget target) {
-                    // esto es lo que hace al seleccionar una opción de alguno de los dd
+                    // esto es lo que hace al seleccionar una opciÃ³n de alguno de los dd
                     // o ingresar un valor en los textboxes
                     cargarNuevaConsulta();
                     target.addComponent(listContainer);
@@ -256,7 +256,7 @@ public class VerUsuarios extends Formulario {
 					item.add(new Label("nombre", usuario.getNombre()));
 					item.add(new Label("apellido", usuario.getApellido()));
 					item.add(new Label("tipo", usuario.esCliente()?"Cliente":usuario.esAdministrador()?"Administrador":"Operador"));
-					item.add(new Label("email", usuario.getEmail()));
+					
 					if(usuario.esCliente()){
 						Cliente cliente=(Cliente) usuario;
 						item.add(new Label("telefono", cliente.getTelefono()));

@@ -8,6 +8,8 @@ import org.hibernate.Session;
 
 
 
+
+
 import hibernate.domain.usuarios.Rubro;
 import hibernate.domain.usuarios.Usuario;
 import hibernate.util.HibernateUtil;
@@ -38,18 +40,35 @@ public class AdministradorUsuarios {
 		return Usuario;
 
 	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public static Usuario obtenerUsuario(Long id) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		List<Usuario> resultado = null;
+		Usuario Usuario = null;
+
+		Query query = session.createQuery("from Usuario usuario where usuario.id="+ id);
+		resultado = query.list();
+		session.getTransaction().commit();
+		if (!resultado.isEmpty())
+			Usuario = (Usuario) resultado.get(0);
+		return Usuario;
+
+	}
 
 	/*
-	 * Obtiene un usuario, si la contraseña y username son correctos
+	 * Obtiene un usuario, si la contraseï¿½a y username son correctos
 	 * 
 	 * @param username del usuario a obtener y validar
 	 * 
-	 * @param pass contraseña del usuario para obtener y validar
+	 * @param pass contraseï¿½a del usuario para obtener y validar
 	 * 
 	 * @return usuario con username
 	 * 
 	 * @return null si no existe usuario con ese username, o si no coincide la
-	 * contraseña
+	 * contraseï¿½a
 	 */
 
 	public static Usuario obtenerUsuarioValido(String username, String pass) {
@@ -120,7 +139,7 @@ public class AdministradorUsuarios {
 	 * 
 	 * @param usuario con atributos ya modificados
 	 * 
-	 * @return true si logra hacer la modificación con exito
+	 * @return true si logra hacer la modificaciï¿½n con exito
 	 * 
 	 * @return false si no
 	 */
@@ -184,6 +203,7 @@ public class AdministradorUsuarios {
 		
 	}
 
+	
 		
 
 	

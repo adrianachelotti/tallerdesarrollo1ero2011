@@ -16,6 +16,8 @@ public final class Sesion extends WebSession
 	
 	private Usuario usuario;
 	
+	private Boolean signedin;
+	
 	public Sesion(Request request) {
 		super(request);
 		// TODO Auto-generated constructor stub
@@ -29,18 +31,29 @@ public final class Sesion extends WebSession
 		if(username==null) return false;
 		if(pass==null) return false;
 		usuario=AdministradorUsuarios.obtenerUsuarioValido(username, pass);
-		return usuario != null;
+		if(usuario==null) return false;
+		signedin=usuario.isActivado();
+		return (usuario.isActivado());
+				
 	}
 
 
 	public boolean signedIn()
 	{
-		return usuario != null;
+		return signedin;
 	}
 
 	public Usuario getUsuario()
 	{
 		return usuario;
+	}
+	
+	public Boolean isSignedIn(){
+		return signedin;
+	}
+	
+	public void setSignedIn(Boolean signedin){
+		this.signedin=signedin;
 	}
 
 	
