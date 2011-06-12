@@ -34,7 +34,7 @@ public class Cliente extends Usuario{
 	}
 
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.EAGER)
 	public Servicio getServicio() {
 		return servicio;
 	}
