@@ -4,6 +4,8 @@ import java.sql.Date;
 
 import hibernate.domain.conductores.Conductor;
 import hibernate.domain.usuarios.Administrador;
+import hibernate.domain.usuarios.Cliente;
+import hibernate.domain.usuarios.Pago;
 import hibernate.domain.usuarios.Rubro;
 import hibernate.domain.usuarios.Servicio;
 import hibernate.domain.vehiculos.Vehiculo;
@@ -17,8 +19,41 @@ public class AppInit {
 		inicializarServicios();
 		inicializarRubros();
 		inicializarEjemplos();
-		return(inicializarUsuarios());
 		
+		
+		boolean primeraVez=inicializarUsuarios();
+		inicializarPagos();
+		return primeraVez;
+		
+		
+	}
+	private static void inicializarPagos() {
+		if(!AdministradorPagos.obtenerPagos().isEmpty()) return;
+		Pago pago=new Pago();
+		pago.setCliente(AdministradorClientes.obtenerCliente("cliente_con_pagos"));
+		pago.setConcepto("Mes Junio");
+		pago.setFecha(Date.valueOf("2011-06-01"));
+		pago.setMonto(100.0);
+		pago.setFormaPago("Contado");
+		AdministradorPagos.agregarPago(pago);
+		
+		
+		Pago pago2=new Pago();
+		pago2.setCliente(AdministradorClientes.obtenerCliente("cliente_con_pagos"));
+		pago2.setConcepto("Mes Mayo");
+		pago2.setFecha(Date.valueOf("2011-05-01"));
+		pago2.setMonto(100.0);
+		pago2.setFormaPago("Tarjeta de crÃ©dito");
+		AdministradorPagos.agregarPago(pago2);
+		
+		
+		Pago pago3=new Pago();
+		pago3.setCliente(AdministradorClientes.obtenerCliente("cliente_con_pagos"));
+		pago3.setConcepto("Mes Abril");
+		pago3.setFecha(Date.valueOf("2011-04-01"));
+		pago3.setMonto(100.0);
+		pago3.setFormaPago("Contado");
+		AdministradorPagos.agregarPago(pago3);
 		
 		
 	}
@@ -26,7 +61,7 @@ public class AppInit {
 		if(!AdministradorUsuarios.obtenerRubros().isEmpty()) return;
 		
 		AdministradorUsuarios.agregarRubro(new Rubro("Aseguradora"));
-		AdministradorUsuarios.agregarRubro(new Rubro("Empresa de logística"));
+		AdministradorUsuarios.agregarRubro(new Rubro("Empresa de logÃ­stica"));
 		AdministradorUsuarios.agregarRubro(new Rubro("Empresa de transporte"));
 		AdministradorUsuarios.agregarRubro(new Rubro("Empresa de finanzas"));
 		AdministradorUsuarios.agregarRubro(new Rubro("Prestadora"));
@@ -52,13 +87,28 @@ public class AppInit {
 		usuario.setPass("admin");
 		usuario.setNombre("Administrador default");
 		usuario.setApellido("Administrador default");
+		usuario.setActivado(true);
 		AdministradorUsuarios.agregarUsuario(usuario);
+		
+		otrosUsuarios();
 		return true;
 		
 		
 	}
 	
 	
+	private static void otrosUsuarios() {
+		
+		Cliente usuario=new Cliente();
+		usuario.setUsername("cliente_con_pagos");
+		usuario.setPass("12345");
+		usuario.setNombre("Maria");
+		usuario.setApellido("Perez");
+		usuario.setServicio(AdministradorServicios.obtenerServicio("CP"));
+		usuario.setActivado(false);
+		AdministradorUsuarios.agregarUsuario(usuario);
+		
+	}
 	@SuppressWarnings("deprecation")
 	private static void inicializarEjemplos() {
 		
@@ -132,7 +182,7 @@ public class AppInit {
 		conductor3.setTipoDocumento("DNI");
 		conductor3.setSexo("Masculino");
 		conductor3.setLugarResidencia("Devoto");
-		conductor3.setProfesion("Médico");
+		conductor3.setProfesion("Mï¿½dico");
 		conductor3.setFechaNacimiento(new Date(87, 1, 1));
 		conductor3.setNumeroDocumento(33206681);
 		

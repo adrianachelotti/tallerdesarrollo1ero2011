@@ -159,7 +159,7 @@
 
 	  		if(!isNumeroEntero(dni)||dni==""){
 
-	  			$("span#dni_error").text('Ingrese Número de Documento (sólo números)');
+	  			$("span#dni_error").text('Ingrese NÃºmero de Documento (sÃ³lo nÃºmeros)');
 
 				$("span#dni_error").css('visibility', 'visible');
 
@@ -169,7 +169,7 @@
 
 				if(!(dni.length==8||dni.length==7)){
 
-					$("span#dni_error").text('Número de Documento inválido');
+					$("span#dni_error").text('NÃºmero de Documento invÃ¡lido');
 
 					$("span#dni_error").css('visibility', 'visible');
 
@@ -219,7 +219,7 @@
 
 				if(!isDateSeparatedFields(fecha_nac_dia,fecha_nac_mes,fecha_nac_anio)){
 
-					$("span#date_error").text('La fecha ingresada no es válida');				
+					$("span#date_error").text('La fecha ingresada no es vÃ¡lida');				
 
 					$("span#date_error").css('visibility', 'visible');
 
@@ -329,7 +329,7 @@
 			<tr>
 				<td>
 					<div id="contenido" wicket:id="contenido">
-						<div id="tit">Eliminación de usuarios</div>
+						<div id="tit">EliminaciÃ³n de usuarios</div>
 						<span class="textopanel" wicket:id="mensajes" />
 						<div id="form">
 							<form name="frm_reclutamiento" action="" method="post" wicket:id="formularioEliminar">

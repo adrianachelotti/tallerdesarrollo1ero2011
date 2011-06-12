@@ -159,7 +159,7 @@
 
 	  		if(!isNumeroEntero(dni)||dni==""){
 
-	  			$("span#dni_error").text('Ingrese Número de Documento (sólo números)');
+	  			$("span#dni_error").text('Ingrese NÃºmero de Documento (sÃ³lo nÃºmeros)');
 
 				$("span#dni_error").css('visibility', 'visible');
 
@@ -169,7 +169,7 @@
 
 				if(!(dni.length==8||dni.length==7)){
 
-					$("span#dni_error").text('Número de Documento inválido');
+					$("span#dni_error").text('NÃºmero de Documento invÃ¡lido');
 
 					$("span#dni_error").css('visibility', 'visible');
 
@@ -219,7 +219,7 @@
 
 				if(!isDateSeparatedFields(fecha_nac_dia,fecha_nac_mes,fecha_nac_anio)){
 
-					$("span#date_error").text('La fecha ingresada no es válida');				
+					$("span#date_error").text('La fecha ingresada no es vÃ¡lida');				
 
 					$("span#date_error").css('visibility', 'visible');
 
@@ -363,15 +363,15 @@
 									</tr>
 									<tr>
 										<td>
-											Tipo y N° de Documento <span class="alert">*</span>
+											Tipo y Nro. de Documento <span class="alert">*</span>
 										</td>
 										<td >
 											<select name="tipo_doc" id="tipo_doc">
 											  <option value="D" selected="selected">DNI</option>
-											  <option value="V">Libreta Cívica</option>
+											  <option value="V">Libreta CÃ­vica</option>
 											  <option value="E">Libreta de Enrolamiento</option>
 											  <option value="P">Pasaporte</option>
-											  <option value="C">Cédula de Identidad</option>
+											  <option value="C">CÃ©dula de Identidad</option>
 											</select>&nbsp;<input type="text" name="dni" id="dni" maxlength="8" autocomplete="off" size="26"/>
 										</td>
 										<td><span class="error" id="dni_error"></span></td>
@@ -383,7 +383,7 @@
 										<td colspan="2">
 											<input type="text" name="mail" id="mail" maxlength="50" autocomplete="off" size="26"/>
 										</td>
-										<td><span class="error" id="mail_error">La dirección de correo no es válida</span></td>
+										<td><span class="error" id="mail_error">La direcciÃ³n de correo no es vÃ¡lida</span></td>
 									</tr>
 									<tr>
 										<td>

@@ -46,10 +46,10 @@ public class Login2 extends WebPage {
 
 					Usuario usuario=sesion.getUsuario();
 					setResponsePage(new Menu(AdministradorUsuarios.obtenerUsuario(usuario.getUsername())));
-					info("Sesi�n iniciada correctamente.");
+					info("Sesión iniciada correctamente.");
 									
 				} else
-					info("El username y/o contrase�a ingrsados son incorrectos.");
+					info("El username y/o contraseña ingrsados son incorrectos o el usuario no fue activado todavía.");
 			}
 		};
 
@@ -57,22 +57,22 @@ public class Login2 extends WebPage {
 		FeedbackPanel panel=new FeedbackPanel("mensajes");
 		formulario.add(panel);
 		
-		if(AppInit.inicializarAplicacion()) info("No hay usuarios cargados en la base de datos. Ingrese al sistema usando username='admin' y constrase�a='admin'.");
+		if(AppInit.inicializarAplicacion()) info("No hay usuarios cargados en la base de datos. Ingrese al sistema usando username='admin' y constraseña='admin'.");
 		else{
-			info("Por favor, ingrese su nombre de usuario y constrase�a.");
+			info("Por favor, ingrese su nombre de usuario y constraseña.");
 		}
 	
 		
 
 		// text field de username
-		usernameTF = new TextField<String>("username", new Model<String>(),	String.class);
+		usernameTF = new TextField<String>("Usuario", new Model<String>(),	String.class);
 		usernameTF.setRequired(true);
 		usernameTF.add(new ExisteUsuarioValidator());
 		
 		formulario.add(usernameTF);
 
-		// textfield de contrase�a
-		passTF = new PasswordTextField("pass", new PropertyModel<String>(properties, "password"));
+		// textfield de contraseña
+		passTF = new PasswordTextField("Contraseña", new PropertyModel<String>(properties, "password"));
 		passTF.setRequired(true);
 		formulario.add(passTF);
 		

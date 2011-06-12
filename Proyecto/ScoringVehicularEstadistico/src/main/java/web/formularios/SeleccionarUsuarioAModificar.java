@@ -49,7 +49,7 @@ public class SeleccionarUsuarioAModificar extends Formulario {
 				protected void onSubmit() {
 					
 					if(usernameTF.getModelObject().compareTo(menu.getUsuario().getUsername())==0){
-						info("No puede modificar sus datos usando esta opción. Modifique los datos de su cuenta a través de la opción 'Modificar datos' de la sección 'Cuenta de usuario'");
+						info("No puede modificar sus datos usando esta opciÃ³n. Modifique los datos de su cuenta a travÃ©s de la opciÃ³n 'Modificar datos' de la secciÃ³n 'Cuenta de usuario'");
 						return;
 					}
 

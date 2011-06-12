@@ -66,7 +66,7 @@ public class Consultar extends Formulario{
 
 			protected void onSubmit() {
 				if((nombreTF.getModelObject().compareTo("")!=0)&&(apellidoTF.getModelObject().compareTo("")==0)){
-					info("Se especifica un nombre, deber· especificar un apellido tambiÈn.");
+					info("Se especifica un nombre, deber√° especificar un apellido tambi√©n.");
 					return;
 				}
 				
@@ -115,7 +115,7 @@ public class Consultar extends Formulario{
 		
 		//dd tipo doc
 		tipoDocumentoModel = new Model<String>("DNI");
-        tipoDocumentoDD = new DropDownChoice<String>("Tipo de documento",tipoDocumentoModel, Arrays.asList(new String[] { "DNI","Libreta CÌvica","Libreta de Enrolamiento","Pasaporte", "CÈdula de Identidad" })) ;
+        tipoDocumentoDD = new DropDownChoice<String>("Tipo de documento",tipoDocumentoModel, Arrays.asList(new String[] { "DNI","Libreta C√≠vica","Libreta de Enrolamiento","Pasaporte", "C√©dula de Identidad" })) ;
         formulario.add(tipoDocumentoDD);
         
 		// text field de nro doc
