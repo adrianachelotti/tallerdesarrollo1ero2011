@@ -16,7 +16,7 @@ public final class Sesion extends WebSession
 	
 	private Usuario usuario;
 	
-	private Boolean signedin;
+	private boolean signedin;
 	
 	public Sesion(Request request) {
 		super(request);

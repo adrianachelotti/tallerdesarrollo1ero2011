@@ -4,6 +4,7 @@ import org.apache.wicket.markup.html.WebMarkupContainer;
 
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
+import org.apache.wicket.model.PropertyModel;
 
 import web.formularios.FormularioDefault;
 
@@ -21,11 +22,16 @@ public class Menu extends AuthenticatedWebPage{
 	WebMarkupContainer containerMensajes ;
 	Label seccion;
 	
+	String textoCuenta;
+	Label lCuenta;
+	
 
 	
+	@SuppressWarnings("rawtypes")
 	public Menu(Usuario usuario){
 	
 		this.usuario=usuario;
+		
 		if(usuario.esCliente()) 
 			this.navigation=new NavigationCliente(this);
 		else if(usuario.esAdministrador())
@@ -38,13 +44,10 @@ public class Menu extends AuthenticatedWebPage{
 		this.formularioActual = new FormularioDefault(this,"Default");
 		add(this.formularioActual);
 		
-		String textoCuenta="Bienvenido <b>"+usuario.getNombre()+"</b> !";
-		if(usuario.esOperador()) textoCuenta+="<br> Usted ha ingresado como <b>Operador</b>";
-		if(usuario.esAdministrador()) textoCuenta+="<br> Usted ha ingresado como <b>Administrador</b>";
-		if(!usuario.esOperador()) textoCuenta+="<br><b>Total de consultas realizadas:</b> "+usuario.getCantidadConsultas();
-		if(usuario.esCliente()) textoCuenta+="<br> <b>Servicio contratado:</b> "+((Cliente)usuario).getServicio().getDescripcion();
 		
-		Label lCuenta=new Label("infoCuenta",textoCuenta);
+		this.actualizarTexto();
+		
+		lCuenta=new Label("infoCuenta",new PropertyModel(this, "textoCuenta"));
 		lCuenta.setEscapeModelStrings(false);
 		add(lCuenta);
 		
@@ -74,6 +77,34 @@ public class Menu extends AuthenticatedWebPage{
 		this.mensajes.setVisible(mostrar);
 		this.containerMensajes.setVisible(mostrar);
 
+	}
+
+	public void cambiarCantConsultas() {
+		actualizarTexto();
+		
+	}
+
+	private void actualizarTexto() {
+		
+		textoCuenta="Bienvenido <b>"+usuario.getNombre()+"</b> !";
+		if(usuario.esOperador()) textoCuenta+="<br> Usted ha ingresado como <b>Operador</b>";
+		if(usuario.esAdministrador()) textoCuenta+="<br> Usted ha ingresado como <b>Administrador</b>";
+		if(!usuario.esOperador()) textoCuenta+="<br><b>Total de consultas realizadas:</b> "+usuario.getCantidadConsultas();
+		if(usuario.esCliente()) {
+			
+			Cliente cliente=(Cliente) usuario;
+			textoCuenta+="<br> <b>Servicio contratado:</b> "+(cliente.getServicio()!=null?cliente.getServicio().getDescripcion():"-");
+			if(cliente.getServicio()!=null){
+			
+				if(cliente.getServicio().getCodigo().compareTo("CP")!=0)
+				textoCuenta+="<br> <b>Consultas disponibles:</b> "+(cliente.getServicio().getMaximoConsultas()-cliente.getCantidadConsultas());
+			}
+			
+		}
+		
+		
+		
+		
 	}
 
 

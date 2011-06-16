@@ -45,6 +45,7 @@ public class Login2 extends WebPage {
 				if (sesion.signedIn()) {
 
 					Usuario usuario=sesion.getUsuario();
+					
 					setResponsePage(new Menu(AdministradorUsuarios.obtenerUsuario(usuario.getUsername())));
 					info("Sesión iniciada correctamente.");
 									
