@@ -3,6 +3,7 @@ package hibernate;
 import java.sql.Date;
 
 import hibernate.domain.conductores.Conductor;
+import hibernate.domain.consultas.Consulta;
 import hibernate.domain.usuarios.Administrador;
 import hibernate.domain.usuarios.Cliente;
 import hibernate.domain.usuarios.Pago;
@@ -71,9 +72,9 @@ public class AppInit {
 	
 	private static void inicializarServicios() {
 		if(!AdministradorServicios.obtenerServicios().isEmpty()) return;
-		AdministradorServicios.agregarServicio(new Servicio("CP","Consulta puntual",5.00,"consulta",-1,false,false));
-		AdministradorServicios.agregarServicio(new Servicio("CM","Consulta mixta",10.00,"consulta",-1,true,false));
-		AdministradorServicios.agregarServicio(new Servicio("P","Premium",30.00,"consulta",-1,true,true));
+		AdministradorServicios.agregarServicio(new Servicio("CP","Consulta puntual",5.00,"consulta",-1,true,true));
+		AdministradorServicios.agregarServicio(new Servicio("50C","Pack 50 consultas/mes",0.00,"consulta",50,true,true));
+		AdministradorServicios.agregarServicio(new Servicio("200C","Pack 200 consultas/mes",0.00,"consulta",200,true,true));
 		
 		
 	}
@@ -105,8 +106,48 @@ public class AppInit {
 		usuario.setNombre("Maria");
 		usuario.setApellido("Perez");
 		usuario.setServicio(AdministradorServicios.obtenerServicio("CP"));
-		usuario.setActivado(false);
+		usuario.setActivado(true);
 		AdministradorUsuarios.agregarUsuario(usuario);
+		crearConsultas(48,"cliente_con_pagos");
+		
+		Cliente usuario2=new Cliente();
+		usuario2.setUsername("cliente_con_consultas");
+		usuario2.setPass("12345");
+		usuario2.setNombre("Mariana");
+		usuario2.setApellido("Perez");
+		usuario2.setServicio(AdministradorServicios.obtenerServicio("50C"));
+		usuario2.setActivado(true);
+		usuario2.setCantidadConsultas(48);
+		AdministradorUsuarios.agregarUsuario(usuario2);
+		
+		crearConsultas(48,"cliente_con_consultas");
+		usuario.setCantidadConsultas(48);
+		
+		
+	}
+	private static void crearConsultas(int cantidad, String username) {
+		for(int i=0;i<cantidad;i++){
+			Consulta c=new Consulta();
+			c.setDocumento(33206679);
+			c.setTipoDoc("DNI");
+			Cliente cliente=AdministradorClientes.obtenerCliente(username);
+			c.setUsuario(cliente);
+			java.util.Date hoy = new java.util.Date();
+    		c.setFecha(new java.sql.Date(hoy.getTime()));
+    		
+    		c.setInfracciones(true);
+    		c.setExpedientesJudiciales(true);
+    		c.setScoring(true);
+    		c.setSiniestros(true);
+    		c.setSituacionFinanciera(true);
+    		c.setVtv(true);
+    		
+    		AdministradorConsultas.agregarConsulta(c);
+
+
+			
+			
+		}
 		
 	}
 	@SuppressWarnings("deprecation")
@@ -182,7 +223,7 @@ public class AppInit {
 		conductor3.setTipoDocumento("DNI");
 		conductor3.setSexo("Masculino");
 		conductor3.setLugarResidencia("Devoto");
-		conductor3.setProfesion("M�dico");
+		conductor3.setProfesion("Médico");
 		conductor3.setFechaNacimiento(new Date(87, 1, 1));
 		conductor3.setNumeroDocumento(33206681);
 		
