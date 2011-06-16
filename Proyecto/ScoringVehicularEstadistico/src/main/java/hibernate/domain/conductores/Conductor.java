@@ -47,6 +47,7 @@ public class Conductor {
 	private Set<DeudaSistemaFinanciero> deudasSistemaFinanciero=new HashSet<DeudaSistemaFinanciero>();
 	private Set<ExpedienteJudicial> expedientesJudiciales=new HashSet<ExpedienteJudicial>();
 	private Set<Vehiculo> vehiculos=new HashSet<Vehiculo>();
+	private Integer cantidadConsultas;
 	
 
 
@@ -219,6 +220,12 @@ public class Conductor {
 		}
 		
 		return encontrado;
+	}
+	public void setCantidadConsultas(Integer cantidadConsultas) {
+		this.cantidadConsultas = cantidadConsultas;
+	}
+	public Integer getCantidadConsultas() {
+		return cantidadConsultas;
 	}
 	
 }
