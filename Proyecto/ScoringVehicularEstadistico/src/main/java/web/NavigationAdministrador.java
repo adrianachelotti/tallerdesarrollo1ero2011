@@ -9,7 +9,9 @@ import org.apache.wicket.markup.html.panel.Panel;
 
 
 import web.formularios.ActualizarBaseDeDatos;
+import web.formularios.AdministrarPerfiles;
 import web.formularios.Ayuda;
+import web.formularios.ConsultaHistorialGeneral;
 import web.formularios.Consultar;
 import web.formularios.ConsultaHistorial;
 import web.formularios.ConsultarPagos;
@@ -135,8 +137,7 @@ public class NavigationAdministrador extends Panel {
 			@Override
 			public void onClick() {
 
-				menu.cambiarFormulario(new FormularioDefault(
-						menu,"Administrar perfiles"));
+				menu.cambiarFormulario(new AdministrarPerfiles(menu));
 
 			}
 
@@ -206,6 +207,18 @@ public class NavigationAdministrador extends Panel {
 			public void onClick() {
 
 				menu.cambiarFormulario(new ConsultaHistorial(menu));
+			}
+
+		});
+		
+		this.add(new Link("linkVerHistorialGeneral") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new ConsultaHistorialGeneral(menu));
 			}
 
 		});

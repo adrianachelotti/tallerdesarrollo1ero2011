@@ -6,13 +6,14 @@ import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.panel.Panel;
 
 import web.formularios.Ayuda;
-import web.formularios.ConsultarPagos;
+
 
 import web.formularios.FormularioDefault;
 import web.formularios.ModificarDatosCuenta;
 
 import web.formularios.Consultar;
 import web.formularios.ConsultaHistorial;
+import web.formularios.ConsultarPagosCliente;
 import web.formularios.Contactenos;
 
 
@@ -74,7 +75,7 @@ public class NavigationCliente extends Panel {
 			@Override
 			public void onClick() {
 
-				menu.cambiarFormulario(new ConsultarPagos(menu));
+				menu.cambiarFormulario(new ConsultarPagosCliente(menu));
 
 			}
 
