@@ -22,6 +22,7 @@ public class Usuario {
 	private String email;
 	private Boolean activado=false;
 	private Integer cantidadConsultas=0;
+	private Boolean obsoleto=false;
 	
 		
 	
@@ -125,8 +126,27 @@ public class Usuario {
 	public void setCantidadConsultas(Integer valor) {
 		cantidadConsultas=valor;
 	}
-	public void aumentarConsutlas(){
+	public void aumentarConsultas(){
 		cantidadConsultas++;
+	}
+	
+	public void copiar(Usuario usuario){
+		this.activado=usuario.activado;
+		this.apellido=usuario.apellido;
+		this.cantidadConsultas=usuario.cantidadConsultas;
+		this.email=usuario.email;
+		this.nombre=usuario.nombre;
+		this.pass=usuario.pass;
+		this.username=usuario.username;
+		this.id=usuario.id;
+	}
+
+	public void setObsoleto(Boolean obsoleto) {
+		this.obsoleto = obsoleto;
+	}
+
+	public Boolean getObsoleto() {
+		return obsoleto;
 	}
 
 

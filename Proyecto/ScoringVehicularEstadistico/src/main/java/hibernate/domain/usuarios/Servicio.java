@@ -12,7 +12,7 @@ public class Servicio {
 	private String descripcion;
 	private double precio;
 	private String unidad;
-	private Integer maximoConsultas; //TODO: va esto al final?
+	private Integer maximoConsultas; 
 	private Boolean solicitaAnalisisConsulta;
 	private Boolean solicitaAnalisisIndividuo;
 	
