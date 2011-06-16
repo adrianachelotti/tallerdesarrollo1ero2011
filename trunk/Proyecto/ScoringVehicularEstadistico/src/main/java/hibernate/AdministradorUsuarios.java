@@ -10,6 +10,7 @@ import org.hibernate.Session;
 
 
 
+
 import hibernate.domain.usuarios.Rubro;
 import hibernate.domain.usuarios.Usuario;
 import hibernate.util.HibernateUtil;
@@ -32,7 +33,7 @@ public class AdministradorUsuarios {
 		List<Usuario> resultado = null;
 		Usuario Usuario = null;
 
-		Query query = session.createQuery("from Usuario usuario where usuario.username ='"+ username + "'");
+		Query query = session.createQuery("from Usuario usuario where usuario.username ='"+ username + "' and usuario.obsoleto=false");
 		resultado = query.list();
 		session.getTransaction().commit();
 		if (!resultado.isEmpty())
@@ -106,6 +107,7 @@ public class AdministradorUsuarios {
 	public static void agregarUsuario(Usuario usuario) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
+		usuario.setObsoleto(false);
 		session.save(usuario);
 		session.flush();
 		session.getTransaction().commit();
@@ -161,7 +163,7 @@ public class AdministradorUsuarios {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		List<Usuario> resultado = null;
-		Query query = session.createQuery("from Usuario ");
+		Query query = session.createQuery("from Usuario u where u.obsoleto=false");
 		resultado = query.list();
 		session.getTransaction().commit();
 		return resultado;
@@ -202,6 +204,8 @@ public class AdministradorUsuarios {
 		return rubro;
 		
 	}
+
+
 
 	
 		

@@ -15,6 +15,7 @@ import hibernate.domain.conductores.Conductor;
 import hibernate.domain.consultas.Consulta;
 
 
+
 import hibernate.util.HibernateUtil;
 
 public class AdministradorConsultas {
@@ -269,6 +270,8 @@ public class AdministradorConsultas {
 		return hayCoincidencia;
 
 	}
+
+
 	
 
 	/*private static void agregarConsultaParaCadaPatente(Conductor conductor,List<Consulta> consultasPosibles) {
