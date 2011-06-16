@@ -106,6 +106,7 @@ public class Informe extends Formulario {
 		conductorContainer.add(new Label("profesion",conductor.getProfesion()));
 		conductorContainer.add(new Label("saldoScoring",conductor.getSaldoScoring()==null?"-":conductor.getSaldoScoring().toString()));
 		conductorContainer.add(new Label("cantidad0",conductor.getCantidadCerosEnScoring()==null?"-":conductor.getCantidadCerosEnScoring().toString()));
+		conductorContainer.add(new Label("cantidadConsultas",conductor.getCantidadConsultas()==null?"-":conductor.getCantidadConsultas().toString()));
 			
 		
 	}

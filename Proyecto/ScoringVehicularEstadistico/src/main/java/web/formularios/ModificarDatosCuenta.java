@@ -87,7 +87,7 @@ public class ModificarDatosCuenta extends Formulario {
 	
 	
 	private String plan = "Consulta Puntual";
-	private RadioChoice<String> planR;
+	private Label planR;
 	
 	
 	private ArrayList<String> rubrosSeleccionados = new ArrayList<String>();
@@ -232,16 +232,12 @@ public class ModificarDatosCuenta extends Formulario {
 		
 		//radio plan
 		
-		List<String> servicios=new ArrayList<String>();
-		Iterator<Servicio> iteradorServicios=AdministradorServicios.obtenerServicios().iterator();
-		while(iteradorServicios.hasNext()){
-			servicios.add(iteradorServicios.next().getDescripcion());
-		}			
-		planR = new RadioChoice<String>("plan", new PropertyModel<String>(this,
-				"plan"),servicios);
-		planR.setRequired(true);
-		Model textoServicio = new Model("Debe seleccionar un servicio.");
-		formulario.add(new FeedbackLabel("planF", planR,textoServicio));
+		if(!usuario.esCliente())
+			planR = new Label("plan","-");
+		else{
+			Cliente clienteS=(Cliente) usuario;
+			planR = new Label("plan",clienteS.getServicio()!=null?clienteS.getServicio().getDescripcion():"-");
+		}
 		formulario.add(planR);
 		
 		
@@ -283,7 +279,8 @@ public class ModificarDatosCuenta extends Formulario {
 		fechaTF.setDefaultModelObject(cliente.getFechaNacimiento());
 		provinciaDD.setDefaultModelObject(cliente.getProvincia());
 		localidadTF.setDefaultModelObject(cliente.getLocalidad());
-		planR.setDefaultModelObject(cliente.getServicio().getDescripcion());
+		planR.setDefaultModelObject(cliente.getServicio()!=null?cliente.getServicio().getDescripcion():null);
+		
 		
 		Iterator<Rubro> iteradorRubros=cliente.getRubros().iterator();
 		
@@ -303,7 +300,6 @@ public class ModificarDatosCuenta extends Formulario {
 		sexoR.setEnabled(b);
 		provinciaDD.setEnabled(b);
 		localidadTF.setEnabled(b);
-		planR.setEnabled(b);
 		serviciosCBMC.setEnabled(b);
 		
 	}

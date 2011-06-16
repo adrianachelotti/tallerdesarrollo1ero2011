@@ -1,15 +1,18 @@
 package web.formularios;
 
 
+import hibernate.AdministradorServicios;
 import hibernate.AdministradorUsuarios;
 
 import hibernate.domain.usuarios.Cliente;
+import hibernate.domain.usuarios.Servicio;
 
 import hibernate.domain.usuarios.Usuario;
 
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 import java.util.Iterator;
@@ -103,6 +106,9 @@ public class VerUsuarios extends Formulario {
     private Model<String> apellidoModel;
     private TextField<String> apellidoTF;
     
+    private Model<Integer> cantidadPorPaginaModel;
+    private TextField<Integer> cantidadPorPaginaTF;
+    
 	private Model<String> tipoUsuarioModel;
 	private DropDownChoice<String> tipoUsuarioDD;
 	
@@ -187,6 +193,13 @@ public class VerUsuarios extends Formulario {
         nombreTF.add(new ActualizacionAjax());
         listContainer.add(nombreTF);
         
+        
+      //armo el textbox de cantidad de paginas
+        cantidadPorPaginaModel = new Model<Integer>();
+        cantidadPorPaginaTF = new TextField<Integer>("Cantidad por pagina",cantidadPorPaginaModel, Integer.class);
+        cantidadPorPaginaTF.add(new ActualizacionAjax());
+        listContainer.add(cantidadPorPaginaTF);
+        
         //dd tipo
         tipoUsuarioModel = new Model<String>("Todos");
 		tipoUsuarioDD = new DropDownChoice<String>("tipo",
@@ -209,10 +222,17 @@ public class VerUsuarios extends Formulario {
 		listContainer.add(tipoUsuarioDD);
 		
 		 //dd tipo
+		
+
+		List<String> servicios=new ArrayList<String>();
+		Iterator<Servicio> iteradorServicios=AdministradorServicios.obtenerServicios().iterator();
+		while(iteradorServicios.hasNext()){
+			servicios.add(iteradorServicios.next().getDescripcion());
+		}		
+		servicios.add("Todos");
         servicioModel = new Model<String>("Todos");
 		servicioDD = new DropDownChoice<String>("servicio",
-				servicioModel, Arrays.asList(new String[] { "Todos", "Consulta puntual",
-						"Consulta mixta", "Premium" })){
+				servicioModel, servicios){
 			
 			 /**
 							 * 
@@ -260,7 +280,7 @@ public class VerUsuarios extends Formulario {
 					if(usuario.esCliente()){
 						Cliente cliente=(Cliente) usuario;
 						item.add(new Label("telefono", cliente.getTelefono()));
-						item.add(new Label("servicio", cliente.getServicio().getDescripcion()));
+						item.add(new Label("servicio", cliente.getServicio()!=null?cliente.getServicio().getDescripcion():"-"));
 					}else{
 						item.add(new Label("telefono", "-"));
 						item.add(new Label("servicio", "-"));
@@ -299,6 +319,7 @@ public class VerUsuarios extends Formulario {
 		String apellido=apellidoModel.getObject();
 		String tipo=tipoUsuarioModel.getObject();
 		String servicio=servicioModel.getObject();
+		Integer cantPaginas=cantidadPorPaginaModel.getObject();
 
          boolean mostrar = true;
          Iterator<UsuarioItem> it = usuarios.iterator();
@@ -349,6 +370,10 @@ public class VerUsuarios extends Formulario {
                  
                  
          }
+         
+         //actualizo el listview
+         if(cantPaginas!=null)
+         listView.setRowsPerPage(cantPaginas);
 
  }
 	 
@@ -363,8 +388,8 @@ public class VerUsuarios extends Formulario {
 			UsuarioItem ui = new UsuarioItem();
 			ui.usuario = iteradorUsuarios.next();
 
-			if (ui.usuario.getUsername().compareTo(
-					menu.getUsuario().getUsername()) != 0) {
+			if ((ui.usuario.getUsername().compareTo(
+					menu.getUsuario().getUsername()) != 0)) {
 				ui.eliminar = false;
 				ui.mostrar = true;
 				ui.activar = ui.usuario.isActivado();
