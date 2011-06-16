@@ -20,6 +20,8 @@ import web.utils.ErrorLevelsFeedbackMessageFilter;
 import web.utils.FeedbackLabel;
 
 import hibernate.domain.consultas.Consulta;
+import hibernate.domain.usuarios.Cliente;
+import hibernate.domain.usuarios.Usuario;
 
 
 public class Consultar extends Formulario{
@@ -36,6 +38,7 @@ public class Consultar extends Formulario{
 	private DropDownChoice<String> tipoDocumentoDD;
 	private TextField<Integer> documentoTF;
 	private FeedbackPanel panel;
+	private Usuario usuario;
 	
 	
 	private CheckBox expedientesJudicialesCB;
@@ -59,6 +62,7 @@ public class Consultar extends Formulario{
 
 	public Consultar(final Menu menu){
         super(menu);
+        this.usuario=menu.getUsuario();
         
         Form<Void> formulario = new Form<Void>("formularioConsulta") {
 
@@ -94,6 +98,11 @@ public class Consultar extends Formulario{
 		this.getContenido().add(formulario);
 		panel=new FeedbackPanel("mensajes");
 		this.getContenido().add(panel);
+		
+		if(!puedeConsultar()) {
+			formulario.setVisible(false);
+			info("Ha alcanzado el límite de consultas por mes. Contactese con nosotros para pedir un cambio de servicio.");
+		}
 		
 
 		
@@ -144,6 +153,15 @@ public class Consultar extends Formulario{
 		formulario.add(situacionFinancieraCB);
 		
 }
+
+	private boolean puedeConsultar() {
+		if(this.usuario.esAdministrador()) return true;
+		Cliente cliente=(Cliente) usuario;
+		if(cliente.getServicio()==null) return false;
+		if(cliente.getServicio().getCodigo().compareTo("CP")==0) return true;
+		else if(cliente.getServicio().getMaximoConsultas()>cliente.getCantidadConsultas()) return true;
+		else return false;
+	}
 
 
 }

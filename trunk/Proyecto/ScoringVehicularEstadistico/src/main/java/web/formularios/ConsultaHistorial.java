@@ -9,6 +9,9 @@ import hibernate.AdministradorConsultas;
 
 import hibernate.domain.consultas.Consulta;
 
+
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.ajax.form.AjaxFormComponentUpdatingBehavior;
 import org.apache.wicket.feedback.FeedbackMessage;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
@@ -23,6 +26,7 @@ import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.Model;
 import web.Formulario;
 import web.Menu;
+
 import web.utils.ErrorLevelsFeedbackMessageFilter;
 import web.utils.FeedbackLabel;
 
@@ -32,13 +36,35 @@ public class ConsultaHistorial extends Formulario {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	
 
-	public class ConsultaItem {
+    public class ConsultaItem {
 
 		private Consulta consulta;
 		private boolean mostrar;
 
 	};
+	
+	   private class ActualizacionAjax extends AjaxFormComponentUpdatingBehavior {
+
+           private static final long serialVersionUID = 1L;
+
+           public ActualizacionAjax() {
+                   super("onchange");
+
+           }
+
+           @Override
+           protected void onUpdate(AjaxRequestTarget target) {
+                   // esto es lo que hace al seleccionar una opción de alguno de los dd
+                   // o ingresar un valor en los textboxes
+                   cargarNuevaConsulta();
+                   target.addComponent(listContainer);
+
+           }
+
+   }
 
 	
 
@@ -56,6 +82,10 @@ public class ConsultaHistorial extends Formulario {
 
 	private Model<Date> hastaModel;
 	private TextField<Date> hastaTF;
+	
+    private Model<Integer> cantidadPorPaginaModel;
+    private TextField<Integer> cantidadPorPaginaTF;
+
 
 	
 	public ConsultaHistorial(final Menu menu) {
@@ -104,7 +134,14 @@ public class ConsultaHistorial extends Formulario {
 		hastaTF = new TextField<Date>("hasta", hastaModel,Date.class);
 		formulario.add(new FeedbackLabel("hastaF", hastaTF));
 		formulario.add(hastaTF);
-
+		
+	      //armo el textbox de cantidad de paginas
+        cantidadPorPaginaModel = new Model<Integer>();
+        cantidadPorPaginaTF = new TextField<Integer>("Cantidad por pagina",cantidadPorPaginaModel, Integer.class);
+        cantidadPorPaginaTF.add(new ActualizacionAjax());
+        listContainer.add(cantidadPorPaginaTF);
+		
+	
 		
 
 		
@@ -134,6 +171,7 @@ public class ConsultaHistorial extends Formulario {
 				item.add(new Label("nombre", consulta.getNombre()));
 				item.add(new Label("apellido", consulta.getApellido()));
 				item.add(new Label("fecha", consulta.getFecha().toString().substring(0, 10)));
+				
 							
 				item.add(new Link("link") {
 
@@ -158,6 +196,8 @@ public class ConsultaHistorial extends Formulario {
 
 		Date desde = desdeTF.getModelObject();
 		Date hasta = hastaTF.getModelObject();
+		Integer cantPaginas=cantidadPorPaginaModel.getObject();
+		
 		
 		boolean mostrar = true;
 		Iterator<ConsultaItem> it = consultas.iterator();
@@ -168,6 +208,7 @@ public class ConsultaHistorial extends Formulario {
 			ConsultaItem ci = it.next();
 			if((desde!=null)&&(ci.consulta.getFecha().before(desde))) mostrar=false;
 			if((mostrar)&&(hasta!=null)&&(ci.consulta.getFecha().after(hasta))) mostrar=false;
+			
 
 			ci.mostrar = mostrar;
 
@@ -182,6 +223,10 @@ public class ConsultaHistorial extends Formulario {
 				consultasMostradas.add(ci);
 
 		}
+		
+        //actualizo el listview
+        if(cantPaginas!=null)
+        listView.setRowsPerPage(cantPaginas);
 
 	}
 

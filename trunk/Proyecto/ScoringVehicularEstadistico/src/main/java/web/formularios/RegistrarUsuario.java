@@ -119,6 +119,8 @@ public class RegistrarUsuario extends Formulario {
 				operador.setNombre(nombreTF.getModelObject());
 				operador.setApellido(apellidoTF.getModelObject());
 				operador.setEmail(emailTF.getModelObject());
+				
+				operador.setActivado(true);
 				return operador;
 				
 			}
@@ -130,6 +132,8 @@ public class RegistrarUsuario extends Formulario {
 				administrador.setNombre(nombreTF.getModelObject());
 				administrador.setApellido(apellidoTF.getModelObject());
 				administrador.setEmail(emailTF.getModelObject());
+				
+				administrador.setActivado(true);
 				return administrador;
 				
 			}
@@ -150,6 +154,7 @@ public class RegistrarUsuario extends Formulario {
 				cliente.setTelefono(telefonoTF.getModelObject());
 				cliente.setServicio(AdministradorServicios.obtenerServicioPorDescripcion(plan));
 				cliente.setActivado(true);
+				
 				Iterator<String> iteradorRubros=rubrosSeleccionados.iterator();
 				while(iteradorRubros.hasNext()){
 					cliente.agregarRubro(AdministradorUsuarios.obtenerRubro(iteradorRubros.next()));

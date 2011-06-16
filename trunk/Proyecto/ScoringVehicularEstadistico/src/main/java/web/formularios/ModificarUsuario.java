@@ -227,6 +227,7 @@ super(menu);
         tipoDocumentoDD = new DropDownChoice<String>("Tipo de documento",tipoDocumentoModel, Arrays.asList(new String[] { "DNI","Libreta Cívica","Libreta de Enrolamiento","Pasaporte", "Cédula de Identidad" })) ;
         tipoDocumentoDD.setRequired(true);
         formulario.add(tipoDocumentoDD);
+        formulario.add(new FeedbackLabel("tipoDocumentoF", tipoDocumentoDD));
         
 		
 		
@@ -257,6 +258,8 @@ super(menu);
 				"sexo"),
 				Arrays.asList(new String[] { "Femenino", "Masculino" }));
 		formulario.add(sexoR);
+		sexoR.setRequired(true);
+		formulario.add(new FeedbackLabel("sexoF", sexoR));
 		
 		// text field de fecha
 		fechaTF = new TextField<Date>("Fecha de nacimiento", new Model<Date>(),	Date.class);
@@ -295,6 +298,8 @@ super(menu);
 						"TUCUMAN", }));
 		
 		formulario.add(provinciaDD);
+		provinciaDD.setRequired(true);
+		formulario.add(new FeedbackLabel("provinciaF", provinciaDD));
 		
 		// text field de localidad
 		localidadTF = new TextField<String>("Localidad", new Model<String>(),	String.class);
@@ -349,7 +354,7 @@ super(menu);
 		fechaTF.setDefaultModelObject(cliente.getFechaNacimiento());
 		provinciaDD.setDefaultModelObject(cliente.getProvincia());
 		localidadTF.setDefaultModelObject(cliente.getLocalidad());
-		planR.setDefaultModelObject(cliente.getServicio().getDescripcion());
+		planR.setDefaultModelObject(cliente.getServicio()!=null?cliente.getServicio().getDescripcion():null);
 		
 		Iterator<Rubro> iteradorRubros=cliente.getRubros().iterator();
 		

@@ -4,16 +4,19 @@ package web.formularios;
 
 
 import hibernate.AdministradorPagos;
+import hibernate.AdministradorServicios;
 import hibernate.AdministradorUsuarios;
 
 import hibernate.domain.usuarios.Cliente;
 import hibernate.domain.usuarios.Pago;
+import hibernate.domain.usuarios.Servicio;
 
 
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.form.AjaxFormComponentUpdatingBehavior;
@@ -34,6 +37,7 @@ import org.apache.wicket.model.Model;
 import web.Formulario;
 
 import web.Menu;
+
 import web.utils.FeedbackLabel;
 
 
@@ -106,6 +110,9 @@ public class ConsultarPagos extends Formulario {
 	private Model<String> servicioModel;
 	private DropDownChoice<String> servicioDD;
 	
+    private Model<Integer> cantidadPorPaginaModel;
+    private TextField<Integer> cantidadPorPaginaTF;
+	
 	// compontentes de la consulta
 	private Model<Date> desdeModel;
 	private TextField<Date> desdeTF;
@@ -177,6 +184,13 @@ public class ConsultarPagos extends Formulario {
         nombreTF.add(new ActualizacionAjax());
         listContainer.add(nombreTF);
         
+        
+        //armo el textbox de cantidad de paginas
+          cantidadPorPaginaModel = new Model<Integer>();
+          cantidadPorPaginaTF = new TextField<Integer>("Cantidad por pagina",cantidadPorPaginaModel, Integer.class);
+          cantidadPorPaginaTF.add(new ActualizacionAjax());
+          listContainer.add(cantidadPorPaginaTF);
+        
         desdeModel = new Model<Date>();
 		desdeTF = new TextField<Date>("desde", desdeModel,Date.class);
 		formulario.add(desdeTF);
@@ -209,11 +223,17 @@ public class ConsultarPagos extends Formulario {
 		formaPagoDD.add(new ActualizacionAjax());
 		listContainer.add(formaPagoDD);
 		
+		
+		List<String> servicios=new ArrayList<String>();
+		Iterator<Servicio> iteradorServicios=AdministradorServicios.obtenerServicios().iterator();
+		while(iteradorServicios.hasNext()){
+			servicios.add(iteradorServicios.next().getDescripcion());
+		}		
+		servicios.add("Todos");
 		 
         servicioModel = new Model<String>("Todos");
 		servicioDD = new DropDownChoice<String>("servicioDD",
-				servicioModel, Arrays.asList(new String[] { "Todos", "Consulta puntual",
-						"Consulta mixta", "Premium" })){
+				servicioModel, servicios){
 			
 			 /**
 							 * 
@@ -282,6 +302,7 @@ public class ConsultarPagos extends Formulario {
 		String servicio=servicioModel.getObject();
 		Date desde = desdeTF.getModelObject();
 		Date hasta = hastaTF.getModelObject();
+		Integer cantPaginas=cantidadPorPaginaModel.getObject();
 
          boolean mostrar = true;
          Iterator<PagoItem> it = pagos.iterator();
@@ -322,7 +343,7 @@ public class ConsultarPagos extends Formulario {
 
          }
          
-         //actualizo los usuarios mostrados
+         //actualizo los pagos mostrados
          pagosMostrados.clear();
          Iterator<PagoItem> itMostrados=pagos.iterator();
          while(itMostrados.hasNext()){
@@ -332,6 +353,10 @@ public class ConsultarPagos extends Formulario {
                  
                  
          }
+         
+         //actualizo el listview
+         if(cantPaginas!=null)
+         listView.setRowsPerPage(cantPaginas);
 
  }
 	 

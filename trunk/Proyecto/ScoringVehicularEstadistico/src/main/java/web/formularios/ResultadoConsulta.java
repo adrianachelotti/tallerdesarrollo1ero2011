@@ -131,13 +131,16 @@ public class ResultadoConsulta extends Formulario {
 	                        public void onClick() {
 	                                //actualizar datos de la consulta y mostrar informe
 	                        		ci.consulta.setUsuario(menu.getUsuario());
-	                        		menu.getUsuario().aumentarConsutlas();
+	                        		menu.getUsuario().aumentarConsultas();
+	                        		menu.cambiarCantConsultas();
+	                        		
 	                        		AdministradorUsuarios.modificarUsuario(menu.getUsuario());
 	                        		java.util.Date hoy = new java.util.Date();
 	                        		ci.consulta.setFecha(new java.sql.Date(hoy.getTime()));
 	                        		ci.consulta.copiarInformacionMostrar(consultaBase);
 	                                AdministradorConsultas.agregarConsulta(ci.consulta);
 	                                menu.cambiarFormulario(new Informe(menu,ci.consulta));
+	                                
 
 	                        }
 

@@ -47,11 +47,11 @@ public class SeleccionarUsuarioAModificar extends Formulario {
 				private static final long serialVersionUID = 1L;
 
 				protected void onSubmit() {
-					
-					if(usernameTF.getModelObject().compareTo(menu.getUsuario().getUsername())==0){
+					String username=usernameTF.getModelObject();
+					if(username.compareTo(menu.getUsuario().getUsername())==0){
 						info("No puede modificar sus datos usando esta opción. Modifique los datos de su cuenta a través de la opción 'Modificar datos' de la sección 'Cuenta de usuario'");
 						return;
-					}
+					};
 
 					menu.cambiarFormulario(new ModificarUsuario(menu,AdministradorUsuarios.obtenerUsuario(usernameTF.getModelObject())));
 
