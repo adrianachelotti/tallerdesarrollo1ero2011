@@ -2,6 +2,11 @@ package hibernate.domain.vehiculos;
 
 
 
+import hibernate.AdministradorConductores;
+import hibernate.AdministradorVehiculo;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -12,6 +17,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -97,6 +103,25 @@ public class Siniestro {
 		this.monto = monto;
 	}
 	
-	
+	@Transient
+	public void cargarDatos(String[] celdas){
+		SimpleDateFormat fecha =  new SimpleDateFormat("dd/mm/yyyy");
+		this.setPatente(celdas[0]);
+		this.setTipo(celdas[1]);
+		try {
+			this.setFecha(fecha.parse(celdas[2]));
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
+		this.setDescripcion(celdas[3]);
+		this.setLugar(celdas[4]);
+		this.setMonto(Float.parseFloat(celdas[5]));
+		
+		
+	}
+	@Transient
+	public void persistir(){
+		AdministradorVehiculo.agregarSiniestro(this);
+	}
 	
 }

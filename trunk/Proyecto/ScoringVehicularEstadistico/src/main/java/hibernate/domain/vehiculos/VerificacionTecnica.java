@@ -1,11 +1,18 @@
 package hibernate.domain.vehiculos;
 
+import hibernate.AdministradorConductores;
+import hibernate.AdministradorInfracciones;
+import hibernate.AdministradorVehiculo;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.Transient;
 
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -98,5 +105,26 @@ public class VerificacionTecnica {
 	public void setResultado(String resultado) {
 		this.resultado = resultado;
 	}
+	@Transient
+	public void cargarDatos(String[] celdas){
+		SimpleDateFormat fecha =  new SimpleDateFormat("dd/mm/yyyy");
+		this.setZona(celdas[0]);
+		this.setEstacion(celdas[1]);
+		this.setPatente(celdas[2]);
+		try {
+			this.setFechaInspeccion(fecha.parse(celdas[3]));
+			this.setTipoVerificacion(celdas[4]);
+			this.setFechaVencimiento(fecha.parse(celdas[5]));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
+		this.setNumeroOblea(Integer.parseInt(celdas[6]));
+		this.setResultado(celdas[7]);
+		
+		
+	}
+	public void persistir(){
+		AdministradorVehiculo.agregarVtv(this);
+	}
 }

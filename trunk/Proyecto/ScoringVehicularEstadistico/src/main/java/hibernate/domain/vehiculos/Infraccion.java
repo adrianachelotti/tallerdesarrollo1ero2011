@@ -1,13 +1,18 @@
 package hibernate.domain.vehiculos;
 
+import hibernate.AdministradorConductores;
+import hibernate.AdministradorInfracciones;
 import hibernate.domain.conductores.Conductor;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.Transient;
 
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -34,7 +39,7 @@ public class Infraccion {
 	private String estadoUACF;
 	private String patente;
 	
-private Conductor conductor;
+	private Conductor conductor;
 	
 	public void setConductor(Conductor conductor) {
 		this.conductor = conductor;
@@ -100,5 +105,30 @@ private Conductor conductor;
 		this.patente = patente;
 	}
 
+	@Transient
+	public void cargarDatos(String[] celdas){
+		SimpleDateFormat fecha =  new SimpleDateFormat("dd/mm/yyyy");
+		this.conductor = AdministradorConductores.obtenerConductor(celdas[0], Integer.parseInt(celdas[1]));
+
+		ActaDeInfraccion acta = new ActaDeInfraccion();
+		acta.setNumero(Integer.parseInt(celdas[2].substring(1)));
+		acta.setTipo(celdas[4]);
+		AdministradorInfracciones.agregarActa(acta);
+		this.setActaDeInfraccion(acta);
+		try {
+			this.setFecha(fecha.parse(celdas[3]));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.setEstadoUACF(celdas[5]);
+		this.setNumero(Integer.parseInt(celdas[6]));
+		this.setDescripcion(celdas[7]);
+		this.setLugar(celdas[8]);
+		
+	}
+	public void persistir(){
+		AdministradorInfracciones.agregarInfraccion(this);
+	}
 	
 }
