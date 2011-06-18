@@ -11,6 +11,7 @@ import org.hibernate.Session;
 
 import hibernate.domain.conductores.Conductor;
 
+import hibernate.domain.sistemaJudicial.ExpedienteJudicial;
 import hibernate.domain.vehiculos.Vehiculo;
 
 
@@ -39,12 +40,20 @@ public class AdministradorConductores{
 	public static void agregarConductor(Conductor conductor) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		session.save(conductor);
+		session.saveOrUpdate(conductor);
 		session.flush();
 		session.getTransaction().commit();
 	}
 	
 	
+	
+	public static void updateConductor(Conductor conductor) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		session.update(conductor);
+		session.flush();
+		session.getTransaction().commit();
+	}
 	
 	
 
@@ -109,7 +118,13 @@ public class AdministradorConductores{
 	
 		
 
-	
+	public static void agregarExpediente(ExpedienteJudicial expediente) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		session.saveOrUpdate(expediente);
+		session.flush();
+		session.getTransaction().commit();
+	}
 
 	
 

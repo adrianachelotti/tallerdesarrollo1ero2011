@@ -1,9 +1,11 @@
 package hibernate.domain.sistemaFinanciero;
 
 
+import hibernate.AdministradorDeudas;
 import hibernate.domain.conductores.Conductor;
 
 import javax.persistence.*;
+
 import org.hibernate.annotations.GenericGenerator;
 
 
@@ -144,5 +146,14 @@ public class DeudaSistemaFinanciero {
 		this.id = id;
 	}
 	
+	@Transient
+	public void cargarDatos(String[] celdas){
+		//TODO mapear los datos del bcra
+		
+	}
+	@Transient
+	public void persistir(){
+		AdministradorDeudas.agregarConductor(this);
+	}
 		
 }

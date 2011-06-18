@@ -2,6 +2,8 @@ package hibernate.domain.sistemaJudicial;
 
 
 
+import hibernate.AdministradorConductores;
+import hibernate.AdministradorDeudas;
 import hibernate.domain.conductores.Conductor;
 
 import javax.persistence.CascadeType;
@@ -9,6 +11,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -70,6 +73,21 @@ private Conductor conductor;
 	public void setObjeto(String objeto) {
 		this.objeto = objeto;
 	}
-
+	@Transient
+	public void cargarDatos(String[] celdas){
+		this.conductor = AdministradorConductores.obtenerConductor(celdas[0],Integer.parseInt(celdas[1]));
+		if(conductor!=null){
+			this.setNumero(Integer.parseInt(celdas[2]));
+			this.setObjeto(celdas[3]);
+			this.setSituacion(celdas[4]);
+		}
+		
+	}
+	@Transient
+	public void persistir(){
+		if (this.conductor!=null)
+		AdministradorConductores.agregarExpediente(this);
+	}
+	
 		
 }

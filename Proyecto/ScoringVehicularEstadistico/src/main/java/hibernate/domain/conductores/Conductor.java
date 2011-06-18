@@ -1,10 +1,12 @@
 package hibernate.domain.conductores;
 
+import hibernate.AdministradorConductores;
 import hibernate.domain.sistemaFinanciero.DeudaSistemaFinanciero;
 import hibernate.domain.sistemaJudicial.ExpedienteJudicial;
 import hibernate.domain.vehiculos.Infraccion;
 import hibernate.domain.vehiculos.Vehiculo;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -12,8 +14,13 @@ import java.util.Iterator;
 import java.util.Set;
 
 import javax.persistence.*;
+
+import jxl.Cell;
+
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Cascade;
+
+
 
 
 
@@ -50,7 +57,7 @@ public class Conductor {
 	private Integer cantidadConsultas;
 	
 
-
+	
 
     @OneToMany (cascade = CascadeType.ALL,fetch= FetchType.EAGER)
     @Cascade(org.hibernate.annotations.CascadeType.DELETE_ORPHAN)
@@ -227,5 +234,32 @@ public class Conductor {
 	public Integer getCantidadConsultas() {
 		return cantidadConsultas;
 	}
+	@Transient
+	public void cargarDatos(String[] celdas){
+		this.setTipoDocumento(celdas[0]);
+		this.setNumeroDocumento(Integer.parseInt(celdas[1]));
+		this.setNombre(celdas[2]);
+		this.setApellidos(celdas[3]);
+		this.setSexo(celdas[4]);
+		SimpleDateFormat fecha =  new SimpleDateFormat("dd/mm/yyyy");
+		try {
+			this.setFechaNacimiento(fecha.parse(celdas[5]));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.setLugarResidencia(celdas[6]);
+		this.setEstadoCivil(celdas[7]);
+		this.setProfesion(celdas[8]);
+		this.setNivelDeEstudio(celdas[9]);
+		this.setIngresoPromedio(Float.parseFloat(celdas[10]));
+		this.setCantidadHijos(Integer.parseInt(celdas[11]));
+		
+	}
+	@Transient
+	public void persistir(){
+		AdministradorConductores.agregarConductor(this);
+	}
+	
 	
 }
