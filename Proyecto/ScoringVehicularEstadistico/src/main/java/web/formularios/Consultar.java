@@ -6,16 +6,20 @@ package web.formularios;
 import java.util.Arrays;
 
 import org.apache.wicket.feedback.FeedbackMessage;
+
 import org.apache.wicket.markup.html.form.CheckBox;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
+
+import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 
 import web.Formulario;
 import web.Menu;
+
 import web.utils.ErrorLevelsFeedbackMessageFilter;
 import web.utils.FeedbackLabel;
 
@@ -59,7 +63,10 @@ public class Consultar extends Formulario{
 	
 	private CheckBox situacionFinancieraCB;
 	private boolean situacionFinanciera=true;
+	@SuppressWarnings("rawtypes")
+	private Link link;
 
+	@SuppressWarnings( "rawtypes")
 	public Consultar(final Menu menu){
         super(menu);
         this.usuario=menu.getUsuario();
@@ -99,10 +106,7 @@ public class Consultar extends Formulario{
 		panel=new FeedbackPanel("mensajes");
 		this.getContenido().add(panel);
 		
-		if(!puedeConsultar()) {
-			formulario.setVisible(false);
-			info("Ha alcanzado el límite de consultas por mes. Contactese con nosotros para pedir un cambio de servicio.");
-		}
+
 		
 
 		
@@ -151,6 +155,31 @@ public class Consultar extends Formulario{
 		
 		situacionFinancieraCB = new CheckBox("situacionFinanciera",new PropertyModel<Boolean>(this, "situacionFinanciera"));
 		formulario.add(situacionFinancieraCB);
+		
+		link=new Link("cambiar") {
+
+                 private static final long serialVersionUID = 1L;
+
+                 @Override
+                 public void onClick() {
+                         
+                         
+                         menu.cambiarFormulario(new CambiarPlan(menu));
+
+                 }
+
+         };
+         this.getContenido().add(link);
+         link.setVisible(false);
+         
+ 		if(!puedeConsultar()) {
+			formulario.setVisible(false);
+			link.setVisible(true);
+			info("Ha alcanzado el límite de consultas por mes.");
+			
+		}
+         
+		
 		
 }
 

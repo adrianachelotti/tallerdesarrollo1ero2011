@@ -10,6 +10,7 @@ public class Servicio {
 
 	private String codigo;
 	private String descripcion;
+	private String detalle;
 	private double precio;
 	private String unidad;
 	private Integer maximoConsultas; 
@@ -20,7 +21,7 @@ public class Servicio {
 		
 	}
 	
-	public Servicio(String codigo, String desc, double precio, String unidad, Integer maxCons,Boolean ac, Boolean ai ){
+	public Servicio(String codigo, String desc,String detalle, double precio, String unidad, Integer maxCons,Boolean ac, Boolean ai ){
 		this.setCodigo(codigo);
 		this.descripcion=desc;
 		this.precio=precio;
@@ -28,6 +29,7 @@ public class Servicio {
 		this.maximoConsultas=maxCons;
 		this.solicitaAnalisisConsulta=ac;
 		this.solicitaAnalisisIndividuo=ai;
+		this.detalle=detalle;
 	}
 	
 	
@@ -77,5 +79,16 @@ public class Servicio {
 	public String getCodigo() {
 		return codigo;
 	}
+
+	public void setDetalle(String detalle) {
+		this.detalle = detalle;
+	}
+
+	public String getDetalle() {
+		return detalle;
+	}
+	
+
+
 	
 }

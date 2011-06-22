@@ -29,6 +29,7 @@ import org.apache.wicket.markup.html.form.PasswordTextField;
 import org.apache.wicket.markup.html.form.RadioChoice;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
+import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.PageableListView;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
@@ -93,10 +94,13 @@ public class ModificarDatosCuenta extends Formulario {
 	private ArrayList<String> rubrosSeleccionados = new ArrayList<String>();
 	private CheckBoxMultipleChoice<String> serviciosCBMC ;
 	
+	@SuppressWarnings("rawtypes")
+	private Link link;
+	
 		
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ModificarDatosCuenta(Menu menu) {
+	public ModificarDatosCuenta(final Menu menu) {
 		super(menu);
 		this.usuario = menu.getUsuario();
 
@@ -254,17 +258,29 @@ public class ModificarDatosCuenta extends Formulario {
 		
 		formulario.add(serviciosCBMC);
 		
+		link=new Link("cambiar") {
+
+            private static final long serialVersionUID = 1L;
+
+            @Override
+            public void onClick() {
+                    
+                    
+                    menu.cambiarFormulario(new CambiarPlan(menu));
+
+            }
+
+    };
+    formulario.add(link);
+    
+    
+		
 		
 		if(usuario.esCliente()) {
 			cargarValoresDefaultDeCliente();
 			habilitarOpcionesCliente(true);
 		}else habilitarOpcionesCliente(false);
-		
-		
-		
-		
-		
-		
+				
 
 	}
 	
@@ -301,6 +317,7 @@ public class ModificarDatosCuenta extends Formulario {
 		provinciaDD.setEnabled(b);
 		localidadTF.setEnabled(b);
 		serviciosCBMC.setEnabled(b);
+		link.setVisible(b);
 		
 	}
 
