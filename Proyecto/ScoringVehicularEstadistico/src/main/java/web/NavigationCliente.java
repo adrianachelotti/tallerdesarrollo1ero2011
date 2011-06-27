@@ -11,6 +11,7 @@ import web.formularios.Ayuda;
 import web.formularios.FormularioDefault;
 import web.formularios.ModificarDatosCuenta;
 
+import web.formularios.CambiarPlan;
 import web.formularios.Consultar;
 import web.formularios.ConsultaHistorial;
 import web.formularios.ConsultarPagosCliente;
@@ -128,6 +129,19 @@ public class NavigationCliente extends Panel {
 			public void onClick() {
 
 				menu.cambiarFormulario(new Contactenos(menu));
+			}
+
+		});
+		
+		
+		this.add(new Link("linkCambiarPlan") {
+
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onClick() {
+
+				menu.cambiarFormulario(new CambiarPlan(menu));
 			}
 
 		});

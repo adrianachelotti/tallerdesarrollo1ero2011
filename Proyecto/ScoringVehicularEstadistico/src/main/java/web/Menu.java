@@ -84,7 +84,7 @@ public class Menu extends AuthenticatedWebPage{
 		
 	}
 
-	private void actualizarTexto() {
+	public void actualizarTexto() {
 		
 		textoCuenta="Bienvenido <b>"+usuario.getNombre()+"</b> !";
 		if(usuario.esOperador()) textoCuenta+="<br> Usted ha ingresado como <b>Operador</b>";
