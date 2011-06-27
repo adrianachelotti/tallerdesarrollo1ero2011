@@ -71,10 +71,19 @@ public class AppInit {
 	
 	
 	private static void inicializarServicios() {
+		/******************************** IMPORTANTE !!!!!!!!!!!!!! *************************
+		 * 
+		 * COMPLETAR LOS DETALLES CON LA DESCRIPCIÓN COMO TIENE QUE QUEDAR
+		 * 
+		 * *********************************************************************************
+		 */
+		
+		
 		if(!AdministradorServicios.obtenerServicios().isEmpty()) return;
-		AdministradorServicios.agregarServicio(new Servicio("CP","Consulta puntual",5.00,"consulta",-1,true,true));
-		AdministradorServicios.agregarServicio(new Servicio("50C","Pack 50 consultas/mes",0.00,"consulta",50,true,true));
-		AdministradorServicios.agregarServicio(new Servicio("200C","Pack 200 consultas/mes",0.00,"consulta",200,true,true));
+		AdministradorServicios.agregarServicio(new Servicio("CP","Consulta puntual","Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",68.00,"consulta",-1,true,true));
+		AdministradorServicios.agregarServicio(new Servicio("50C","Pack 50 consultas/mes","Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",2720.00,"mes",50,true,true));
+		AdministradorServicios.agregarServicio(new Servicio("200C","Pack 200 consultas/mes","Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",10880.00,"mes",200,true,true));
+		AdministradorServicios.agregarServicio(new Servicio("CI","Consultas ilimitadas por mes","Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",10880.00,"mes",-1,true,true));
 		
 		
 	}

@@ -76,13 +76,7 @@ public class Login2 extends WebPage {
 		passTF = new PasswordTextField("Contraseña", new PropertyModel<String>(properties, "password"));
 		passTF.setRequired(true);
 		formulario.add(passTF);
-		
-		
-
-		
-
-
-		
+						
 		formulario.add(new BookmarkablePageLink("linkSolicitarUsuario",SolicitarServicio.class));
 
 	}

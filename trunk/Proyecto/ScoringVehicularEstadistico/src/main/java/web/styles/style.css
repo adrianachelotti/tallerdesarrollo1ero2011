@@ -335,5 +335,14 @@ td.footer{
 		
 }
 
+.btnGrande {
+	color:#FFF;
+	font: bold 24px Arial;
+	text-decoration:none;
+	padding:5px;
+	background-color:#0062a8;
+	border:1px solid;
+	
+}
 
  
