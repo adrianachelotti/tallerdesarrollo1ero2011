@@ -1,0 +1,13 @@
+Pongo aca algunas cosas que creo que calificarian para diferencias entre
+prototipo y producto final.
+La verdad que 1) no se si vale la pena nombrarla; la 3) hay que disfrazarla
+lo mejor posible porque puede ser que la tomen como que le falta el valor agregado
+a los datos (o sea que solo tiramos los datos a la pantalla y listo); la 4)
+tambien hay que decirla muy por arriba mepa
+
+1 Contratos con las diferentes entidades para obtener los datos
+2 Montaje de la base de datos y de la web en un datacenter
+(hoy en dia corre en una pc local con datos ficticios)
+3 Falta informe coloquial sobre el comportamiento del individuo y
+una definicion en cuanto a riesgos (poco riesgoso, riesgoso, muy riesgoso)
+4 Implementacion de Data Mining para sacar estadísticas
