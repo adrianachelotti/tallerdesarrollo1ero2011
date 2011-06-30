@@ -10,4 +10,8 @@ tambien hay que decirla muy por arriba mepa
 (hoy en dia corre en una pc local con datos ficticios)
 3 Falta informe coloquial sobre el comportamiento del individuo y
 una definicion en cuanto a riesgos (poco riesgoso, riesgoso, muy riesgoso)
+
 4 Implementacion de Data Mining para sacar estadísticas
+[Flor: Con respecto a esto diría que falta el análisis realizado por un actuario o algún profesional que haga estimación de riesgos. ]
+
+5 Procesos de actualización de la base de datos.
