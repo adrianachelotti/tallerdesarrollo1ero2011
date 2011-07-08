@@ -86,6 +86,30 @@
 										<td><span wicket:id="cantidadConsultas"/></td>
 									</tr>
 									
+									
+									
+</table>
+
+<p class="subtit">Scoring</p>
+<table wicket:id="scoring" class="table_form" cellpadding="0" cellspacing="0" width="780"  border="0">
+<thead>
+  <tr>
+    <th>Patente</th>
+    <th>Descripción</th>
+    <th>Tipo</th>
+    <th>Fecha</th>
+    <th>Lugar</th>
+    <th>Monto</th>
+  </tr>
+  </thead>
+  <tr>
+    <td>ABC123</td>
+    <td>Accidente</td>
+    <td>Grave</td>
+    <td>21/05/2011</td>
+    <td>Capital Federal</td>
+    <td>$100</td>
+  </tr>
 </table>
 <p class="subtit">Vehiculos</p>
 <table wicket:id="vehiculos" class="table_form"  cellpadding="0" cellspacing="0" width="780"  border="0">
@@ -106,6 +130,28 @@
     <td>Bueno</td>
     <td>Bueno</td>
     <td>Malo</td>
+  </tr>
+</table>
+
+<p class="subtit">Verificación técnica vehicular</p>
+<table wicket:id="vtv" class="table_form" cellpadding="0" cellspacing="0" width="780"  border="0">
+<thead>
+  <tr>
+    <th>Patente</th>
+    <th>Descripción</th>
+    <th>Tipo</th>
+    <th>Fecha</th>
+    <th>Lugar</th>
+    <th>Monto</th>
+  </tr>
+  </thead>
+  <tr>
+    <td>ABC123</td>
+    <td>Accidente</td>
+    <td>Grave</td>
+    <td>21/05/2011</td>
+    <td>Capital Federal</td>
+    <td>$100</td>
   </tr>
 </table>
 <p class="subtit">Infracciones</p>
@@ -150,6 +196,8 @@
     <td>$100</td>
   </tr>
 </table>
+
+
 <p class="subtit">Expedientes judiciales</p>
 <table wicket:id="expedientesJudiciales" class="table_form" cellpadding="0" cellspacing="0" width="780"  border="0">
 <thead>
@@ -169,44 +217,44 @@
 <table wicket:id="sistemaFinanciero" class="table_form" cellpadding="0" cellspacing="0" width="780"  border="0">
   <tr>
 										<td>Tipo clave única</td>
-										<td>CUIL</td>
+										<td><span wicket:id="tipoClaveUnica"/></td>
 									</tr>
 									<tr>
 										<td>Clave única</td>
-										<td>20332066772</td>
+										<td><span wicket:id="claveUnica"/></td>
 									</tr>
 									<tr>
 										<td>Inhabilitación por multa</td>
-										<td>NO</td>
+										<td><span wicket:id="multa"/></td>
 									</tr>
 									<tr>
 										<td>Inhabilitación judicial</td>
-										<td>NO</td>
+										<td><span wicket:id="judicial"/></td>
 									</tr>
 									<tr>
 										<td>Cantidad de cheques rechazados</td>
-										<td>3</td>
+										<td><span wicket:id="cheques"/></td>
 									</tr>
 
 									<tr>
 										<td>Cantidad de préstamos</td>
-										<td>3</td>
+										<td><span wicket:id="prestamos"/></td>
 									</tr>
 									<tr>
 										<td>Cantidad de préstamos con mayor calificación</td>
-										<td>1</td>
+										<td><span wicket:id="prestamosMayor"/></td>
 									</tr>
 									<tr>
 										<td>Promedio dias de atraso</td>
-										<td>10</td>
+										<td><span wicket:id="promedio"/></td>
 									</tr>
 									<tr>
 										<td>Monto por deudas en estado "normal"</td>
-										<td>$1000</td>
+										<td> <span wicket:id="normal"/></td>
 									</tr>
 									<tr>
 										<td>Monto por deudas en estado "irrecuperable"</td>
-										<td>$10000</td>
+										<td> <span wicket:id="irrecuperable"/></td>
 									</tr>
 </table>
 

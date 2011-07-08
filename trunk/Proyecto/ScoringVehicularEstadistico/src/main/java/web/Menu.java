@@ -37,7 +37,7 @@ public class Menu extends AuthenticatedWebPage{
 		else if(usuario.esAdministrador())
 			this.navigation=new NavigationAdministrador(this);
 		else
-			this.navigation=new NavigationAdministrador(this);
+			this.navigation=new NavigationOperador(this);
 					
 		add(navigation);
 		
