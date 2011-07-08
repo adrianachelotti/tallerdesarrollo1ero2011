@@ -67,7 +67,7 @@ public class AdministradorConsultas {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		List<Consulta> resultado = null;
-		Query query = session.createQuery("from Consulta ");
+		Query query = session.createQuery("from Consulta order by fecha ");
 		resultado = query.list();
 		session.getTransaction().commit();
 		return resultado;
@@ -78,7 +78,7 @@ public class AdministradorConsultas {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		List<Consulta> resultado = null;
-		Query query = session.createQuery("from Consulta consulta where consulta.usuario.username='"+username+"'");;
+		Query query = session.createQuery("from Consulta consulta where consulta.usuario.username='"+username+"' order by fecha");;
 		resultado = query.list();
 		session.getTransaction().commit();
 		return resultado;

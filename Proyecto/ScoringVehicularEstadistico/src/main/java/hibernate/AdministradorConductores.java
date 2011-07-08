@@ -9,8 +9,11 @@ import org.hibernate.Session;
 
 
 
+
+
 import hibernate.domain.conductores.Conductor;
 
+import hibernate.domain.sistemaFinanciero.DeudaSistemaFinanciero;
 import hibernate.domain.sistemaJudicial.ExpedienteJudicial;
 import hibernate.domain.vehiculos.Vehiculo;
 
@@ -125,6 +128,24 @@ public class AdministradorConductores{
 		session.flush();
 		session.getTransaction().commit();
 	}
+
+	@SuppressWarnings("unchecked")
+	public static DeudaSistemaFinanciero obtenerDeuda(
+			String tipoDoc, Integer documento) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		List<DeudaSistemaFinanciero> resultado = null;
+		DeudaSistemaFinanciero d = null;
+
+		Query query = session.createQuery("from DeudaSistemaFinanciero d where d.conductor.tipoDocumento ='"+tipoDoc+"' and d.conductor.numeroDocumento='"+documento+"'");
+		resultado = query.list();
+		session.getTransaction().commit();
+		if (!resultado.isEmpty())
+			d = (DeudaSistemaFinanciero) resultado.get(0);
+		return d;
+	}
+
+	
 
 	
 
