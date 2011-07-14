@@ -43,7 +43,7 @@ public class Conductor {
 	private String estadoCivil;
 	private String profesion;
 	private String nivelDeEstudio;
-	private Float ingresoPromedio;
+	private Double ingresoPromedio;
 	private Integer cantidadHijos;
 	private String nombre;
 	private String apellidos;
@@ -55,6 +55,7 @@ public class Conductor {
 	private Set<ExpedienteJudicial> expedientesJudiciales=new HashSet<ExpedienteJudicial>();
 	private Set<Vehiculo> vehiculos=new HashSet<Vehiculo>();
 	private Integer cantidadConsultas;
+	private Integer scoring;
 	
 
 	
@@ -161,11 +162,11 @@ public class Conductor {
 	public void setNivelDeEstudio(String nivelDeEstudio) {
 		this.nivelDeEstudio = nivelDeEstudio;
 	}
-	public Float getIngresoPromedio() {
+	public Double getIngresoPromedio() {
 		return ingresoPromedio;
 	}
-	public void setIngresoPromedio(Float ingresoPromedio) {
-		this.ingresoPromedio = ingresoPromedio;
+	public void setIngresoPromedio(Double d) {
+		this.ingresoPromedio = d;
 	}
 	public Integer getCantidadHijos() {
 		return cantidadHijos;
@@ -252,13 +253,19 @@ public class Conductor {
 		this.setEstadoCivil(celdas[7]);
 		this.setProfesion(celdas[8]);
 		this.setNivelDeEstudio(celdas[9]);
-		this.setIngresoPromedio(Float.parseFloat(celdas[10]));
+		this.setIngresoPromedio((double) Float.parseFloat(celdas[10]));
 		this.setCantidadHijos(Integer.parseInt(celdas[11]));
 		
 	}
 	@Transient
 	public void persistir(){
 		AdministradorConductores.agregarConductor(this);
+	}
+	public void setScoring(Integer scoring) {
+		this.scoring = scoring;
+	}
+	public Integer getScoring() {
+		return scoring;
 	}
 	
 	
