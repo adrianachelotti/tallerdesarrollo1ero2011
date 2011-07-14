@@ -133,7 +133,7 @@ public class AdministrarPerfiles extends Formulario {
 
                         UsuarioItem ui = it.next();
                         
-                        if((ui.tipo.compareTo("cliente")==0)&&(!ui.usuario.esCliente())){
+                    /*    if((ui.tipo.compareTo("cliente")==0)&&(!ui.usuario.esCliente())){
                         	Cliente cliente=new Cliente();
                         	cliente.copiar(ui.usuario);
                         	ui.usuario.setActivado(false);
@@ -143,7 +143,7 @@ public class AdministrarPerfiles extends Formulario {
                         	AdministradorUsuarios.agregarUsuario(cliente);
                         	
                         	
-                        }else 
+                        }else */
                             if((ui.tipo.compareTo("administrador")==0)&&(!ui.usuario.esAdministrador())){
                             	Administrador administrador=new Administrador();
                             	administrador.copiar(ui.usuario);
@@ -261,7 +261,7 @@ public class AdministrarPerfiles extends Formulario {
 					else if(usuario.esOperador()) ui.tipo="operador";
 					final RadioGroup radioGroup = new RadioGroup("perfiles", new PropertyModel(ui, "tipo"));
 					item.add(radioGroup);
-					radioGroup.add(new Radio("cliente", new Model("cliente")));
+					//radioGroup.add(new Radio("cliente", new Model("cliente")));
 					radioGroup.add(new Radio("administrador", new Model("administrador")));
 					radioGroup.add(new Radio("operador", new Model("operador")));
 	                ;
