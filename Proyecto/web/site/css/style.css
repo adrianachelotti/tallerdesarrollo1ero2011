@@ -73,6 +73,9 @@ footer .list1 li {line-height:20px}
 .input {background:url(../images/input_bg.gif) top repeat-x;border:1px solid #fff;font:14px Arial, Helvetica, sans-serif;height:16px;padding:5px 10px;color:#aaa;border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;behavior:url(js/PIE.htc);position:relative}
 .bg {border:1px solid #d9d9d9;border-bottom:1px solid #f7f7f7;border-right:1px solid #f7f7f7;border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;behavior:url(js/PIE.htc);position:relative;margin-bottom:15px}
 .submit {font-size:17px;color:#fff;float:right;line-height:32px;background:url(../images/button1_bg.gif) top repeat-x;text-transform:uppercase;text-decoration:none}
+
+.submit2 {font-size:17px;color:#fff;float:center;line-height:32px;background:url(../images/button1_bg.gif) top repeat-x;text-transform:uppercase;text-decoration:none}
+
 .submit span {display:block;background:url(../images/button1_left.jpg) top left no-repeat}
 .submit span span {padding:0 17px;height:48px;background:url(../images/button1_right.jpg) top right no-repeat}
 #form_1 {width:237px}
