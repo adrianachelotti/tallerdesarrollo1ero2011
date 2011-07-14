@@ -47,10 +47,10 @@ public class Login2 extends WebPage {
 					Usuario usuario=sesion.getUsuario();
 					
 					setResponsePage(new Menu(AdministradorUsuarios.obtenerUsuario(usuario.getUsername())));
-					info("Sesión iniciada correctamente.");
+					info("Sesi�n iniciada correctamente.");
 									
 				} else
-					info("El username y/o contraseña ingrsados son incorrectos o el usuario no fue activado todavía.");
+					info("El username y/o contraseña ingrsados son incorrectos o el usuario no fue activado todav�a.");
 			}
 		};
 
@@ -58,9 +58,9 @@ public class Login2 extends WebPage {
 		FeedbackPanel panel=new FeedbackPanel("mensajes");
 		formulario.add(panel);
 		
-		if(AppInit.inicializarAplicacion()) info("No hay usuarios cargados en la base de datos. Ingrese al sistema usando username='admin' y constraseña='admin'.");
+		if(AppInit.inicializarAplicacion()) info("No hay usuarios cargados en la base de datos. Ingrese al sistema usando username='admin' y constrase�a='admin'.");
 		else{
-			info("Por favor, ingrese su nombre de usuario y constraseña.");
+			info("Por favor, ingrese su nombre de usuario y constrase�a.");
 		}
 	
 		

@@ -115,7 +115,7 @@ public class Informe extends Formulario {
 		sistemaFinancieroContainer.add(new Label("prestamos",deuda.getCantidadPrestamos()==null?"-":deuda.getCantidadPrestamos().toString()));
 		sistemaFinancieroContainer.add(new Label("prestamosMayor",deuda.getCantidadPrestamosCalificacionMayor()==null?"-":deuda.getCantidadPrestamosCalificacionMayor().toString()));
 		sistemaFinancieroContainer.add(new Label("judicial",deuda.getInhabilitacionJudicial()==null?"-":deuda.getInhabilitacionJudicial()?"SÃ�":"NO"));
-		sistemaFinancieroContainer.add(new Label("multa",deuda.getInhabilitacionMulta()==null?"-":deuda.getInhabilitacionMulta()?"SÃ�":"NO"));
+		sistemaFinancieroContainer.add(new Label("multa",deuda.getInhabilitacionMulta()==null?"-":deuda.getInhabilitacionMulta()?"SI":"NO"));
 		
 		sistemaFinancieroContainer.add(new Label("irrecuperable",deuda.getMontoDeudaIrrecuperable()==null?"-":"$"+deuda.getMontoDeudaIrrecuperable().toString()));
 		sistemaFinancieroContainer.add(new Label("normal",deuda.getMontoDeudaNormal()==null?"-":"$ "+deuda.getMontoDeudaNormal().toString()));
