@@ -24,7 +24,7 @@
 										<td><span wicket:id="tipoDocumento"/></td>
   </tr>
 									<tr>
-										<td>NÃºmero de documento</td>
+										<td>Número de documento</td>
 										<td><span wicket:id="numeroDocumento"/></td>
 									</tr>
 									<tr>
@@ -69,7 +69,7 @@
 										<td><span wicket:id="nivelEstudio"/></td>
 									</tr>
 									<tr>
-										<td>Profesion</td>
+										<td>Profesión</td>
 										<td><span wicket:id="profesion"/></td>
 									</tr>
 									<tr>
@@ -78,7 +78,7 @@
 									</tr>
 									</tr>
 									<tr>
-										<td>Cantidad de veces que llegÃ³ a 0 en scoring</td>
+										<td>Cantidad de veces que llegó a 0 en scoring</td>
 										<td><span wicket:id="cantidad0"/></td>
 									</tr>
 									<tr>
@@ -92,26 +92,12 @@
 
 <p class="subtit">Scoring</p>
 <table wicket:id="scoring" class="table_form" cellpadding="0" cellspacing="0" width="780"  border="0">
-<thead>
-  <tr>
-    <th>Patente</th>
-    <th>DescripciÃ³n</th>
-    <th>Tipo</th>
-    <th>Fecha</th>
-    <th>Lugar</th>
-    <th>Monto</th>
-  </tr>
-  </thead>
-  <tr>
-    <td>ABC123</td>
-    <td>Accidente</td>
-    <td>Grave</td>
-    <td>21/05/2011</td>
-    <td>Capital Federal</td>
-    <td>$100</td>
-  </tr>
+									<tr>
+										<td>Scoring</td>
+										<td><span wicket:id="scoringValor"/></td>
+									</tr>
 </table>
-<p class="subtit">Vehiculos</p>
+<p class="subtit">Vehículos</p>
 <table wicket:id="vehiculos" class="table_form"  cellpadding="0" cellspacing="0" width="780"  border="0">
 <thead>
 					<!--  HEADINGS -->
@@ -121,7 +107,7 @@
     <th>Modelo</th>
     <th>Estado exterior</th>
     <th>Estado interior</th>
-    <th>Estado mecÃ¡nica</th>
+    <th>Estado mecánica</th>
   </tr>
   	</thead>
    <tr>
@@ -133,12 +119,12 @@
   </tr>
 </table>
 
-<p class="subtit">VerificaciÃ³n tÃ©cnica vehicular</p>
+<p class="subtit">Verificación técnica vehicular</p>
 <table wicket:id="vtv" class="table_form" cellpadding="0" cellspacing="0" width="780"  border="0">
 <thead>
   <tr>
     <th>Patente</th>
-    <th>DescripciÃ³n</th>
+    <th>Descripción</th>
     <th>Tipo</th>
     <th>Fecha</th>
     <th>Lugar</th>
@@ -159,7 +145,7 @@
 <thead>
   <tr>
     <th>Patente</th>
-    <th>DescripciÃ³n</th>
+    <th>Descripción</th>
     <th>Tipo</th>
     <th>Fecha</th>
     <th>Lugar</th>
@@ -168,7 +154,7 @@
   </thead>
   <tr>
     <td>ABC123</td>
-    <td>PasÃ³ semÃ¡foro en rojo</td>
+    <td>Pasó semáforo en rojo</td>
     <td>Grave</td>
     <td>20/05/2011</td>
     <td>Capital Federal</td>
@@ -180,7 +166,7 @@
 <thead>
   <tr>
     <th>Patente</th>
-    <th>DescripciÃ³n</th>
+    <th>Descripción</th>
     <th>Tipo</th>
     <th>Fecha</th>
     <th>Lugar</th>
@@ -202,33 +188,33 @@
 <table wicket:id="expedientesJudiciales" class="table_form" cellpadding="0" cellspacing="0" width="780"  border="0">
 <thead>
   <tr>
-    <th>NÃºmero</th>
+    <th>Número</th>
     <th>Objeto</th>
-    <th>SituaciÃ³n</th>
+    <th>Situación</th>
   </tr>
   </thead>
-   <tr>
-    <td>12345</td>
-    <td>Accidente</td>
-    <td>Demandado</td>
+   <tr wicket:id="expedientes">
+    <td><span wicket:id="numero" /></td>
+    <td><span wicket:id="objeto" /></td>
+    <td><span wicket:id="situacion" /></td>
   </tr>
 </table>
 <p class="subtit">Deudas con el sistema financiero</p>
 <table wicket:id="sistemaFinanciero" class="table_form" cellpadding="0" cellspacing="0" width="780"  border="0">
   <tr>
-										<td>Tipo clave Ãºnica</td>
+										<td>Tipo clave única</td>
 										<td><span wicket:id="tipoClaveUnica"/></td>
 									</tr>
 									<tr>
-										<td>Clave Ãºnica</td>
+										<td>Clave Única</td>
 										<td><span wicket:id="claveUnica"/></td>
 									</tr>
 									<tr>
-										<td>InhabilitaciÃ³n por multa</td>
+										<td>Inhabilitación por multa</td>
 										<td><span wicket:id="multa"/></td>
 									</tr>
 									<tr>
-										<td>InhabilitaciÃ³n judicial</td>
+										<td>Inhabilitación judicial</td>
 										<td><span wicket:id="judicial"/></td>
 									</tr>
 									<tr>
@@ -237,11 +223,11 @@
 									</tr>
 
 									<tr>
-										<td>Cantidad de prÃ©stamos</td>
+										<td>Cantidad de préstamos</td>
 										<td><span wicket:id="prestamos"/></td>
 									</tr>
 									<tr>
-										<td>Cantidad de prÃ©stamos con mayor calificaciÃ³n</td>
+										<td>Cantidad de préstamos con mayor calificación</td>
 										<td><span wicket:id="prestamosMayor"/></td>
 									</tr>
 									<tr>
