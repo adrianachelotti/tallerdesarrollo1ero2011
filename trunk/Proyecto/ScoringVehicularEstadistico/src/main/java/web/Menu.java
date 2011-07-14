@@ -96,7 +96,7 @@ public class Menu extends AuthenticatedWebPage{
 			textoCuenta+="<br> <b>Servicio contratado:</b> "+(cliente.getServicio()!=null?cliente.getServicio().getDescripcion():"-");
 			if(cliente.getServicio()!=null){
 			
-				if(cliente.getServicio().getCodigo().compareTo("CP")!=0)
+				if((cliente.getServicio().getCodigo().compareTo("CP")!=0)&&(cliente.getServicio().getCodigo().compareTo("CI")!=0))
 				textoCuenta+="<br> <b>Consultas disponibles:</b> "+(cliente.getServicio().getMaximoConsultas()-cliente.getCantidadConsultas());
 			}
 			

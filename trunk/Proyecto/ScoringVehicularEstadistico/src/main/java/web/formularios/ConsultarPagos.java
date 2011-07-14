@@ -205,8 +205,8 @@ public class ConsultarPagos extends Formulario {
         //dd forma de pago
         formaPagoModel = new Model<String>("Todos");
 		formaPagoDD = new DropDownChoice<String>("formaPagoDD",
-				formaPagoModel, Arrays.asList(new String[] { "Todos", "Tarjeta de crédito",
-						"Tarjeta de débito", "Cheque","Contado" })){
+				formaPagoModel, Arrays.asList(new String[] { "Todos", "Tarjeta de credito",
+						"Tarjeta de debito", "Cheque","Contado" })){
 			
 			 /**
 							 * 

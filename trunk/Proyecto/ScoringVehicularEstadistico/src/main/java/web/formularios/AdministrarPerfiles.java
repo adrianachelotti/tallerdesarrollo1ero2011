@@ -334,8 +334,8 @@ public class AdministrarPerfiles extends Formulario {
 			UsuarioItem ui = new UsuarioItem();
 			ui.usuario = iteradorUsuarios.next();
 
-			if (ui.usuario.getUsername().compareTo(
-					menu.getUsuario().getUsername()) != 0) {
+			if ((ui.usuario.getUsername().compareTo(
+					menu.getUsuario().getUsername()) != 0)&&(!ui.usuario.esCliente())) {
 				
 				ui.mostrar = true;
 				
