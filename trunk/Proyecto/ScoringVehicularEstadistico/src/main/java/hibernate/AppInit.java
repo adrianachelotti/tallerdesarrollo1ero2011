@@ -46,7 +46,7 @@ public class AppInit {
 		pago2.setConcepto("Mes Mayo");
 		pago2.setFecha(Date.valueOf("2011-05-01"));
 		pago2.setMonto(100.0);
-		pago2.setFormaPago("Tarjeta de crédito");
+		pago2.setFormaPago("Tarjeta de credito");
 		AdministradorPagos.agregarPago(pago2);
 		
 		
@@ -64,7 +64,7 @@ public class AppInit {
 		if(!AdministradorUsuarios.obtenerRubros().isEmpty()) return;
 		
 		AdministradorUsuarios.agregarRubro(new Rubro("Aseguradora"));
-		AdministradorUsuarios.agregarRubro(new Rubro("Empresa de logística"));
+		AdministradorUsuarios.agregarRubro(new Rubro("Empresa de logistica"));
 		AdministradorUsuarios.agregarRubro(new Rubro("Empresa de transporte"));
 		AdministradorUsuarios.agregarRubro(new Rubro("Empresa de finanzas"));
 		AdministradorUsuarios.agregarRubro(new Rubro("Prestadora"));
