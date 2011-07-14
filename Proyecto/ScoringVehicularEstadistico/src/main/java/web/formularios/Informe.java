@@ -1,14 +1,26 @@
 package web.formularios;
 
+import java.util.ArrayList;
+
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.form.CheckBox;
+import org.apache.wicket.markup.html.link.Link;
+import org.apache.wicket.markup.html.list.ListItem;
+import org.apache.wicket.markup.html.list.ListView;
+import org.apache.wicket.markup.html.list.PageableListView;
+import org.apache.wicket.model.PropertyModel;
 
 import hibernate.AdministradorConductores;
 import hibernate.domain.conductores.Conductor;
 import hibernate.domain.consultas.Consulta;
 import hibernate.domain.sistemaFinanciero.DeudaSistemaFinanciero;
+import hibernate.domain.sistemaJudicial.ExpedienteJudicial;
+import hibernate.domain.usuarios.Cliente;
+import hibernate.domain.usuarios.Usuario;
 import web.Formulario;
 import web.Menu;
+import web.formularios.VerUsuarios.UsuarioItem;
 
 
 
@@ -48,14 +60,14 @@ public class Informe extends Formulario {
 		this.getContenido().add(scoringContainer);
 		this.getContenido().add(vtvContainer);
 		
-		//TODO: SCORING
 		
-		armarConductor();
-		armarVehiculos();
+		
+		armarConductor(); //ok!
+		armarVehiculos(); //ok!
 		armarInfracciones();
 		armarSiniestros();
-		armarExpedientesJudiciales();
-		armarDeudas();
+		armarExpedientesJudiciales(); //ok!
+		armarDeudas(); //ok!
 		armarVtv();
 		armarScoring();
 		
@@ -102,8 +114,8 @@ public class Informe extends Formulario {
 		sistemaFinancieroContainer.add(new Label("cheques",deuda.getCantidadChequesRechazados()==null?"-":deuda.getCantidadChequesRechazados().toString()));
 		sistemaFinancieroContainer.add(new Label("prestamos",deuda.getCantidadPrestamos()==null?"-":deuda.getCantidadPrestamos().toString()));
 		sistemaFinancieroContainer.add(new Label("prestamosMayor",deuda.getCantidadPrestamosCalificacionMayor()==null?"-":deuda.getCantidadPrestamosCalificacionMayor().toString()));
-		sistemaFinancieroContainer.add(new Label("judicial",deuda.getInhabilitacionJudicial()==null?"-":deuda.getInhabilitacionJudicial()?"SÍ":"NO"));
-		sistemaFinancieroContainer.add(new Label("multa",deuda.getInhabilitacionMulta()==null?"-":deuda.getInhabilitacionMulta()?"SÍ":"NO"));
+		sistemaFinancieroContainer.add(new Label("judicial",deuda.getInhabilitacionJudicial()==null?"-":deuda.getInhabilitacionJudicial()?"SÃ�":"NO"));
+		sistemaFinancieroContainer.add(new Label("multa",deuda.getInhabilitacionMulta()==null?"-":deuda.getInhabilitacionMulta()?"SÃ�":"NO"));
 		
 		sistemaFinancieroContainer.add(new Label("irrecuperable",deuda.getMontoDeudaIrrecuperable()==null?"-":"$"+deuda.getMontoDeudaIrrecuperable().toString()));
 		sistemaFinancieroContainer.add(new Label("normal",deuda.getMontoDeudaNormal()==null?"-":"$ "+deuda.getMontoDeudaNormal().toString()));
@@ -115,7 +127,30 @@ public class Informe extends Formulario {
 	}
 
 	private void armarExpedientesJudiciales() {
-		// TODO Auto-generated method stub
+		ArrayList<ExpedienteJudicial> expedientes=new ArrayList<ExpedienteJudicial>();
+		expedientes.addAll(AdministradorConductores.obtenerExpedientes(consulta.getTipoDoc(), consulta.getDocumento()));
+			
+		ListView listview=new ListView("expedientes", expedientes) {
+
+		
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			protected void populateItem(ListItem item) {
+
+				final ExpedienteJudicial ei=(ExpedienteJudicial) item.getModelObject();
+				
+
+				item.add(new Label("numero", ei.getNumero().toString()));
+				item.add(new Label("objeto", ei.getObjeto()));
+				item.add(new Label("situacion", ei.getSituacion()));
+				
+				
+
+			}
+		};
+		
+		expedientesJudicialesContainer.add(listview);
 		
 	}
 
@@ -151,7 +186,13 @@ public class Informe extends Formulario {
 		conductorContainer.add(new Label("profesion",conductor.getProfesion()));
 		conductorContainer.add(new Label("saldoScoring",conductor.getSaldoScoring()==null?"-":conductor.getSaldoScoring().toString()));
 		conductorContainer.add(new Label("cantidad0",conductor.getCantidadCerosEnScoring()==null?"-":conductor.getCantidadCerosEnScoring().toString()));
+		
+		conductor.setCantidadConsultas(conductor.getCantidadConsultas()+1);
+		AdministradorConductores.updateConductor(conductor);
+		
 		conductorContainer.add(new Label("cantidadConsultas",conductor.getCantidadConsultas()==null?"-":conductor.getCantidadConsultas().toString()));
+		scoringContainer.add(new Label("scoringValor",conductor.getScoring()==null?"-":conductor.getScoring().toString()));
+		
 			
 		
 	}

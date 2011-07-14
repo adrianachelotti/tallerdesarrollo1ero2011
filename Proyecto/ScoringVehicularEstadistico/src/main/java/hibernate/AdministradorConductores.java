@@ -1,11 +1,14 @@
 package hibernate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 
 import org.hibernate.Query;
 import org.hibernate.Session;
+
+
 
 
 
@@ -143,6 +146,27 @@ public class AdministradorConductores{
 		if (!resultado.isEmpty())
 			d = (DeudaSistemaFinanciero) resultado.get(0);
 		return d;
+	}
+
+	public static void agregarDeuda(DeudaSistemaFinanciero deuda) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		session.saveOrUpdate(deuda);
+		session.flush();
+		session.getTransaction().commit();
+		
+	}
+
+	public static List<ExpedienteJudicial> obtenerExpedientes(
+			String tipoDoc, Integer documento) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		List<ExpedienteJudicial> resultado = null;
+		
+		Query query = session.createQuery("from ExpedienteJudicial e where e.conductor.tipoDocumento ='"+tipoDoc+"' and e.conductor.numeroDocumento='"+documento+"'");
+		resultado = query.list();
+		session.getTransaction().commit();
+		return resultado;
 	}
 
 	

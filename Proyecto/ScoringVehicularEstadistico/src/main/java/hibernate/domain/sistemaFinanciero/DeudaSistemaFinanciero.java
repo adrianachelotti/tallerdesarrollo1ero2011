@@ -27,11 +27,11 @@ public class DeudaSistemaFinanciero {
 	private Integer cantidadChequesRechazados;
 	private Integer cantidadPrestamos;
 	private Integer cantidadPrestamosCalificacionMayor;
-	private Float montoDeudaNormal;
+	private Double montoDeudaNormal;
 	private Float montoDeudaEspecial;
 	private Float montoDeudaEnProblemas;
 	private Float montoDeudaInsolvente;
-	private Float montoDeudaIrrecuperable;
+	private Double montoDeudaIrrecuperable;
 	private Float promedioDiasAtraso;
 	private Integer id;
 	private Conductor conductor;
@@ -97,11 +97,11 @@ public class DeudaSistemaFinanciero {
 			Integer cantidadPrestamosCalificacionMayor) {
 		this.cantidadPrestamosCalificacionMayor = cantidadPrestamosCalificacionMayor;
 	}
-	public Float getMontoDeudaNormal() {
+	public Double getMontoDeudaNormal() {
 		return montoDeudaNormal;
 	}
-	public void setMontoDeudaNormal(Float montoDeudaNormal) {
-		this.montoDeudaNormal = montoDeudaNormal;
+	public void setMontoDeudaNormal(Double d) {
+		this.montoDeudaNormal = d;
 	}
 	public Float getMontoDeudaEspecial() {
 		return montoDeudaEspecial;
@@ -121,11 +121,11 @@ public class DeudaSistemaFinanciero {
 	public void setMontoDeudaInsolvente(Float montoDeudaInsolvente) {
 		this.montoDeudaInsolvente = montoDeudaInsolvente;
 	}
-	public Float getMontoDeudaIrrecuperable() {
+	public Double getMontoDeudaIrrecuperable() {
 		return montoDeudaIrrecuperable;
 	}
-	public void setMontoDeudaIrrecuperable(Float montoDeudaIrrecuperable) {
-		this.montoDeudaIrrecuperable = montoDeudaIrrecuperable;
+	public void setMontoDeudaIrrecuperable(Double d) {
+		this.montoDeudaIrrecuperable = d;
 	}
 	public Float getPromedioDiasAtraso() {
 		return promedioDiasAtraso;
